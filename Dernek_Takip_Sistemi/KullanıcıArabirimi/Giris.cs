@@ -19,10 +19,15 @@ namespace Dernek_Takip_Sistemi
 
         private void btn_Personel_Click(object sender, EventArgs e)
         {
+         
+
+            this.Hide();
+
+            // Yeni formu oluştur ve göster
             PersonelLogin personelLogin = new PersonelLogin();
-            personelLogin.Show();
+            personelLogin.ShowDialog();
 
-
+  
         }
     }
 }

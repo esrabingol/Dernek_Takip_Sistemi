@@ -1,0 +1,124 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+using static Dernek_Takip_Sistemi.Class1;
+
+namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
+{
+    public partial class UyeSilGüncelleEkrani : Form
+    {
+        VeriTabaniBaglantisi connect;
+        public UyeSilGüncelleEkrani()
+        {
+            InitializeComponent();
+        }
+
+
+        private void UyeGoruntuleBTN_Click(object sender, EventArgs e)
+        {
+            string TcNumarasi = TCgirTB.Text;
+            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            DataTable UserDT = new DataTable();
+            if (String.IsNullOrWhiteSpace(TCgirTB.Text))
+                MessageBox.Show("TC Kimlik Numarası Alanı Boş Olamaz!");
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu WHERE TCKimlikNumarasi ='{TcNumarasi}'", connect.Connect()))
+            {
+                dataAdapter.Fill(UserDT);
+
+            }
+            UyeGoruntuleDGW.DataSource = UserDT;
+        }
+
+        private void UyeSilBTN_Click(object sender, EventArgs e)
+        {
+            string TcNumarasi = TCgirTB.Text;
+
+            // Kullanıcıya silme işlemi için onay iste
+            DialogResult result = MessageBox.Show("Bu üye silinecek. Emin misiniz?", "Üye Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                string dynamicConnectionString = "Dernek_Takip_Sistemi";
+                string connectionString = $"Data Source=LAPTOP-IPQTP7GR;Initial Catalog={dynamicConnectionString};Integrated Security=True";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    // SQL sorgusunu hazırla
+                    string sqlSorgusu = $"DELETE FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{TcNumarasi}'";
+
+                    // SQL sorgusunu çalıştır
+                    using (SqlCommand sqlCommand = new SqlCommand(sqlSorgusu, connection))
+                    {
+                        try
+                        {
+                            // Veritabanı bağlantısını aç
+                            connection.Open();
+
+                            // İşlemi gerçekleştir
+                            int etkilenenSatırSayısı = sqlCommand.ExecuteNonQuery();
+
+                            if (etkilenenSatırSayısı > 0)
+                            {
+                                // İşlem başarılıysa kullanıcıya bilgi ver
+                                MessageBox.Show("Üye başarıyla silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                // UyeBilgileriniListelemeİslemleri formunu aç
+                                UyeBilgileriniListelemeİslemleri listelemeIslemleri = new UyeBilgileriniListelemeİslemleri();
+                                listelemeIslemleri.Show();
+
+                                // Mevcut formu gizle
+                                this.Hide();
+                            }
+                            else
+                            {
+                                // İşlem başarısızsa kullanıcıya hata mesajı ver
+                                MessageBox.Show("Üye silinirken bir hata oluştu.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // Hata durumunda kullanıcıya bilgi ver
+                            MessageBox.Show("Bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            // Veritabanı bağlantısını kapat
+                            connection.Close();
+                        }
+                    }
+                }
+            }
+
+            else
+            {
+                // Kullanıcı "Hayır" dediyse, mevcut formu göster
+                this.Show();
+            }
+        }
+
+        private void UyeGuncelleBTN_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void GeriDonBTN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UyeBilgileriniListelemeİslemleri geriDonİslemi = new UyeBilgileriniListelemeİslemleri();
+            geriDonİslemi.ShowDialog();
+
+           
+
+        }
+    }
+}
+
+
+

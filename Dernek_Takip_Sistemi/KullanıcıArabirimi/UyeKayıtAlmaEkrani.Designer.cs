@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UyeKayıtAlmaEkrani));
             this.TckimliknoTB = new System.Windows.Forms.TextBox();
             this.lbl_tckimlikno = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -215,7 +214,7 @@
             // 
             // KanGrubuLB
             // 
-            this.KanGrubuLB.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.KanGrubuLB.BackColor = System.Drawing.Color.White;
             this.KanGrubuLB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.KanGrubuLB.FormattingEnabled = true;
             this.KanGrubuLB.Items.AddRange(new object[] {
@@ -258,7 +257,7 @@
             // 
             // SehirCB
             // 
-            this.SehirCB.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.SehirCB.BackColor = System.Drawing.Color.White;
             this.SehirCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SehirCB.FormattingEnabled = true;
             this.SehirCB.Items.AddRange(new object[] {
@@ -399,13 +398,14 @@
             this.dogumtarihiTB.Name = "dogumtarihiTB";
             this.dogumtarihiTB.Size = new System.Drawing.Size(156, 20);
             this.dogumtarihiTB.TabIndex = 33;
+            this.dogumtarihiTB.Text = "Yıl/Ay/Gün";
             // 
             // UyeKayıtAlmaEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(794, 343);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(747, 337);
             this.Controls.Add(this.dogumtarihiTB);
             this.Controls.Add(this.DogumtarihiLB);
             this.Controls.Add(this.UyelikDurumuCB);

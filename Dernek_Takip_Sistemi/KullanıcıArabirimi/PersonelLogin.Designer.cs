@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonelLogin));
             this.lbl_personelnumber = new System.Windows.Forms.Label();
             this.lbl_PersonelPassword = new System.Windows.Forms.Label();
             this.SifreTB = new System.Windows.Forms.TextBox();
@@ -70,7 +69,7 @@
             // 
             this.btn_login.BackColor = System.Drawing.Color.Lime;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_login.Location = new System.Drawing.Point(195, 164);
+            this.btn_login.Location = new System.Drawing.Point(218, 157);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(100, 34);
             this.btn_login.TabIndex = 4;
@@ -112,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(536, 215);
             this.Controls.Add(this.sfregorCB);

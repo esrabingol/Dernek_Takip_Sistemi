@@ -99,43 +99,6 @@ namespace Dernek_Takip_Sistemi
                 }
             }
 
-
-            //else
-            //{
-
-            //    connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-            //    DataTable personelDataT = new DataTable();//veri görüntülemek için datatable oluşturulur
-            //    //sql deki tablonun c deki karşılığı bu tabloda olacaktır.
-            //    SqlDataAdapter da = new SqlDataAdapter($"Select * from UyeKayitTablosu Where TCKimlikNumarasi = '{TckimliknoTB.Text}'", connect.Connect()); // sql connection dan connect() fonk çağrılır
-
-            //    //ezber kullanım sqldataadapter 
-            //    da.Fill(dataTable: personelDataT); //personelDataT doldurmak(fill) için 
-            //    if (personelDataT.Rows.Count > 0)//personelDataT getirilen satır sayısı >0 ise demek ki önceden kayıt oluşturulmuş demektir
-            //    {
-            //        MessageBox.Show("Girdiğiniz TC Kimlik Numarası sisteme kayıtlıdır tekrar kontrol ediniz!");
-            //    }
-            //    else
-            //    {
-            //        try
-            //        {
-            //            SqlDataAdapter daInsert = new SqlDataAdapter();
-            //            string command = ($"INSERT INTO UyeKayitTablosu (TCKimlikNumarasi, UyeAdi, UyeSoyadi, UyeDogumTarihi,UyeCinsiyet,UyeKanGrubu,UyeSehir,UyeninDurumBilgisi,UyeninAylıkOdemeMiktari,UyeMailAdresi,UyeTelefonNumarasi) " +
-            //                $"VALUES ('{TckimliknoTB.Text}', '{isimTB.Text}', '{soyisimTB.Text}', '{dogumtarihiTB.Text}','{CinsiyetCB.Text}','{KanGrubuLB.Text}','{UyelikDurumuCB.Text}',{AylikOdemeTB.Text},'{EPostaTB.Text}','{TelefonNumarasiTB.Text}','{SehirCB.Text}')");
-            //            daInsert.InsertCommand = new SqlCommand(command, connect.Connect());
-            //            daInsert.InsertCommand.ExecuteNonQuery();//yazılan sorgu çalıştırıldı
-            //            MessageBox.Show("Dernek Sistemine Kayıt Başarılı.");
-            //            UyeBilgileriniListelemeİslemleri frm = new UyeBilgileriniListelemeİslemleri();
-            //            frm.Show();
-            //            this.Hide();
-
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            MessageBox.Show(ex.Message);
-            //        }
-            //    }
-            //}
-
         }
     }
     }

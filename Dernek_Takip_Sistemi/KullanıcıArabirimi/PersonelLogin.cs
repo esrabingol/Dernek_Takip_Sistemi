@@ -64,8 +64,8 @@ namespace Dernek_Takip_Sistemi
                     {
 
                         MessageBox.Show("Personel Giriş Başarılı, Hoşgeldiniz");
-                        UyeKayıtAlmaEkrani frm = new UyeKayıtAlmaEkrani();
-                        frm.Show();
+                        UyeBilgileriniListelemeİslemleri listelemeİslemleri = new UyeBilgileriniListelemeİslemleri();
+                        listelemeİslemleri.Show();
                         this.Hide();
 
                     }

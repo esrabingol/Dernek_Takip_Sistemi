@@ -47,13 +47,14 @@
             // 
             // btn_Personel
             // 
+            this.btn_Personel.BackColor = System.Drawing.Color.Lime;
             this.btn_Personel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_Personel.Location = new System.Drawing.Point(147, 185);
             this.btn_Personel.Name = "btn_Personel";
             this.btn_Personel.Size = new System.Drawing.Size(168, 44);
             this.btn_Personel.TabIndex = 1;
             this.btn_Personel.Text = "PERSONEL GİRİŞİ";
-            this.btn_Personel.UseVisualStyleBackColor = true;
+            this.btn_Personel.UseVisualStyleBackColor = false;
             this.btn_Personel.Click += new System.EventHandler(this.btn_Personel_Click);
             // 
             // pictureBox1
@@ -70,9 +71,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(462, 255);
+            this.ClientSize = new System.Drawing.Size(450, 269);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Personel);
             this.Controls.Add(this.lbl_baslik);
