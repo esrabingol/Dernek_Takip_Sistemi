@@ -33,9 +33,94 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.8.0.2\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.2\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,11 +132,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KullanıcıArabirimi\UyeSilGüncelleEkrani.cs">
+    <Compile Include="KullanıcıArabirimi\MailIslemleriEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KullanıcıArabirimi\UyeSilGüncelleEkrani.Designer.cs">
-      <DependentUpon>UyeSilGüncelleEkrani.cs</DependentUpon>
+    <Compile Include="KullanıcıArabirimi\MailIslemleriEkrani.Designer.cs">
+      <DependentUpon>MailIslemleriEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Uye\OdemeIslemleriEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Uye\OdemeIslemleriEkrani.Designer.cs">
+      <DependentUpon>OdemeIslemleriEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Uye\UyeGirisEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Uye\UyeGirisEkrani.Designer.cs">
+      <DependentUpon>UyeGirisEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Personel\UyeSilEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Personel\UyeSilEkrani.Designer.cs">
+      <DependentUpon>UyeSilEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Uye\UyeIslemlerEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Uye\UyeIslemlerEkrani.Designer.cs">
+      <DependentUpon>UyeIslemlerEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="VeritabaniBaglantısı\Class1.cs" />
     <Compile Include="KullanıcıArabirimi\Giris.cs">
@@ -60,48 +174,56 @@
     <Compile Include="KullanıcıArabirimi\Giris.Designer.cs">
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
-    <Compile Include="KullanıcıArabirimi\UyeBilgileriniListelemeİslemleri.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\UyeBilgileriniListelemeİslemleri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KullanıcıArabirimi\UyeBilgileriniListelemeİslemleri.Designer.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\UyeBilgileriniListelemeİslemleri.Designer.cs">
       <DependentUpon>UyeBilgileriniListelemeİslemleri.cs</DependentUpon>
     </Compile>
-    <Compile Include="KullanıcıArabirimi\PersonelLogin.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\PersonelLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KullanıcıArabirimi\PersonelLogin.Designer.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\PersonelLogin.Designer.cs">
       <DependentUpon>PersonelLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="KullanıcıArabirimi\UyeKayıtAlmaEkrani.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\UyeKayıtAlmaEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KullanıcıArabirimi\UyeKayıtAlmaEkrani.Designer.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\UyeKayıtAlmaEkrani.Designer.cs">
       <DependentUpon>UyeKayıtAlmaEkrani.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="KullanıcıArabirimi\Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KullanıcıArabirimi\UyeBilgileriniListelemeİslemleri.resx">
+    <EmbeddedResource Include="KullanıcıArabirimi\MailIslemleriEkrani.resx">
+      <DependentUpon>MailIslemleriEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullanıcıArabirimi\Personel\UyeBilgileriniListelemeİslemleri.resx">
       <DependentUpon>UyeBilgileriniListelemeİslemleri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KullanıcıArabirimi\PersonelLogin.resx">
+    <EmbeddedResource Include="KullanıcıArabirimi\Personel\PersonelLogin.resx">
       <DependentUpon>PersonelLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KullanıcıArabirimi\UyeSilGüncelleEkrani.resx">
-      <DependentUpon>UyeSilGüncelleEkrani.cs</DependentUpon>
+    <EmbeddedResource Include="KullanıcıArabirimi\Uye\OdemeIslemleriEkrani.resx">
+      <DependentUpon>OdemeIslemleriEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullanıcıArabirimi\Uye\UyeGirisEkrani.resx">
+      <DependentUpon>UyeGirisEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullanıcıArabirimi\Personel\UyeSilEkrani.resx">
+      <DependentUpon>UyeSilEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullanıcıArabirimi\Uye\UyeIslemlerEkrani.resx">
+      <DependentUpon>UyeIslemlerEkrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="KullanıcıArabirimi\UyeKayıtAlmaEkrani.resx">
+    <EmbeddedResource Include="KullanıcıArabirimi\Personel\UyeKayıtAlmaEkrani.resx">
       <DependentUpon>UyeKayıtAlmaEkrani.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -117,6 +239,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Flatastic-8-Go-back.16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eposta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconshock-Real-Vista-Text-Print.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Flatastic-3-Filetype-pdf.24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

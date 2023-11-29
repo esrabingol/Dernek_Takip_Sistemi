@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dernek_Takip_Sistemi.KullanıcıArabirimi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,13 @@ namespace Dernek_Takip_Sistemi
             personelLogin.ShowDialog();
 
   
+        }
+
+        private void btn_Uye_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UyeGirisEkrani uyeGiris = new UyeGirisEkrani();
+            uyeGiris.ShowDialog();
         }
     }
 }

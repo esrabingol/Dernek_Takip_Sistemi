@@ -100,6 +100,15 @@ namespace Dernek_Takip_Sistemi
             }
 
         }
+
+        private void TBS_UyeKayit_Click(object sender, EventArgs e)
+        {
+            Giris giris = new Giris();
+            giris.Show();
+            this.Hide();
+        }
+
+  
     }
     }
 

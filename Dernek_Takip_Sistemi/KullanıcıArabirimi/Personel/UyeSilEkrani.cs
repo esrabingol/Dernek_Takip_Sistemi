@@ -108,14 +108,17 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
            
         }
 
-        private void GeriDonBTN_Click(object sender, EventArgs e)
+
+        private void UyeSilGüncelleEkrani_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TSB_UyeSil_Click(object sender, EventArgs e)
         {
             this.Hide();
             UyeBilgileriniListelemeİslemleri geriDonİslemi = new UyeBilgileriniListelemeİslemleri();
             geriDonİslemi.ShowDialog();
-
-           
-
         }
     }
 }

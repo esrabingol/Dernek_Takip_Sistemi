@@ -31,7 +31,22 @@ namespace Dernek_Takip_Sistemi
 
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void sfregorCB_CheckedChanged(object sender, EventArgs e)
+        {
+            //checkBox işaretli ise
+            if (sfregorCB.Checked)
+            {
+                //karakteri göster.
+                SifreTB.PasswordChar = '\0';
+            }
+            //değilse karakterlerin yerine * koy.
+            else
+            {
+                SifreTB.PasswordChar = '*';
+            }
+        }
+
+        private void btn_Personellgn_Click(object sender, EventArgs e)
         {
             VeriTabaniBaglantisi connect;
 
@@ -58,7 +73,7 @@ namespace Dernek_Takip_Sistemi
             {
                 var sifre = kullaniciDataT.Rows[0]["PersonelSifresi"].ToString();
 
-                if (KullaniciAdiTB.Text == "Admin") //admin girişi
+                if (KullaniciAdiTB.Text == "Personel1") //admin girişi
                 {
                     if (SifreTB.Text == sifre)
                     {
@@ -81,18 +96,28 @@ namespace Dernek_Takip_Sistemi
             }
         }
 
-        private void sfregorCB_CheckedChanged(object sender, EventArgs e)
+        private void TSB_Personel_Click(object sender, EventArgs e)
         {
-            //checkBox işaretli ise
-            if (sfregorCB.Checked)
+            Giris giris = new Giris();
+            giris.Show();
+            this.Hide();
+        }
+
+        private void KullaniciAdiTB_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (KullaniciAdiTB.Text == "Kullanıcı Adı")
             {
-                //karakteri göster.
-                SifreTB.PasswordChar = '\0';
+                KullaniciAdiTB.Text = "";
+                KullaniciAdiTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
             }
-            //değilse karakterlerin yerine * koy.
-            else
+        }
+
+        private void KullaniciAdiTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(KullaniciAdiTB.Text))
             {
-                SifreTB.PasswordChar = '*';
+                KullaniciAdiTB.Text = "Kullanıcı Adı";
+                KullaniciAdiTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
             }
         }
     }
