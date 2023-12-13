@@ -34,8 +34,8 @@
             this.OdemeBaslik_LB = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.OdenecekTutar_TB = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_aidat = new System.Windows.Forms.Label();
+            this.lbl_borc = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -90,6 +90,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Tamamla";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // OdenecekTutar_TB
             // 
@@ -99,23 +100,23 @@
             this.OdenecekTutar_TB.TabIndex = 5;
             this.OdenecekTutar_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OdenecekTutar_TB_KeyPress);
             // 
-            // label1
+            // lbl_aidat
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(177, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "(Aylık Ödeme Tutarı)";
+            this.lbl_aidat.AutoSize = true;
+            this.lbl_aidat.Location = new System.Drawing.Point(177, 76);
+            this.lbl_aidat.Name = "lbl_aidat";
+            this.lbl_aidat.Size = new System.Drawing.Size(102, 13);
+            this.lbl_aidat.TabIndex = 6;
+            this.lbl_aidat.Text = "(Aylık Ödeme Tutarı)";
             // 
-            // label2
+            // lbl_borc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(177, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "(Kalan Toplam Borç)";
+            this.lbl_borc.AutoSize = true;
+            this.lbl_borc.Location = new System.Drawing.Point(177, 131);
+            this.lbl_borc.Name = "lbl_borc";
+            this.lbl_borc.Size = new System.Drawing.Size(103, 13);
+            this.lbl_borc.TabIndex = 7;
+            this.lbl_borc.Text = "(Kalan Toplam Borç)";
             // 
             // toolStrip1
             // 
@@ -135,6 +136,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "Geri Dön";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // label3
             // 
@@ -161,8 +163,8 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_borc);
+            this.Controls.Add(this.lbl_aidat);
             this.Controls.Add(this.OdenecekTutar_TB);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.OdemeBaslik_LB);
@@ -186,8 +188,8 @@
         private System.Windows.Forms.Label OdemeBaslik_LB;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox OdenecekTutar_TB;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_aidat;
+        private System.Windows.Forms.Label lbl_borc;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.Label label3;

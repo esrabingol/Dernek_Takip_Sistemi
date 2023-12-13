@@ -80,8 +80,10 @@
             this.TCgirTB.Name = "TCgirTB";
             this.TCgirTB.Size = new System.Drawing.Size(379, 20);
             this.TCgirTB.TabIndex = 4;
-            this.TCgirTB.Text = "Üyenin TC numarasını giriniz ve görüntüleyiniz.\r\n";
             this.TCgirTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TCgirTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TCgirTB_MouseClick);
+            this.TCgirTB.TextChanged += new System.EventHandler(this.TCgirTB_TextChanged);
+            this.TCgirTB.MouseLeave += new System.EventHandler(this.TCgirTB_MouseLeave);
             // 
             // toolStrip1
             // 

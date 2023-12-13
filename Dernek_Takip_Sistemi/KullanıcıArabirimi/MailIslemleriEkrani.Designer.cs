@@ -33,14 +33,14 @@
             this.KonuBasligi_LB = new System.Windows.Forms.Label();
             this.KonuIcerigi_LB = new System.Windows.Forms.Label();
             this.KonuBasligi_TB = new System.Windows.Forms.TextBox();
-            this.KonuIcerigi_TB = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.KonuIcerigi_RTB = new System.Windows.Forms.RichTextBox();
+            this.Mail_BTN = new System.Windows.Forms.Button();
             this.Baslik_LB = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AnaEkranaDon_TSB = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.Temizle_TSB = new System.Windows.Forms.ToolStripButton();
             this.MAdressUye_TB = new System.Windows.Forms.TextBox();
-            this.MailPersonel_LB = new System.Windows.Forms.Label();
+            this.PersonelMail_TB = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,24 +87,25 @@
             this.KonuBasligi_TB.Size = new System.Drawing.Size(197, 20);
             this.KonuBasligi_TB.TabIndex = 6;
             // 
-            // KonuIcerigi_TB
+            // KonuIcerigi_RTB
             // 
-            this.KonuIcerigi_TB.Location = new System.Drawing.Point(129, 238);
-            this.KonuIcerigi_TB.Name = "KonuIcerigi_TB";
-            this.KonuIcerigi_TB.Size = new System.Drawing.Size(197, 96);
-            this.KonuIcerigi_TB.TabIndex = 7;
-            this.KonuIcerigi_TB.Text = "";
+            this.KonuIcerigi_RTB.Location = new System.Drawing.Point(129, 238);
+            this.KonuIcerigi_RTB.Name = "KonuIcerigi_RTB";
+            this.KonuIcerigi_RTB.Size = new System.Drawing.Size(197, 96);
+            this.KonuIcerigi_RTB.TabIndex = 7;
+            this.KonuIcerigi_RTB.Text = "";
             // 
-            // button1
+            // Mail_BTN
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(150, 353);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 32);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Gönder";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Mail_BTN.BackColor = System.Drawing.Color.Lime;
+            this.Mail_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Mail_BTN.Location = new System.Drawing.Point(150, 353);
+            this.Mail_BTN.Name = "Mail_BTN";
+            this.Mail_BTN.Size = new System.Drawing.Size(112, 32);
+            this.Mail_BTN.TabIndex = 8;
+            this.Mail_BTN.Text = "Gönder";
+            this.Mail_BTN.UseVisualStyleBackColor = false;
+            this.Mail_BTN.Click += new System.EventHandler(this.Mail_BTN_Click);
             // 
             // Baslik_LB
             // 
@@ -120,7 +121,7 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AnaEkranaDon_TSB,
-            this.toolStripButton1});
+            this.Temizle_TSB});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(392, 25);
@@ -135,15 +136,17 @@
             this.AnaEkranaDon_TSB.Name = "AnaEkranaDon_TSB";
             this.AnaEkranaDon_TSB.Size = new System.Drawing.Size(23, 22);
             this.AnaEkranaDon_TSB.Text = "Ana Menüye Dön";
+            this.AnaEkranaDon_TSB.Click += new System.EventHandler(this.AnaEkranaDon_TSB_Click);
             // 
-            // toolStripButton1
+            // Temizle_TSB
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Dernek_Takip_Sistemi.Properties.Resources.warning;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Taslağı Sil";
+            this.Temizle_TSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Temizle_TSB.Image = global::Dernek_Takip_Sistemi.Properties.Resources.warning;
+            this.Temizle_TSB.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Temizle_TSB.Name = "Temizle_TSB";
+            this.Temizle_TSB.Size = new System.Drawing.Size(23, 22);
+            this.Temizle_TSB.Text = "Taslağı Sil";
+            this.Temizle_TSB.Click += new System.EventHandler(this.Temizle_TSB_Click);
             // 
             // MAdressUye_TB
             // 
@@ -152,14 +155,12 @@
             this.MAdressUye_TB.Size = new System.Drawing.Size(197, 20);
             this.MAdressUye_TB.TabIndex = 5;
             // 
-            // MailPersonel_LB
+            // PersonelMail_TB
             // 
-            this.MailPersonel_LB.AutoSize = true;
-            this.MailPersonel_LB.Location = new System.Drawing.Point(138, 95);
-            this.MailPersonel_LB.Name = "MailPersonel_LB";
-            this.MailPersonel_LB.Size = new System.Drawing.Size(102, 13);
-            this.MailPersonel_LB.TabIndex = 11;
-            this.MailPersonel_LB.Text = "Personel Mail Adresi";
+            this.PersonelMail_TB.Location = new System.Drawing.Point(129, 95);
+            this.PersonelMail_TB.Name = "PersonelMail_TB";
+            this.PersonelMail_TB.Size = new System.Drawing.Size(197, 20);
+            this.PersonelMail_TB.TabIndex = 11;
             // 
             // MailIslemleriEkrani
             // 
@@ -167,11 +168,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(392, 397);
-            this.Controls.Add(this.MailPersonel_LB);
+            this.Controls.Add(this.PersonelMail_TB);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.Baslik_LB);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.KonuIcerigi_TB);
+            this.Controls.Add(this.Mail_BTN);
+            this.Controls.Add(this.KonuIcerigi_RTB);
             this.Controls.Add(this.KonuBasligi_TB);
             this.Controls.Add(this.MAdressUye_TB);
             this.Controls.Add(this.KonuIcerigi_LB);
@@ -180,6 +181,7 @@
             this.Controls.Add(this.UyeMail_LB);
             this.Name = "MailIslemleriEkrani";
             this.Text = "MailIslemleriEkrani";
+            this.Load += new System.EventHandler(this.MailIslemleriEkrani_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -194,13 +196,13 @@
         private System.Windows.Forms.Label KonuBasligi_LB;
         private System.Windows.Forms.Label KonuIcerigi_LB;
         private System.Windows.Forms.TextBox KonuBasligi_TB;
-        private System.Windows.Forms.RichTextBox KonuIcerigi_TB;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox KonuIcerigi_RTB;
+        private System.Windows.Forms.Button Mail_BTN;
         private System.Windows.Forms.Label Baslik_LB;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton AnaEkranaDon_TSB;
         private System.Windows.Forms.TextBox MAdressUye_TB;
-        private System.Windows.Forms.Label MailPersonel_LB;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton Temizle_TSB;
+        private System.Windows.Forms.TextBox PersonelMail_TB;
     }
 }

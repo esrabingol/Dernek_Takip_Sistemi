@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.X509.SigI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,7 +51,7 @@ namespace Dernek_Takip_Sistemi
         {
             VeriTabaniBaglantisi connect;
 
-            if (String.IsNullOrWhiteSpace(KullaniciAdiTB.Text))
+            if (String.IsNullOrWhiteSpace(PersonelAdiTB.Text))
             {
                 MessageBox.Show("Kullanıcı Adı Alanı Boş Olamaz!");
                 return;
@@ -61,19 +62,19 @@ namespace Dernek_Takip_Sistemi
                 return;
             }
             connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-            DataTable kullaniciDataT = new DataTable();//veri görüntülemek için datatable oluşturulur
+            DataTable personelDataT = new DataTable();//veri görüntülemek için datatable oluşturulur
                                                        //sql deki tablonun c deki karşılığı bu tabloda olacaktır.
-            SqlDataAdapter da = new SqlDataAdapter($"Select * from PersonelTablosu Where PersonelKullaniciAdi = '{KullaniciAdiTB.Text}'", connect.Connect()); // sql connection dan connect() fonk çağrılır
+            SqlDataAdapter da = new SqlDataAdapter($"Select * from PersonelTablosu Where PersonelKullaniciAdi = '{PersonelAdiTB.Text}'", connect.Connect()); // sql connection dan connect() fonk çağrılır
 
-            da.Fill(dataTable: kullaniciDataT); //kullaniciDataT doldurmak(fill) için
+            da.Fill(dataTable: personelDataT); //personelDataT doldurmak(fill) için
 
 
 
-            if (kullaniciDataT.Rows.Count > 0)//kullaniciDataT getirilen satır sayısı >0 ise kullanıcı adı doğru
+            if (personelDataT.Rows.Count > 0)//personelDataT getirilen satır sayısı >0 ise kullanıcı adı doğru
             {
-                var sifre = kullaniciDataT.Rows[0]["PersonelSifresi"].ToString();
+                var sifre = personelDataT.Rows[0]["PersonelSifresi"].ToString();
 
-                if (KullaniciAdiTB.Text == "Personel1") //admin girişi
+                if (PersonelAdiTB.Text == "Personel1") //personel girişi
                 {
                     if (SifreTB.Text == sifre)
                     {
@@ -105,19 +106,19 @@ namespace Dernek_Takip_Sistemi
 
         private void KullaniciAdiTB_MouseClick(object sender, MouseEventArgs e)
         {
-            if (KullaniciAdiTB.Text == "Kullanıcı Adı")
+            if (PersonelAdiTB.Text == "Kullanıcı Adı")
             {
-                KullaniciAdiTB.Text = "";
-                KullaniciAdiTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
+                PersonelAdiTB.Text = "";
+                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
             }
         }
 
         private void KullaniciAdiTB_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(KullaniciAdiTB.Text))
+            if (string.IsNullOrWhiteSpace(PersonelAdiTB.Text))
             {
-                KullaniciAdiTB.Text = "Kullanıcı Adı";
-                KullaniciAdiTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
+                PersonelAdiTB.Text = "Kullanıcı Adı";
+                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
             }
         }
     }

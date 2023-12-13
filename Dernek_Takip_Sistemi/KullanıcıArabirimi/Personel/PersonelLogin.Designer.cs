@@ -31,7 +31,7 @@
             this.lbl_personelnumber = new System.Windows.Forms.Label();
             this.lbl_PersonelPassword = new System.Windows.Forms.Label();
             this.SifreTB = new System.Windows.Forms.TextBox();
-            this.KullaniciAdiTB = new System.Windows.Forms.TextBox();
+            this.PersonelAdiTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.sfregorCB = new System.Windows.Forms.CheckBox();
             this.btn_Personellgn = new System.Windows.Forms.Button();
@@ -69,16 +69,16 @@
             this.SifreTB.TabIndex = 3;
             this.SifreTB.TextChanged += new System.EventHandler(this.txtBox_prsonelpassword_TextChanged);
             // 
-            // KullaniciAdiTB
+            // PersonelAdiTB
             // 
-            this.KullaniciAdiTB.Location = new System.Drawing.Point(253, 75);
-            this.KullaniciAdiTB.Name = "KullaniciAdiTB";
-            this.KullaniciAdiTB.Size = new System.Drawing.Size(154, 20);
-            this.KullaniciAdiTB.TabIndex = 5;
-            this.KullaniciAdiTB.Text = "Kullanıcı Adı";
-            this.KullaniciAdiTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KullaniciAdiTB_MouseClick);
-            this.KullaniciAdiTB.TextChanged += new System.EventHandler(this.txtBox_prsonelnumber_TextChanged);
-            this.KullaniciAdiTB.Leave += new System.EventHandler(this.KullaniciAdiTB_Leave);
+            this.PersonelAdiTB.Location = new System.Drawing.Point(253, 75);
+            this.PersonelAdiTB.Name = "PersonelAdiTB";
+            this.PersonelAdiTB.Size = new System.Drawing.Size(154, 20);
+            this.PersonelAdiTB.TabIndex = 5;
+            this.PersonelAdiTB.Text = "Kullanıcı Adı";
+            this.PersonelAdiTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KullaniciAdiTB_MouseClick);
+            this.PersonelAdiTB.TextChanged += new System.EventHandler(this.txtBox_prsonelnumber_TextChanged);
+            this.PersonelAdiTB.Leave += new System.EventHandler(this.KullaniciAdiTB_Leave);
             // 
             // label1
             // 
@@ -145,7 +145,7 @@
             this.Controls.Add(this.btn_Personellgn);
             this.Controls.Add(this.sfregorCB);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.KullaniciAdiTB);
+            this.Controls.Add(this.PersonelAdiTB);
             this.Controls.Add(this.SifreTB);
             this.Controls.Add(this.lbl_PersonelPassword);
             this.Controls.Add(this.lbl_personelnumber);
@@ -163,7 +163,7 @@
         private System.Windows.Forms.Label lbl_personelnumber;
         private System.Windows.Forms.Label lbl_PersonelPassword;
         private System.Windows.Forms.TextBox SifreTB;
-        private System.Windows.Forms.TextBox KullaniciAdiTB;
+        private System.Windows.Forms.TextBox PersonelAdiTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox sfregorCB;
         private System.Windows.Forms.Button btn_Personellgn;

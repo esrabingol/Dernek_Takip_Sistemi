@@ -40,7 +40,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
         private void UyeSilBTN_Click(object sender, EventArgs e)
         {
             string TcNumarasi = TCgirTB.Text;
-
+         
             // Kullanıcıya silme işlemi için onay iste
             DialogResult result = MessageBox.Show("Bu üye silinecek. Emin misiniz?", "Üye Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -78,8 +78,9 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                             }
                             else
                             {
+
                                 // İşlem başarısızsa kullanıcıya hata mesajı ver
-                                MessageBox.Show("Üye silinirken bir hata oluştu.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Uygun Kullanıcı Bulunamadı.Tc yi kontrol ediniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         catch (Exception ex)
@@ -103,12 +104,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
             }
         }
 
-        private void UyeGuncelleBTN_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-
         private void UyeSilGüncelleEkrani_Load(object sender, EventArgs e)
         {
 
@@ -119,6 +114,29 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
             this.Hide();
             UyeBilgileriniListelemeİslemleri geriDonİslemi = new UyeBilgileriniListelemeİslemleri();
             geriDonİslemi.ShowDialog();
+        }
+
+        private void TCgirTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TCgirTB_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (TCgirTB.Text == "Kullanıcı TC Numarası")
+            {
+                TCgirTB.Text = "";
+                TCgirTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
+            }
+        }
+
+        private void TCgirTB_MouseLeave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TCgirTB.Text))
+            {
+                TCgirTB.Text = "Kullanıcı TC Numarası";
+                TCgirTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
+            }
         }
     }
 }

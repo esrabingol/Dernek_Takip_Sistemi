@@ -54,8 +54,10 @@
             this.DogumtarihiLB = new System.Windows.Forms.Label();
             this.dogumtarihiTB = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.TBS_UyeKayit = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.UKayitReturn = new System.Windows.Forms.ToolStripButton();
+            this.UyeYazdir_BTN = new System.Windows.Forms.ToolStripButton();
+            this.txt_Sifre = new System.Windows.Forms.TextBox();
+            this.lbl_Sifre = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,7 +173,7 @@
             // 
             this.lbl_sehir.AutoSize = true;
             this.lbl_sehir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_sehir.Location = new System.Drawing.Point(499, 289);
+            this.lbl_sehir.Location = new System.Drawing.Point(502, 233);
             this.lbl_sehir.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_sehir.Name = "lbl_sehir";
             this.lbl_sehir.Size = new System.Drawing.Size(61, 17);
@@ -182,7 +184,7 @@
             // 
             this.lbl_tlfnumarası.AutoSize = true;
             this.lbl_tlfnumarası.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_tlfnumarası.Location = new System.Drawing.Point(440, 236);
+            this.lbl_tlfnumarası.Location = new System.Drawing.Point(440, 283);
             this.lbl_tlfnumarası.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_tlfnumarası.Name = "lbl_tlfnumarası";
             this.lbl_tlfnumarası.Size = new System.Drawing.Size(146, 17);
@@ -237,7 +239,7 @@
             // 
             // TelefonNumarasiTB
             // 
-            this.TelefonNumarasiTB.Location = new System.Drawing.Point(594, 239);
+            this.TelefonNumarasiTB.Location = new System.Drawing.Point(594, 286);
             this.TelefonNumarasiTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TelefonNumarasiTB.Name = "TelefonNumarasiTB";
             this.TelefonNumarasiTB.Size = new System.Drawing.Size(156, 20);
@@ -346,7 +348,7 @@
             "Kilis",
             "Osmaniye",
             "Düzce"});
-            this.SehirCB.Location = new System.Drawing.Point(594, 289);
+            this.SehirCB.Location = new System.Drawing.Point(594, 233);
             this.SehirCB.Name = "SehirCB";
             this.SehirCB.Size = new System.Drawing.Size(156, 21);
             this.SehirCB.TabIndex = 24;
@@ -354,7 +356,7 @@
             // KaydetBTN
             // 
             this.KaydetBTN.BackColor = System.Drawing.Color.Lime;
-            this.KaydetBTN.Location = new System.Drawing.Point(594, 329);
+            this.KaydetBTN.Location = new System.Drawing.Point(594, 364);
             this.KaydetBTN.Name = "KaydetBTN";
             this.KaydetBTN.Size = new System.Drawing.Size(156, 27);
             this.KaydetBTN.TabIndex = 25;
@@ -407,41 +409,61 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TBS_UyeKayit,
-            this.toolStripButton1});
+            this.UKayitReturn,
+            this.UyeYazdir_BTN});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(808, 25);
             this.toolStrip1.TabIndex = 34;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
-            // TBS_UyeKayit
+            // UKayitReturn
             // 
-            this.TBS_UyeKayit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TBS_UyeKayit.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Custom_Icon_Design_Flatastic_8_Go_back_16;
-            this.TBS_UyeKayit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TBS_UyeKayit.Name = "TBS_UyeKayit";
-            this.TBS_UyeKayit.Size = new System.Drawing.Size(23, 22);
-            this.TBS_UyeKayit.Text = "toolStripButton1";
-            this.TBS_UyeKayit.ToolTipText = "Ana Menüye Dön";
-            this.TBS_UyeKayit.Click += new System.EventHandler(this.TBS_UyeKayit_Click);
+            this.UKayitReturn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.UKayitReturn.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Custom_Icon_Design_Flatastic_8_Go_back_16;
+            this.UKayitReturn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UKayitReturn.Name = "UKayitReturn";
+            this.UKayitReturn.Size = new System.Drawing.Size(23, 22);
+            this.UKayitReturn.Text = "Geri";
+            this.UKayitReturn.Click += new System.EventHandler(this.UKayitReturn_Click);
             // 
-            // toolStripButton1
+            // UyeYazdir_BTN
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Iconshock_Real_Vista_Text_Print_32;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.ToolTipText = "Yazdır";
+            this.UyeYazdir_BTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.UyeYazdir_BTN.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.UyeYazdir_BTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Iconshock_Real_Vista_Text_Print_32;
+            this.UyeYazdir_BTN.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UyeYazdir_BTN.Name = "UyeYazdir_BTN";
+            this.UyeYazdir_BTN.Size = new System.Drawing.Size(23, 22);
+            this.UyeYazdir_BTN.Text = "Yazdır";
+            this.UyeYazdir_BTN.Click += new System.EventHandler(this.UyeYazdir_BTN_Click);
+            // 
+            // txt_Sifre
+            // 
+            this.txt_Sifre.Location = new System.Drawing.Point(594, 321);
+            this.txt_Sifre.Name = "txt_Sifre";
+            this.txt_Sifre.Size = new System.Drawing.Size(156, 20);
+            this.txt_Sifre.TabIndex = 35;
+            // 
+            // lbl_Sifre
+            // 
+            this.lbl_Sifre.AutoSize = true;
+            this.lbl_Sifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_Sifre.Location = new System.Drawing.Point(534, 324);
+            this.lbl_Sifre.Name = "lbl_Sifre";
+            this.lbl_Sifre.Size = new System.Drawing.Size(52, 17);
+            this.lbl_Sifre.TabIndex = 36;
+            this.lbl_Sifre.Text = "Şifre :";
             // 
             // UyeKayıtAlmaEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(808, 374);
+            this.ClientSize = new System.Drawing.Size(808, 403);
+            this.Controls.Add(this.lbl_Sifre);
+            this.Controls.Add(this.txt_Sifre);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dogumtarihiTB);
             this.Controls.Add(this.DogumtarihiLB);
@@ -472,6 +494,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "UyeKayıtAlmaEkrani";
             this.Text = "User_Registiration_Form";
+            this.Load += new System.EventHandler(this.UyeKayıtAlmaEkrani_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -507,7 +530,9 @@
         private System.Windows.Forms.Label DogumtarihiLB;
         private System.Windows.Forms.TextBox dogumtarihiTB;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton TBS_UyeKayit;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton UKayitReturn;
+        private System.Windows.Forms.ToolStripButton UyeYazdir_BTN;
+        private System.Windows.Forms.TextBox txt_Sifre;
+        private System.Windows.Forms.Label lbl_Sifre;
     }
 }

@@ -1,25 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿//using iText.IO.Font.Constants;
+//using iText.Kernel.Pdf;
+using iTextSharp.text;
+using System;
+//using System.Collections.Generic;
+//using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Printing;
+using System.IO;
+//using System.Linq;
+//using System.Runtime.Remoting.Contexts;
+//using System.Text;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static Dernek_Takip_Sistemi.Class1;
+
 
 namespace Dernek_Takip_Sistemi
 {
     public partial class UyeKayıtAlmaEkrani : Form
     {
         VeriTabaniBaglantisi connect;
-        public UyeKayıtAlmaEkrani()
+        Boolean personelGirismi = false;
+        public UyeKayıtAlmaEkrani(Boolean personelGirismi)
         {
             InitializeComponent();
+            this.personelGirismi = personelGirismi;
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -68,8 +78,8 @@ namespace Dernek_Takip_Sistemi
                 {
                     try
                     {
-                        using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO UyeKayitTablosu (TCKimlikNumarasi, UyeAdi, UyeSoyadi, UyeDogumTarihi, UyeCinsiyet, UyeKanGrubu, UyeSehir, UyeninDurumBilgisi, UyeninAylıkOdemeMiktari, UyeMailAdresi, UyeTelefonNumarasi) " +
-                                                                       "VALUES (@TCKimlikNumarasi, @UyeAdi, @UyeSoyadi, @UyeDogumTarihi, @UyeCinsiyet, @UyeKanGrubu, @UyeSehir, @UyeninDurumBilgisi, @UyeninAylıkOdemeMiktari, @UyeMailAdresi, @UyeTelefonNumarasi)", connect.Connect()))
+                        using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO UyeKayitTablosu (TCKimlikNumarasi, UyeAdi, UyeSoyadi, UyeDogumTarihi, UyeCinsiyet, UyeKanGrubu, UyeSehir, UyeninDurumBilgisi, UyeninAylıkOdemeMiktari, UyeMailAdresi, UyeTelefonNumarasi, UyeSifre) " +
+                                                                       "VALUES (@TCKimlikNumarasi, @UyeAdi, @UyeSoyadi, @UyeDogumTarihi, @UyeCinsiyet, @UyeKanGrubu, @UyeSehir, @UyeninDurumBilgisi, @UyeninAylıkOdemeMiktari, @UyeMailAdresi, @UyeTelefonNumarasi, @UyeSifre)", connect.Connect()))
                         {
                             sqlCommand.Parameters.AddWithValue("@TCKimlikNumarasi", TckimliknoTB.Text);
                             sqlCommand.Parameters.AddWithValue("@UyeAdi", isimTB.Text);
@@ -83,32 +93,95 @@ namespace Dernek_Takip_Sistemi
                             sqlCommand.Parameters.AddWithValue("@UyeMailAdresi", EPostaTB.Text);
                             sqlCommand.Parameters.AddWithValue("@UyeTelefonNumarasi", TelefonNumarasiTB.Text);
 
+                            if(personelGirismi)
+                                txt_Sifre.Text = TckimliknoTB.Text;
+
+                            sqlCommand.Parameters.AddWithValue("@UyeSifre", txt_Sifre.Text);
+
                             sqlCommand.ExecuteNonQuery();
 
-                            MessageBox.Show("Dernek Sistemine Kayıt Başarılı.");
-
-                            UyeBilgileriniListelemeİslemleri frm = new UyeBilgileriniListelemeİslemleri();
-                            frm.Show();
-                            this.Hide();
+                            
                         }
+
+                        string insertQuery = $"INSERT INTO BorcTablosu (TCKimlikNumarasi, BorcMiktari) VALUES ('{TckimliknoTB.Text}', 0)";
+
+                        using (SqlCommand command = new SqlCommand(insertQuery, connect.Connect()))
+                        {
+                            command.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Dernek Sistemine Kayıt Başarılı.");
+
+                        this.Close();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
+
                 }
+            }
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        { }
+
+        private void UKayitReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UyeBilgileriniListelemeİslemleri giris = new UyeBilgileriniListelemeİslemleri();
+            giris.ShowDialog();
+
+        }
+
+        private void UyeYazdir_BTN_Click(object sender, EventArgs e)
+        {
+            // Bilgileri metin formatında bir değişkene topla
+            string Tckimlik = TckimliknoTB.Text;
+            string isim = isimTB.Text;
+            string soyisim = soyisimTB.Text;
+            string DogumTarihi = dogumtarihiTB.Text;
+            string cinsiyet = CinsiyetCB.Text;
+            string UyeKanGrubu = KanGrubuLB.Text;
+            string sehir = SehirCB.Text;
+            string UyelikDurumu = UyelikDurumuCB.Text;
+            string AylikOdeme = AylikOdemeTB.Text;
+            string EPosta = EPostaTB.Text;
+            string TelefonNumarasi = TelefonNumarasiTB.Text;
+
+            string textToPrint = $"TC Kimlik Numarasi: {Tckimlik}\n" +
+                                 $"Isim: {isim}\n" +
+                                 $"Soyisim: {soyisim}\n" +
+                                 $"Dogum Tarihi: {DogumTarihi}\n" +
+                                 $"Cinsiyet: {cinsiyet}\n" +
+                                 $"Uye Kan Grubu: {UyeKanGrubu}\n" +
+                                 $"Uyelik Durumu: {UyelikDurumu}\n" +
+                                 $"Aylik Odeme : {AylikOdeme}\n" +
+                                 $"Uye Eposta: {EPosta}\n" +
+                                 $"Telefon Numarasi : {TelefonNumarasi}\n";
+
+            // Kullanıcıya dosya kaydetme penceresi aç
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Files|*.pdf";
+            saveFileDialog.Title = "Save as PDF";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                // Seçilen dosya yoluna bilgileri yaz
+                File.WriteAllText(filePath, textToPrint);
             }
 
         }
 
-        private void TBS_UyeKayit_Click(object sender, EventArgs e)
+        private void UyeKayıtAlmaEkrani_Load(object sender, EventArgs e)
         {
-            Giris giris = new Giris();
-            giris.Show();
-            this.Hide();
+            if (personelGirismi == true)
+            {
+                txt_Sifre.Visible = false;
+                lbl_Sifre.Visible = false;
+            }
         }
-
-  
     }
-    }
-
+}

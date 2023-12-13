@@ -39,10 +39,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BorcDurumu_BTN = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.pdfkaydet_BTN = new System.Windows.Forms.Button();
             this.TSB_Logout = new System.Windows.Forms.ToolStripButton();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pdfkaydet_BTN = new System.Windows.Forms.Button();
+            this.MailGonderBTN = new System.Windows.Forms.Button();
+            this.BilgiYazdirBTN = new System.Windows.Forms.Button();
             this.UyeKayitBTN = new System.Windows.Forms.Button();
             this.UyeSilBTN = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -237,8 +237,9 @@
             this.BorcDurumu_BTN.Name = "BorcDurumu_BTN";
             this.BorcDurumu_BTN.Size = new System.Drawing.Size(347, 35);
             this.BorcDurumu_BTN.TabIndex = 13;
-            this.BorcDurumu_BTN.Text = "5- Borç Dıurumuna Göre Listele\r\n";
+            this.BorcDurumu_BTN.Text = "5- Borç Durumuna Göre Listele\r\n";
             this.BorcDurumu_BTN.UseVisualStyleBackColor = false;
+            this.BorcDurumu_BTN.Click += new System.EventHandler(this.BorcDurumu_BTN_Click);
             // 
             // toolStrip1
             // 
@@ -250,6 +251,16 @@
             this.toolStrip1.Size = new System.Drawing.Size(967, 25);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // TSB_Logout
+            // 
+            this.TSB_Logout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSB_Logout.Image = global::Dernek_Takip_Sistemi.Properties.Resources.logout;
+            this.TSB_Logout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_Logout.Name = "TSB_Logout";
+            this.TSB_Logout.Size = new System.Drawing.Size(23, 22);
+            this.TSB_Logout.Text = "toolStripButton1";
+            this.TSB_Logout.ToolTipText = "Çıkış Yap";
             // 
             // pdfkaydet_BTN
             // 
@@ -266,44 +277,35 @@
             this.pdfkaydet_BTN.UseVisualStyleBackColor = false;
             this.pdfkaydet_BTN.Click += new System.EventHandler(this.button3_Click);
             // 
-            // TSB_Logout
+            // MailGonderBTN
             // 
-            this.TSB_Logout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TSB_Logout.Image = global::Dernek_Takip_Sistemi.Properties.Resources.logout;
-            this.TSB_Logout.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TSB_Logout.Name = "TSB_Logout";
-            this.TSB_Logout.Size = new System.Drawing.Size(23, 22);
-            this.TSB_Logout.Text = "toolStripButton1";
-            this.TSB_Logout.ToolTipText = "Çıkış Yap";
+            this.MailGonderBTN.BackColor = System.Drawing.Color.White;
+            this.MailGonderBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MailGonderBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MailGonderBTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.eposta;
+            this.MailGonderBTN.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.MailGonderBTN.Location = new System.Drawing.Point(373, 11);
+            this.MailGonderBTN.Name = "MailGonderBTN";
+            this.MailGonderBTN.Size = new System.Drawing.Size(125, 40);
+            this.MailGonderBTN.TabIndex = 15;
+            this.MailGonderBTN.Text = "Mail Gönder";
+            this.MailGonderBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MailGonderBTN.UseVisualStyleBackColor = false;
+            this.MailGonderBTN.Click += new System.EventHandler(this.MailGonderBTN_Click);
             // 
-            // button2
+            // BilgiYazdirBTN
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Image = global::Dernek_Takip_Sistemi.Properties.Resources.eposta;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button2.Location = new System.Drawing.Point(373, 11);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 40);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Mail Gönder";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Iconshock_Real_Vista_Text_Print_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(533, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 37);
-            this.button1.TabIndex = 14;
-            this.button1.Text = " Bilgileri Yazdır";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.BilgiYazdirBTN.BackColor = System.Drawing.Color.White;
+            this.BilgiYazdirBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BilgiYazdirBTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Iconshock_Real_Vista_Text_Print_32;
+            this.BilgiYazdirBTN.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BilgiYazdirBTN.Location = new System.Drawing.Point(533, 10);
+            this.BilgiYazdirBTN.Name = "BilgiYazdirBTN";
+            this.BilgiYazdirBTN.Size = new System.Drawing.Size(133, 37);
+            this.BilgiYazdirBTN.TabIndex = 14;
+            this.BilgiYazdirBTN.Text = " Bilgileri Yazdır";
+            this.BilgiYazdirBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BilgiYazdirBTN.UseVisualStyleBackColor = false;
             // 
             // UyeKayitBTN
             // 
@@ -341,8 +343,8 @@
             this.groupBox2.Controls.Add(this.UyeSilBTN);
             this.groupBox2.Controls.Add(this.pdfkaydet_BTN);
             this.groupBox2.Controls.Add(this.UyeKayitBTN);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.MailGonderBTN);
+            this.groupBox2.Controls.Add(this.BilgiYazdirBTN);
             this.groupBox2.Location = new System.Drawing.Point(22, 357);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(884, 54);
@@ -384,9 +386,9 @@
         private System.Windows.Forms.ComboBox sehirler_CB;
         private System.Windows.Forms.DataGridView ListelemeDGW;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BilgiYazdirBTN;
         private System.Windows.Forms.Button BorcDurumu_BTN;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button MailGonderBTN;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton TSB_Logout;
         private System.Windows.Forms.Button pdfkaydet_BTN;

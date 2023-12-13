@@ -28,36 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sfregorCB = new System.Windows.Forms.CheckBox();
+            this.UsfregorCB = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Uyelogin = new System.Windows.Forms.Button();
             this.SifreTB = new System.Windows.Forms.TextBox();
             this.lbl_PersonelPassword = new System.Windows.Forms.Label();
             this.lbl_personelnumber = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.UyeKayit_LNK = new System.Windows.Forms.LinkLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.TSB_Uye = new System.Windows.Forms.ToolStripButton();
-            this.KullaniciAdiTB = new System.Windows.Forms.TextBox();
+            this.UKullaniciAdiTB = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // sfregorCB
+            // UsfregorCB
             // 
-            this.sfregorCB.AutoSize = true;
-            this.sfregorCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sfregorCB.Location = new System.Drawing.Point(364, 132);
-            this.sfregorCB.Name = "sfregorCB";
-            this.sfregorCB.Size = new System.Drawing.Size(93, 17);
-            this.sfregorCB.TabIndex = 14;
-            this.sfregorCB.Text = "Şifre Göster";
-            this.sfregorCB.UseVisualStyleBackColor = true;
+            this.UsfregorCB.AutoSize = true;
+            this.UsfregorCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UsfregorCB.Location = new System.Drawing.Point(241, 156);
+            this.UsfregorCB.Name = "UsfregorCB";
+            this.UsfregorCB.Size = new System.Drawing.Size(93, 17);
+            this.UsfregorCB.TabIndex = 14;
+            this.UsfregorCB.Text = "Şifre Göster";
+            this.UsfregorCB.UseVisualStyleBackColor = true;
+            this.UsfregorCB.CheckedChanged += new System.EventHandler(this.UsfregorCB_CheckedChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(196, 35);
+            this.label1.Location = new System.Drawing.Point(196, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 25);
             this.label1.TabIndex = 13;
@@ -66,13 +69,14 @@
             // btn_Uyelogin
             // 
             this.btn_Uyelogin.BackColor = System.Drawing.Color.Lime;
-            this.btn_Uyelogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_Uyelogin.Location = new System.Drawing.Point(234, 214);
+            this.btn_Uyelogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_Uyelogin.Location = new System.Drawing.Point(233, 234);
             this.btn_Uyelogin.Name = "btn_Uyelogin";
-            this.btn_Uyelogin.Size = new System.Drawing.Size(100, 26);
+            this.btn_Uyelogin.Size = new System.Drawing.Size(108, 31);
             this.btn_Uyelogin.TabIndex = 11;
             this.btn_Uyelogin.Text = "Giriş Yap";
             this.btn_Uyelogin.UseVisualStyleBackColor = false;
+            this.btn_Uyelogin.Click += new System.EventHandler(this.btn_Uyelogin_Click);
             // 
             // SifreTB
             // 
@@ -80,7 +84,7 @@
             this.SifreTB.Name = "SifreTB";
             this.SifreTB.Size = new System.Drawing.Size(154, 20);
             this.SifreTB.TabIndex = 10;
-            this.SifreTB.Text = "Şifre";
+            this.SifreTB.Text = "46049001318";
             this.SifreTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SifreTB_MouseClick);
             this.SifreTB.MouseLeave += new System.EventHandler(this.SifreTB_MouseLeave);
             // 
@@ -107,22 +111,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(231, 164);
+            this.label2.Location = new System.Drawing.Point(230, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 13);
             this.label2.TabIndex = 15;
             this.label2.Text = "Kayıtlı Değil Misiniz ?";
             // 
-            // linkLabel1
+            // UyeKayit_LNK
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(251, 195);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(55, 13);
-            this.linkLabel1.TabIndex = 16;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "KAYIT OL";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.UyeKayit_LNK.AutoSize = true;
+            this.UyeKayit_LNK.Location = new System.Drawing.Point(251, 209);
+            this.UyeKayit_LNK.Name = "UyeKayit_LNK";
+            this.UyeKayit_LNK.Size = new System.Drawing.Size(55, 13);
+            this.UyeKayit_LNK.TabIndex = 16;
+            this.UyeKayit_LNK.TabStop = true;
+            this.UyeKayit_LNK.Text = "KAYIT OL";
+            this.UyeKayit_LNK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // toolStrip1
             // 
@@ -130,7 +134,7 @@
             this.TSB_Uye});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(519, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(567, 25);
             this.toolStrip1.TabIndex = 17;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -141,31 +145,55 @@
             this.TSB_Uye.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TSB_Uye.Name = "TSB_Uye";
             this.TSB_Uye.Size = new System.Drawing.Size(23, 22);
-            this.TSB_Uye.Text = "toolStripButton1";
+            this.TSB_Uye.Text = "Geri";
             this.TSB_Uye.Click += new System.EventHandler(this.TSB_Uye_Click);
             // 
-            // KullaniciAdiTB
+            // UKullaniciAdiTB
             // 
-            this.KullaniciAdiTB.Location = new System.Drawing.Point(209, 88);
-            this.KullaniciAdiTB.Name = "KullaniciAdiTB";
-            this.KullaniciAdiTB.Size = new System.Drawing.Size(154, 20);
-            this.KullaniciAdiTB.TabIndex = 12;
-            this.KullaniciAdiTB.Text = "Kullanıcı Adı";
-            this.KullaniciAdiTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KullaniciAdiTB_MouseClick);
-            this.KullaniciAdiTB.MouseLeave += new System.EventHandler(this.KullaniciAdiTB_MouseLeave);
+            this.UKullaniciAdiTB.Location = new System.Drawing.Point(209, 88);
+            this.UKullaniciAdiTB.Name = "UKullaniciAdiTB";
+            this.UKullaniciAdiTB.Size = new System.Drawing.Size(154, 20);
+            this.UKullaniciAdiTB.TabIndex = 12;
+            this.UKullaniciAdiTB.Text = "neslihan.yildiriim@gmail.com";
+            this.UKullaniciAdiTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KullaniciAdiTB_MouseClick);
+            this.UKullaniciAdiTB.MouseLeave += new System.EventHandler(this.KullaniciAdiTB_MouseLeave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(369, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(201, 15);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Kullanıcı Adınız Eposta Adresinizdir.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(369, 137);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(184, 15);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Şifreniz TC Kimlik Numaranızdır.";
             // 
             // UyeGirisEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(519, 252);
+            this.ClientSize = new System.Drawing.Size(567, 277);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.UyeKayit_LNK);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.sfregorCB);
+            this.Controls.Add(this.UsfregorCB);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.KullaniciAdiTB);
+            this.Controls.Add(this.UKullaniciAdiTB);
             this.Controls.Add(this.btn_Uyelogin);
             this.Controls.Add(this.SifreTB);
             this.Controls.Add(this.lbl_PersonelPassword);
@@ -181,16 +209,18 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox sfregorCB;
+        private System.Windows.Forms.CheckBox UsfregorCB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Uyelogin;
         private System.Windows.Forms.TextBox SifreTB;
         private System.Windows.Forms.Label lbl_PersonelPassword;
         private System.Windows.Forms.Label lbl_personelnumber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel UyeKayit_LNK;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton TSB_Uye;
-        private System.Windows.Forms.TextBox KullaniciAdiTB;
+        private System.Windows.Forms.TextBox UKullaniciAdiTB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
