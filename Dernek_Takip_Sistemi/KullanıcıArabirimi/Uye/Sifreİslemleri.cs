@@ -20,7 +20,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
         {
             InitializeComponent();
             this.tcKimlikNumarasi = tcKimlikNumarasi;
-            connection = new VeriTabaniBaglantisi("DernekTakipSistemi");
+            connection = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
         }
 
         private void chbox_mevcutParola_CheckedChanged(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             string veritabaniSifre;
 
             // Veritabanından mevcut şifreyi al
-            string passwordQuery = $"SELECT Sifre FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
+            string passwordQuery = $"SELECT UyeSifre FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
             using (SqlCommand command = new SqlCommand(passwordQuery, connection.Connect()))
             {
                 veritabaniSifre = (string)command.ExecuteScalar();
@@ -66,7 +66,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                 if (txt_yeniSifre.Text == txt_sifreTekrar.Text)
                 {
                     // Yeni şifreyi veritabanına güncelle
-                    string query = $"UPDATE UyeKayitTablosu SET Sifre = '{txt_yeniSifre.Text}' WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
+                    string query = $"UPDATE UyeKayitTablosu SET UyeSifre = '{txt_yeniSifre.Text}' WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
                     using (SqlCommand command = new SqlCommand(query, connection.Connect()))
                     {
                         command.ExecuteNonQuery();
@@ -83,6 +83,20 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                 MessageBox.Show("Mevcut şifre hatalı. Lütfen  şifreyi tekrar giriniz");
             }
 
+        }
+
+        private void GeriDon_BTN_Click(object sender, EventArgs e)
+        {
+            UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani();
+            uyeIslemlerEkrani.Show();
+            this.Close();
+        }
+
+        private void CKS_BTN_Click(object sender, EventArgs e)
+        {
+            Giris giris = new Giris();
+            giris.Show();
+            this.Close();
         }
     }
 }

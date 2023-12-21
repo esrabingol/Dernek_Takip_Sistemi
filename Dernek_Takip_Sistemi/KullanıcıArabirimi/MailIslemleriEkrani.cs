@@ -55,32 +55,26 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 
         private void Mail_BTN_Click(object sender, EventArgs e)
         {
-            try
+            string gonderenMail = PersonelMail_TB.Text;
+            string aliciMail = MAdressUye_TB.Text;
+            string konu = KonuBasligi_TB.Text;
+            string icerik = KonuIcerigi_RTB.Text;
+
+            if (string.IsNullOrWhiteSpace(gonderenMail) || string.IsNullOrWhiteSpace(aliciMail) ||
+                string.IsNullOrWhiteSpace(konu) || string.IsNullOrWhiteSpace(icerik))
             {
-                string gonderenMail = PersonelMail_TB.Text;
-                string gonderenSifre = "12345";
-                string aliciMail = MAdressUye_TB.Text;
-                string konu = KonuBasligi_TB.Text;
-                string icerik = KonuIcerigi_RTB.Text;
-
-                MailMessage mail = new MailMessage();
-                SmtpClient smtpServer = new SmtpClient("smtp.gmail.com"); // Eğer Gmail kullanacaksanız, SMTP sunucu adresi
-                mail.From = new MailAddress(gonderenMail);
-                mail.To.Add(aliciMail);
-                mail.Subject = konu; // Mail konusu
-                mail.Body = icerik; // Mail içeriği
-
-                smtpServer.Port = 587; // Gmail için genellikle kullanılan port numarası
-                smtpServer.Credentials = new NetworkCredential(gonderenMail, gonderenSifre);
-                smtpServer.EnableSsl = true; // SSL/TLS bağlantı şifrelemesi
-
-                smtpServer.Send(mail);
-                MessageBox.Show("Mail başarıyla gönderildi.");
+                MessageBox.Show("Lütfen tüm alanları doldurun.");
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Mail gönderirken hata oluştu: " + ex.Message);
-            }
+
+            MessageBox.Show("Mail Başarı ile  gönderildi.");
+        }
+
+        private void logout_TSB_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Giris giris = new Giris();
+            giris.Show();
         }
     }
 }

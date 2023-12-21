@@ -52,12 +52,15 @@
             this.CinsiyetCB = new System.Windows.Forms.ComboBox();
             this.UyelikDurumuCB = new System.Windows.Forms.ComboBox();
             this.DogumtarihiLB = new System.Windows.Forms.Label();
-            this.dogumtarihiTB = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.UKayitReturn = new System.Windows.Forms.ToolStripButton();
             this.UyeYazdir_BTN = new System.Windows.Forms.ToolStripButton();
             this.txt_Sifre = new System.Windows.Forms.TextBox();
             this.lbl_Sifre = new System.Windows.Forms.Label();
+            this.date_dogumTarihi = new System.Windows.Forms.DateTimePicker();
+            this.lbl_sifreTekrar = new System.Windows.Forms.Label();
+            this.chbox_parola = new System.Windows.Forms.CheckBox();
+            this.txt_sifreTekrar = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +111,7 @@
             // 
             this.lbl_kangrubu.AutoSize = true;
             this.lbl_kangrubu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_kangrubu.Location = new System.Drawing.Point(78, 336);
+            this.lbl_kangrubu.Location = new System.Drawing.Point(78, 321);
             this.lbl_kangrubu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_kangrubu.Name = "lbl_kangrubu";
             this.lbl_kangrubu.Size = new System.Drawing.Size(96, 17);
@@ -119,7 +122,7 @@
             // 
             this.lbl_cinsiyet.AutoSize = true;
             this.lbl_cinsiyet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_cinsiyet.Location = new System.Drawing.Point(99, 289);
+            this.lbl_cinsiyet.Location = new System.Drawing.Point(95, 279);
             this.lbl_cinsiyet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cinsiyet.Name = "lbl_cinsiyet";
             this.lbl_cinsiyet.Size = new System.Drawing.Size(75, 17);
@@ -151,7 +154,7 @@
             // 
             this.lbl_aktifpasif.AutoSize = true;
             this.lbl_aktifpasif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_aktifpasif.Location = new System.Drawing.Point(481, 90);
+            this.lbl_aktifpasif.Location = new System.Drawing.Point(64, 369);
             this.lbl_aktifpasif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_aktifpasif.Name = "lbl_aktifpasif";
             this.lbl_aktifpasif.Size = new System.Drawing.Size(106, 17);
@@ -162,7 +165,7 @@
             // 
             this.lbl_aylikodeme.AutoSize = true;
             this.lbl_aylikodeme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_aylikodeme.Location = new System.Drawing.Point(479, 141);
+            this.lbl_aylikodeme.Location = new System.Drawing.Point(464, 90);
             this.lbl_aylikodeme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_aylikodeme.Name = "lbl_aylikodeme";
             this.lbl_aylikodeme.Size = new System.Drawing.Size(108, 17);
@@ -173,7 +176,7 @@
             // 
             this.lbl_sehir.AutoSize = true;
             this.lbl_sehir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_sehir.Location = new System.Drawing.Point(502, 233);
+            this.lbl_sehir.Location = new System.Drawing.Point(487, 182);
             this.lbl_sehir.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_sehir.Name = "lbl_sehir";
             this.lbl_sehir.Size = new System.Drawing.Size(61, 17);
@@ -184,7 +187,7 @@
             // 
             this.lbl_tlfnumarası.AutoSize = true;
             this.lbl_tlfnumarası.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_tlfnumarası.Location = new System.Drawing.Point(440, 283);
+            this.lbl_tlfnumarası.Location = new System.Drawing.Point(425, 232);
             this.lbl_tlfnumarası.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_tlfnumarası.Name = "lbl_tlfnumarası";
             this.lbl_tlfnumarası.Size = new System.Drawing.Size(146, 17);
@@ -195,7 +198,7 @@
             // 
             this.lbl_eposta.AutoSize = true;
             this.lbl_eposta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_eposta.Location = new System.Drawing.Point(512, 186);
+            this.lbl_eposta.Location = new System.Drawing.Point(497, 135);
             this.lbl_eposta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_eposta.Name = "lbl_eposta";
             this.lbl_eposta.Size = new System.Drawing.Size(75, 17);
@@ -232,14 +235,14 @@
             "ABRH(+)",
             "BRH(-) ",
             "BRH(+)"});
-            this.KanGrubuLB.Location = new System.Drawing.Point(194, 335);
+            this.KanGrubuLB.Location = new System.Drawing.Point(194, 321);
             this.KanGrubuLB.Name = "KanGrubuLB";
             this.KanGrubuLB.Size = new System.Drawing.Size(156, 21);
             this.KanGrubuLB.TabIndex = 18;
             // 
             // TelefonNumarasiTB
             // 
-            this.TelefonNumarasiTB.Location = new System.Drawing.Point(594, 286);
+            this.TelefonNumarasiTB.Location = new System.Drawing.Point(579, 235);
             this.TelefonNumarasiTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TelefonNumarasiTB.Name = "TelefonNumarasiTB";
             this.TelefonNumarasiTB.Size = new System.Drawing.Size(156, 20);
@@ -247,7 +250,7 @@
             // 
             // EPostaTB
             // 
-            this.EPostaTB.Location = new System.Drawing.Point(594, 186);
+            this.EPostaTB.Location = new System.Drawing.Point(579, 135);
             this.EPostaTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EPostaTB.Name = "EPostaTB";
             this.EPostaTB.Size = new System.Drawing.Size(156, 20);
@@ -255,7 +258,7 @@
             // 
             // AylikOdemeTB
             // 
-            this.AylikOdemeTB.Location = new System.Drawing.Point(594, 139);
+            this.AylikOdemeTB.Location = new System.Drawing.Point(579, 88);
             this.AylikOdemeTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AylikOdemeTB.Name = "AylikOdemeTB";
             this.AylikOdemeTB.Size = new System.Drawing.Size(156, 20);
@@ -348,7 +351,7 @@
             "Kilis",
             "Osmaniye",
             "Düzce"});
-            this.SehirCB.Location = new System.Drawing.Point(594, 233);
+            this.SehirCB.Location = new System.Drawing.Point(579, 182);
             this.SehirCB.Name = "SehirCB";
             this.SehirCB.Size = new System.Drawing.Size(156, 21);
             this.SehirCB.TabIndex = 24;
@@ -370,7 +373,7 @@
             this.CinsiyetCB.Items.AddRange(new object[] {
             "Kadın ",
             "Erkek"});
-            this.CinsiyetCB.Location = new System.Drawing.Point(194, 289);
+            this.CinsiyetCB.Location = new System.Drawing.Point(194, 279);
             this.CinsiyetCB.Name = "CinsiyetCB";
             this.CinsiyetCB.Size = new System.Drawing.Size(156, 21);
             this.CinsiyetCB.TabIndex = 30;
@@ -381,7 +384,7 @@
             this.UyelikDurumuCB.Items.AddRange(new object[] {
             "Aktif ",
             "Pasif"});
-            this.UyelikDurumuCB.Location = new System.Drawing.Point(594, 86);
+            this.UyelikDurumuCB.Location = new System.Drawing.Point(194, 364);
             this.UyelikDurumuCB.Name = "UyelikDurumuCB";
             this.UyelikDurumuCB.Size = new System.Drawing.Size(156, 21);
             this.UyelikDurumuCB.TabIndex = 31;
@@ -396,15 +399,6 @@
             this.DogumtarihiLB.Size = new System.Drawing.Size(120, 17);
             this.DogumtarihiLB.TabIndex = 32;
             this.DogumtarihiLB.Text = "Doğum Tarihi  :";
-            // 
-            // dogumtarihiTB
-            // 
-            this.dogumtarihiTB.Location = new System.Drawing.Point(194, 233);
-            this.dogumtarihiTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dogumtarihiTB.Name = "dogumtarihiTB";
-            this.dogumtarihiTB.Size = new System.Drawing.Size(156, 20);
-            this.dogumtarihiTB.TabIndex = 33;
-            this.dogumtarihiTB.Text = "Yıl/Ay/Gün";
             // 
             // toolStrip1
             // 
@@ -441,7 +435,7 @@
             // 
             // txt_Sifre
             // 
-            this.txt_Sifre.Location = new System.Drawing.Point(594, 321);
+            this.txt_Sifre.Location = new System.Drawing.Point(579, 270);
             this.txt_Sifre.Name = "txt_Sifre";
             this.txt_Sifre.Size = new System.Drawing.Size(156, 20);
             this.txt_Sifre.TabIndex = 35;
@@ -450,11 +444,51 @@
             // 
             this.lbl_Sifre.AutoSize = true;
             this.lbl_Sifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_Sifre.Location = new System.Drawing.Point(534, 324);
+            this.lbl_Sifre.Location = new System.Drawing.Point(519, 273);
             this.lbl_Sifre.Name = "lbl_Sifre";
             this.lbl_Sifre.Size = new System.Drawing.Size(52, 17);
             this.lbl_Sifre.TabIndex = 36;
             this.lbl_Sifre.Text = "Şifre :";
+            // 
+            // date_dogumTarihi
+            // 
+            this.date_dogumTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_dogumTarihi.Location = new System.Drawing.Point(194, 232);
+            this.date_dogumTarihi.Name = "date_dogumTarihi";
+            this.date_dogumTarihi.Size = new System.Drawing.Size(156, 20);
+            this.date_dogumTarihi.TabIndex = 38;
+            this.date_dogumTarihi.Value = new System.DateTime(2023, 12, 20, 18, 57, 39, 0);
+            // 
+            // lbl_sifreTekrar
+            // 
+            this.lbl_sifreTekrar.AutoSize = true;
+            this.lbl_sifreTekrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_sifreTekrar.Location = new System.Drawing.Point(461, 316);
+            this.lbl_sifreTekrar.Name = "lbl_sifreTekrar";
+            this.lbl_sifreTekrar.Size = new System.Drawing.Size(112, 17);
+            this.lbl_sifreTekrar.TabIndex = 44;
+            this.lbl_sifreTekrar.Text = "Şifre (Tekrar):";
+            // 
+            // chbox_parola
+            // 
+            this.chbox_parola.AutoSize = true;
+            this.chbox_parola.Location = new System.Drawing.Point(617, 342);
+            this.chbox_parola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chbox_parola.Name = "chbox_parola";
+            this.chbox_parola.Size = new System.Drawing.Size(89, 17);
+            this.chbox_parola.TabIndex = 43;
+            this.chbox_parola.Text = "şifre göster";
+            this.chbox_parola.UseVisualStyleBackColor = true;
+            this.chbox_parola.CheckedChanged += new System.EventHandler(this.chbox_parola_CheckedChanged);
+            // 
+            // txt_sifreTekrar
+            // 
+            this.txt_sifreTekrar.Location = new System.Drawing.Point(579, 313);
+            this.txt_sifreTekrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_sifreTekrar.Name = "txt_sifreTekrar";
+            this.txt_sifreTekrar.PasswordChar = '*';
+            this.txt_sifreTekrar.Size = new System.Drawing.Size(156, 20);
+            this.txt_sifreTekrar.TabIndex = 42;
             // 
             // UyeKayıtAlmaEkrani
             // 
@@ -462,10 +496,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(808, 403);
+            this.Controls.Add(this.lbl_sifreTekrar);
+            this.Controls.Add(this.chbox_parola);
+            this.Controls.Add(this.txt_sifreTekrar);
+            this.Controls.Add(this.date_dogumTarihi);
             this.Controls.Add(this.lbl_Sifre);
             this.Controls.Add(this.txt_Sifre);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dogumtarihiTB);
             this.Controls.Add(this.DogumtarihiLB);
             this.Controls.Add(this.UyelikDurumuCB);
             this.Controls.Add(this.CinsiyetCB);
@@ -528,11 +565,14 @@
         private System.Windows.Forms.ComboBox CinsiyetCB;
         private System.Windows.Forms.ComboBox UyelikDurumuCB;
         private System.Windows.Forms.Label DogumtarihiLB;
-        private System.Windows.Forms.TextBox dogumtarihiTB;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton UKayitReturn;
         private System.Windows.Forms.ToolStripButton UyeYazdir_BTN;
         private System.Windows.Forms.TextBox txt_Sifre;
         private System.Windows.Forms.Label lbl_Sifre;
+        private System.Windows.Forms.DateTimePicker date_dogumTarihi;
+        private System.Windows.Forms.Label lbl_sifreTekrar;
+        private System.Windows.Forms.CheckBox chbox_parola;
+        private System.Windows.Forms.TextBox txt_sifreTekrar;
     }
 }

@@ -32,7 +32,7 @@
             this.KalanBorcu_LB = new System.Windows.Forms.Label();
             this.OdenecekTutar_LB = new System.Windows.Forms.Label();
             this.OdemeBaslik_LB = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_tamamla = new System.Windows.Forms.Button();
             this.OdenecekTutar_TB = new System.Windows.Forms.TextBox();
             this.lbl_aidat = new System.Windows.Forms.Label();
             this.lbl_borc = new System.Windows.Forms.Label();
@@ -80,24 +80,27 @@
             this.OdemeBaslik_LB.TabIndex = 3;
             this.OdemeBaslik_LB.Text = "Ödeme İşlemleri ";
             // 
-            // button1
+            // btn_tamamla
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(88, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 27);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Tamamla";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_tamamla.BackColor = System.Drawing.Color.Lime;
+            this.btn_tamamla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_tamamla.Location = new System.Drawing.Point(88, 204);
+            this.btn_tamamla.Name = "btn_tamamla";
+            this.btn_tamamla.Size = new System.Drawing.Size(158, 27);
+            this.btn_tamamla.TabIndex = 4;
+            this.btn_tamamla.Text = "Tamamla";
+            this.btn_tamamla.UseVisualStyleBackColor = false;
+            this.btn_tamamla.Click += new System.EventHandler(this.btn_tamamla_Click);
             // 
             // OdenecekTutar_TB
             // 
+            this.OdenecekTutar_TB.ForeColor = System.Drawing.SystemColors.GrayText;
             this.OdenecekTutar_TB.Location = new System.Drawing.Point(180, 104);
             this.OdenecekTutar_TB.Name = "OdenecekTutar_TB";
             this.OdenecekTutar_TB.Size = new System.Drawing.Size(80, 20);
             this.OdenecekTutar_TB.TabIndex = 5;
+            this.OdenecekTutar_TB.Text = "0,0";
+            this.OdenecekTutar_TB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OdenecekTutar_TB_MouseClick);
             this.OdenecekTutar_TB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OdenecekTutar_TB_KeyPress);
             // 
             // lbl_aidat
@@ -166,13 +169,14 @@
             this.Controls.Add(this.lbl_borc);
             this.Controls.Add(this.lbl_aidat);
             this.Controls.Add(this.OdenecekTutar_TB);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_tamamla);
             this.Controls.Add(this.OdemeBaslik_LB);
             this.Controls.Add(this.OdenecekTutar_LB);
             this.Controls.Add(this.KalanBorcu_LB);
             this.Controls.Add(this.AylikOdeme_LB);
             this.Name = "OdemeIslemleriEkrani";
             this.Text = "OdemeIslemleriEkrani";
+            this.Load += new System.EventHandler(this.Odeme_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -186,7 +190,7 @@
         private System.Windows.Forms.Label KalanBorcu_LB;
         private System.Windows.Forms.Label OdenecekTutar_LB;
         private System.Windows.Forms.Label OdemeBaslik_LB;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_tamamla;
         private System.Windows.Forms.TextBox OdenecekTutar_TB;
         private System.Windows.Forms.Label lbl_aidat;
         private System.Windows.Forms.Label lbl_borc;

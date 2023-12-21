@@ -23,14 +23,14 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             InitializeComponent();
             this.tcKimlikNumarasi = tcKimlikNumarasi;
 
-            connection = new VeriTabaniBaglantisi("DernekTakipSistemi");
+            connection = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
         }
         public OdemeIslemleriEkrani(string tcKimlikNumarasi, UyeIslemlerEkrani uye_Islemleri)
         {
             InitializeComponent();
             this.tcKimlikNumarasi = tcKimlikNumarasi;
 
-            connection = new VeriTabaniBaglantisi("DernekTakipSistemi");
+            connection = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
             this.uye_islemleri = uye_Islemleri;
         }
 
@@ -40,27 +40,32 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             {
                 try
                 {
-                    // Odeme_Tablosu'na yeni ödeme ekle
-                    string odemeQuery = "INSERT INTO Odeme_Tablosu (TCKimlikNumarasi, OdemeTarihi, OdemeMiktari) VALUES (@TCKimlikNumarasi, @OdemeTarihi, @OdemeMiktari)";
+                    // OdemeTablosu'na yeni ödeme ekle
+                    string odemeQuery = "INSERT INTO OdemeTablosu (TCKimlikNumarasi, OdemeMiktari, OdemeTarihi) VALUES (@TCKimlikNumarasi, @OdemeMiktari, @OdemeTarihi)";
                     using (SqlCommand insertCommand = new SqlCommand(odemeQuery, connection.Connect()))
                     {
                         insertCommand.Parameters.AddWithValue("@TCKimlikNumarasi", tcKimlikNumarasi);
+                        insertCommand.Parameters.AddWithValue("@OdemeMiktari", OdenecekTutar_TB.Text);
                         insertCommand.Parameters.AddWithValue("@OdemeTarihi", DateTime.Now);
-                        insertCommand.Parameters.AddWithValue("@OdemeMiktari", Convert.ToDecimal(OdenecekTutar_TB.Text));
                         insertCommand.ExecuteNonQuery();
 
                         MessageBox.Show("Ödemeniz başarıyla gerçekleştirildi.");
-                        this.Close();
+
                     }
 
-                    //Borc_Tablosu'nu güncelle
-                    string updateQuery = $"UPDATE Borc_Tablosu SET BorcMiktari = BorcMiktari - @OdenenMiktar WHERE TCKimlikNumarasi = @TCKimlikNumarasi";
+                    //BorcTablosu'nu güncelle
+                    string updateQuery = $"UPDATE BorcTablosu SET BorcMiktari = BorcMiktari - @OdenenMiktar WHERE TCKimlikNumarasi = @TCKimlikNumarasi";
                     using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection.Connect()))
                     {
-                        updateCommand.Parameters.AddWithValue("@OdenenMiktar", Convert.ToDecimal(OdenecekTutar_TB.Text));
                         updateCommand.Parameters.AddWithValue("@TCKimlikNumarasi", tcKimlikNumarasi);
+                        updateCommand.Parameters.AddWithValue("@OdenenMiktar", Convert.ToDecimal(OdenecekTutar_TB.Text));
                         updateCommand.ExecuteNonQuery();
                     }
+
+                    this.Close();
+                    UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani(tcKimlikNumarasi);
+                    uyeIslemlerEkrani.ShowDialog();
+            
 
                 }
                 catch (Exception ex)
@@ -69,7 +74,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                 }
             }
             else
-                MessageBox.Show("Ödeme işlemi sırasında bir hata oluştu: ", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ödenecek tutar giriniz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void Odeme_Load(object sender, EventArgs e)
@@ -84,14 +89,14 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             {
                 string query = @"
 					SELECT 
-						COALESCE(Borc_Tablosu.BorcMiktari, 0) AS BorcMiktari,
+						COALESCE(BorcTablosu.BorcMiktari, 0) AS BorcMiktari,
 						COALESCE(AidatTablosu.AidatMiktari, 0) AS AidatMiktari
 					FROM 
-						Borc_Tablosu
+						BorcTablosu
 					FULL OUTER JOIN 
-						AidatTablosu ON Borc_Tablosu.TCKimlikNumarasi = AidatTablosu.TCKimlikNumarasi
+						AidatTablosu ON BorcTablosu.TCKimlikNumarasi = AidatTablosu.TCKimlikNumarasi
 					WHERE 
-						Borc_Tablosu.TCKimlikNumarasi = @TCKimlikNumarasi
+						BorcTablosu.TCKimlikNumarasi = @TCKimlikNumarasi
 						OR AidatTablosu.TCKimlikNumarasi = @TCKimlikNumarasi;
 				";
 
@@ -105,14 +110,16 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                         decimal borcMiktari = reader.GetDecimal(0);
                         decimal aidatMiktari = reader.GetDecimal(1);
 
-                        lbl_borc.Text = $"Borç: {borcMiktari:C}";
-                        lbl_aidat.Text = $"Aidat: {aidatMiktari:C}";
+                        lbl_borc.Text = $"{borcMiktari:C}";
+                        lbl_aidat.Text = $"{aidatMiktari:C}";
                     }
                     else
                     {
                         lbl_borc.Text = "Borç bilgisi bulunamadı";
                         lbl_aidat.Text = "Aidat bilgisi bulunamadı";
                     }
+
+                    reader.Close();
                 }
             }
             catch (Exception ex)
@@ -143,11 +150,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                 OdenecekTutar_TB.Text = "";
                 OdenecekTutar_TB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-             
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

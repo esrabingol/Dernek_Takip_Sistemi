@@ -38,6 +38,10 @@
             this.txt_sifreTekrar = new System.Windows.Forms.TextBox();
             this.txt_yeniSifre = new System.Windows.Forms.TextBox();
             this.txt_eskiSifre = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.GeriDon_BTN = new System.Windows.Forms.ToolStripButton();
+            this.CKS_BTN = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chbox_tekrarParola
@@ -105,13 +109,16 @@
             // 
             // btn_kaydet
             // 
-            this.btn_kaydet.Location = new System.Drawing.Point(84, 203);
+            this.btn_kaydet.BackColor = System.Drawing.Color.Lime;
+            this.btn_kaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_kaydet.Location = new System.Drawing.Point(81, 201);
             this.btn_kaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btn_kaydet.Name = "btn_kaydet";
-            this.btn_kaydet.Size = new System.Drawing.Size(56, 28);
+            this.btn_kaydet.Size = new System.Drawing.Size(115, 28);
             this.btn_kaydet.TabIndex = 13;
             this.btn_kaydet.Text = "Kaydet";
-            this.btn_kaydet.UseVisualStyleBackColor = true;
+            this.btn_kaydet.UseVisualStyleBackColor = false;
+            this.btn_kaydet.Click += new System.EventHandler(this.btn_kaydet_Click);
             // 
             // txt_sifreTekrar
             // 
@@ -140,11 +147,44 @@
             this.txt_eskiSifre.Size = new System.Drawing.Size(173, 20);
             this.txt_eskiSifre.TabIndex = 10;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GeriDon_BTN,
+            this.CKS_BTN});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(371, 25);
+            this.toolStrip1.TabIndex = 20;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // GeriDon_BTN
+            // 
+            this.GeriDon_BTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.GeriDon_BTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Custom_Icon_Design_Flatastic_8_Go_back_16;
+            this.GeriDon_BTN.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GeriDon_BTN.Name = "GeriDon_BTN";
+            this.GeriDon_BTN.Size = new System.Drawing.Size(23, 22);
+            this.GeriDon_BTN.Text = "GERİ DÖN";
+            this.GeriDon_BTN.Click += new System.EventHandler(this.GeriDon_BTN_Click);
+            // 
+            // CKS_BTN
+            // 
+            this.CKS_BTN.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.CKS_BTN.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CKS_BTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.logout;
+            this.CKS_BTN.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CKS_BTN.Name = "CKS_BTN";
+            this.CKS_BTN.Size = new System.Drawing.Size(23, 22);
+            this.CKS_BTN.Text = "Çıkış Yap";
+            this.CKS_BTN.Click += new System.EventHandler(this.CKS_BTN_Click);
+            // 
             // Sifreİslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(371, 255);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.chbox_tekrarParola);
             this.Controls.Add(this.chbox_yeniParola);
             this.Controls.Add(this.chbox_mevcutParola);
@@ -157,6 +197,8 @@
             this.Controls.Add(this.txt_eskiSifre);
             this.Name = "Sifreİslemleri";
             this.Text = "Sifreİslemleri";
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +216,8 @@
         private System.Windows.Forms.TextBox txt_sifreTekrar;
         private System.Windows.Forms.TextBox txt_yeniSifre;
         private System.Windows.Forms.TextBox txt_eskiSifre;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton GeriDon_BTN;
+        private System.Windows.Forms.ToolStripButton CKS_BTN;
     }
 }

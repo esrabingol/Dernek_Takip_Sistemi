@@ -84,7 +84,7 @@
             this.SifreTB.Name = "SifreTB";
             this.SifreTB.Size = new System.Drawing.Size(154, 20);
             this.SifreTB.TabIndex = 10;
-            this.SifreTB.Text = "46049001318";
+            this.SifreTB.Text = "1221562585";
             this.SifreTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SifreTB_MouseClick);
             this.SifreTB.MouseLeave += new System.EventHandler(this.SifreTB_MouseLeave);
             // 
@@ -154,7 +154,7 @@
             this.UKullaniciAdiTB.Name = "UKullaniciAdiTB";
             this.UKullaniciAdiTB.Size = new System.Drawing.Size(154, 20);
             this.UKullaniciAdiTB.TabIndex = 12;
-            this.UKullaniciAdiTB.Text = "neslihan.yildiriim@gmail.com";
+            this.UKullaniciAdiTB.Text = "ebingol@gmail.com";
             this.UKullaniciAdiTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KullaniciAdiTB_MouseClick);
             this.UKullaniciAdiTB.MouseLeave += new System.EventHandler(this.KullaniciAdiTB_MouseLeave);
             // 

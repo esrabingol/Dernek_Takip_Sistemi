@@ -40,7 +40,7 @@
             // 
             this.lbl_baslik.AutoSize = true;
             this.lbl_baslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_baslik.Location = new System.Drawing.Point(98, 19);
+            this.lbl_baslik.Location = new System.Drawing.Point(137, 9);
             this.lbl_baslik.Name = "lbl_baslik";
             this.lbl_baslik.Size = new System.Drawing.Size(220, 20);
             this.lbl_baslik.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.btn_Personel.BackColor = System.Drawing.Color.Lime;
             this.btn_Personel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_Personel.Location = new System.Drawing.Point(29, 175);
+            this.btn_Personel.Location = new System.Drawing.Point(79, 206);
             this.btn_Personel.Name = "btn_Personel";
             this.btn_Personel.Size = new System.Drawing.Size(168, 44);
             this.btn_Personel.TabIndex = 1;
@@ -61,9 +61,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(121, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(79, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 103);
+            this.pictureBox1.Size = new System.Drawing.Size(330, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -72,9 +72,9 @@
             // 
             this.btn_Uye.BackColor = System.Drawing.Color.Lime;
             this.btn_Uye.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_Uye.Location = new System.Drawing.Point(214, 175);
+            this.btn_Uye.Location = new System.Drawing.Point(261, 206);
             this.btn_Uye.Name = "btn_Uye";
-            this.btn_Uye.Size = new System.Drawing.Size(168, 44);
+            this.btn_Uye.Size = new System.Drawing.Size(148, 44);
             this.btn_Uye.TabIndex = 3;
             this.btn_Uye.Text = "ÜYE GİRİŞİ";
             this.btn_Uye.UseVisualStyleBackColor = false;
@@ -87,7 +87,7 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(431, 240);
+            this.ClientSize = new System.Drawing.Size(485, 287);
             this.Controls.Add(this.btn_Uye);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Personel);

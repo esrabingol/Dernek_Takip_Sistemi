@@ -93,6 +93,26 @@ namespace Dernek_Takip_Sistemi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fuar1 {
+            get {
+                object obj = ResourceManager.GetObject("fuar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fuar2 {
+            get {
+                object obj = ResourceManager.GetObject("fuar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Iconshock_Real_Vista_Text_Print_32 {
             get {
                 object obj = ResourceManager.GetObject("Iconshock-Real-Vista-Text-Print.32", resourceCulture);

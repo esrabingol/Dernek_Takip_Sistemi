@@ -86,7 +86,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             //Hesap Hareketleri Tab
 
             //Borç Bilgileri
-            string borcQuery = $"SELECT BorcMiktari, SonOdemeTarihi FROM BorcTablosu WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
+            string borcQuery = $"SELECT BorcMiktari FROM BorcTablosu WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
             using (SqlCommand command = new SqlCommand(borcQuery, connection.Connect()))
             {
                 SqlDataReader reader = command.ExecuteReader();
@@ -94,7 +94,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                 if (reader.Read())
                 {
                     lbl_borc.Text = reader["BorcMiktari"].ToString();
-                    lbl_tarih.Text = reader["SonOdemeTarihi"].ToString();
+       
                 }
                 reader.Close();
             }
@@ -106,10 +106,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             {
                 dataAdapter.Fill(OdemeDT);
             }
-
-            // DataGridView sütun adlarını değiştir
-            //dgv_odemeler.Columns["OdemeTarihi"].HeaderText = "Tarih";
-            //dgv_odemeler.Columns["OdemeMiktari"].HeaderText = "Tutar";
 
             // DataGridView'e veriyi bağla
             dgv_odemeler.DataSource = OdemeDT;
@@ -125,6 +121,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
         {
             OdemeIslemleriEkrani odemeIslemleriEkrani = new OdemeIslemleriEkrani(tcKimlikNumarasi);
             odemeIslemleriEkrani.Show();
+            
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

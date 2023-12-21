@@ -39,6 +39,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AnaEkranaDon_TSB = new System.Windows.Forms.ToolStripButton();
             this.Temizle_TSB = new System.Windows.Forms.ToolStripButton();
+            this.logout_TSB = new System.Windows.Forms.ToolStripButton();
             this.MAdressUye_TB = new System.Windows.Forms.TextBox();
             this.PersonelMail_TB = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
@@ -91,7 +92,7 @@
             // 
             this.KonuIcerigi_RTB.Location = new System.Drawing.Point(129, 238);
             this.KonuIcerigi_RTB.Name = "KonuIcerigi_RTB";
-            this.KonuIcerigi_RTB.Size = new System.Drawing.Size(197, 96);
+            this.KonuIcerigi_RTB.Size = new System.Drawing.Size(197, 82);
             this.KonuIcerigi_RTB.TabIndex = 7;
             this.KonuIcerigi_RTB.Text = "";
             // 
@@ -121,7 +122,8 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AnaEkranaDon_TSB,
-            this.Temizle_TSB});
+            this.Temizle_TSB,
+            this.logout_TSB});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(392, 25);
@@ -147,6 +149,20 @@
             this.Temizle_TSB.Size = new System.Drawing.Size(23, 22);
             this.Temizle_TSB.Text = "Taslağı Sil";
             this.Temizle_TSB.Click += new System.EventHandler(this.Temizle_TSB_Click);
+            // 
+            // logout_TSB
+            // 
+            this.logout_TSB.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logout_TSB.CheckOnClick = true;
+            this.logout_TSB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.logout_TSB.Image = global::Dernek_Takip_Sistemi.Properties.Resources.logout;
+            this.logout_TSB.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.logout_TSB.Name = "logout_TSB";
+            this.logout_TSB.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.logout_TSB.Size = new System.Drawing.Size(23, 22);
+            this.logout_TSB.Text = "ÇIKIŞ YAP";
+            this.logout_TSB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.logout_TSB.Click += new System.EventHandler(this.logout_TSB_Click);
             // 
             // MAdressUye_TB
             // 
@@ -204,5 +220,6 @@
         private System.Windows.Forms.TextBox MAdressUye_TB;
         private System.Windows.Forms.ToolStripButton Temizle_TSB;
         private System.Windows.Forms.TextBox PersonelMail_TB;
+        private System.Windows.Forms.ToolStripButton logout_TSB;
     }
 }
