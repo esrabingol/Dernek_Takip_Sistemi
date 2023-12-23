@@ -219,6 +219,7 @@ namespace Dernek_Takip_Sistemi
                 lbl_Sifre.Visible = false;
                 txt_sifreTekrar.Visible = false;
                 lbl_sifreTekrar.Visible = false;
+                chbox_parola.Visible= false;
             }
         }
 

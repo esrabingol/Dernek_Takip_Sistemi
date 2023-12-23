@@ -325,18 +325,11 @@ namespace Dernek_Takip_Sistemi
 
         }
 
-        private void BTN_AylikYillikZedGraph_Click(object sender, EventArgs e)
+        private void BTN_AylikYillikZedgraph_Click(object sender, EventArgs e)
         {
             this.Close();
-            ZedGraph_AylikYillikOdeme zedGraph_AylikYillikOdeme = new ZedGraph_AylikYillikOdeme();
-            zedGraph_AylikYillikOdeme.Show();
-        }
-
-        private void BTN_YilZedGraph_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            ZedGraph_YillikOdeme graph_YillikOdeme = new ZedGraph_YillikOdeme();
-            graph_YillikOdeme.Show();
+            ZedGraph_AylikYillikOdeme graph_AylikYillikOdeme = new ZedGraph_AylikYillikOdeme();
+            graph_AylikYillikOdeme.Show();
         }
     }
 }

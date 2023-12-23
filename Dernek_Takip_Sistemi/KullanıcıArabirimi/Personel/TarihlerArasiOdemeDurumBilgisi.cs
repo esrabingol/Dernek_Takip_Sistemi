@@ -53,5 +53,12 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
 
 
         }
+
+        private void TSB_Return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            UyeBilgileriniListelemeİslemleri uyeislemleri = new UyeBilgileriniListelemeİslemleri();
+            uyeislemleri.Show();
+        }
     }
 }

@@ -87,9 +87,10 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
 
         private void GeriDon_BTN_Click(object sender, EventArgs e)
         {
+            this.Close();
             UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani();
             uyeIslemlerEkrani.Show();
-            this.Close();
+           
         }
 
         private void CKS_BTN_Click(object sender, EventArgs e)

@@ -37,7 +37,6 @@
             this.sehirler_CB = new System.Windows.Forms.ComboBox();
             this.ListelemeDGW = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BTN_AylikYillikZedGraph = new System.Windows.Forms.Button();
             this.BTN_ODEMEDURUM = new System.Windows.Forms.Button();
             this.Listele_BTN = new System.Windows.Forms.Button();
             this.TC_TBX = new System.Windows.Forms.TextBox();
@@ -52,7 +51,7 @@
             this.UyeSilBTN = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.BTN_YilZedGraph = new System.Windows.Forms.Button();
+            this.BTN_AylikYillikZedgraph = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ListelemeDGW)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -75,9 +74,9 @@
             // 
             this.SehirListele_BTN.BackColor = System.Drawing.Color.White;
             this.SehirListele_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.SehirListele_BTN.Location = new System.Drawing.Point(205, 50);
+            this.SehirListele_BTN.Location = new System.Drawing.Point(205, 51);
             this.SehirListele_BTN.Name = "SehirListele_BTN";
-            this.SehirListele_BTN.Size = new System.Drawing.Size(153, 21);
+            this.SehirListele_BTN.Size = new System.Drawing.Size(153, 35);
             this.SehirListele_BTN.TabIndex = 2;
             this.SehirListele_BTN.Text = "2- Şehire Göre Listele\r\n\r\n";
             this.SehirListele_BTN.UseVisualStyleBackColor = false;
@@ -87,9 +86,9 @@
             // 
             this.KanGrubu_BTN.BackColor = System.Drawing.Color.White;
             this.KanGrubu_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.KanGrubu_BTN.Location = new System.Drawing.Point(11, 143);
+            this.KanGrubu_BTN.Location = new System.Drawing.Point(11, 162);
             this.KanGrubu_BTN.Name = "KanGrubu_BTN";
-            this.KanGrubu_BTN.Size = new System.Drawing.Size(347, 26);
+            this.KanGrubu_BTN.Size = new System.Drawing.Size(347, 24);
             this.KanGrubu_BTN.TabIndex = 1;
             this.KanGrubu_BTN.Text = "5- Kan Grubuna Göre Listele\r\n";
             this.KanGrubu_BTN.UseVisualStyleBackColor = false;
@@ -101,7 +100,7 @@
             this.TumUyeleriGorBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TumUyeleriGorBTN.Location = new System.Drawing.Point(6, 19);
             this.TumUyeleriGorBTN.Name = "TumUyeleriGorBTN";
-            this.TumUyeleriGorBTN.Size = new System.Drawing.Size(352, 25);
+            this.TumUyeleriGorBTN.Size = new System.Drawing.Size(352, 26);
             this.TumUyeleriGorBTN.TabIndex = 10;
             this.TumUyeleriGorBTN.Text = "1- Tüm Üyeleri Ve Bilgilerini Listele\r\n\r\n";
             this.TumUyeleriGorBTN.UseVisualStyleBackColor = false;
@@ -111,9 +110,9 @@
             // 
             this.DurumBTN.BackColor = System.Drawing.Color.White;
             this.DurumBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DurumBTN.Location = new System.Drawing.Point(11, 112);
+            this.DurumBTN.Location = new System.Drawing.Point(11, 132);
             this.DurumBTN.Name = "DurumBTN";
-            this.DurumBTN.Size = new System.Drawing.Size(347, 25);
+            this.DurumBTN.Size = new System.Drawing.Size(347, 24);
             this.DurumBTN.TabIndex = 3;
             this.DurumBTN.Text = "4- Aktif/ Pasif Durumuna Göre Listele\r\n\r\n\r\n";
             this.DurumBTN.UseVisualStyleBackColor = false;
@@ -205,7 +204,7 @@
             "Kilis",
             "Osmaniye",
             "Düzce"});
-            this.sehirler_CB.Location = new System.Drawing.Point(11, 50);
+            this.sehirler_CB.Location = new System.Drawing.Point(11, 51);
             this.sehirler_CB.Name = "sehirler_CB";
             this.sehirler_CB.Size = new System.Drawing.Size(174, 21);
             this.sehirler_CB.TabIndex = 12;
@@ -214,16 +213,15 @@
             // 
             this.ListelemeDGW.BackgroundColor = System.Drawing.Color.White;
             this.ListelemeDGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListelemeDGW.Location = new System.Drawing.Point(457, 19);
+            this.ListelemeDGW.Location = new System.Drawing.Point(457, 20);
             this.ListelemeDGW.Name = "ListelemeDGW";
-            this.ListelemeDGW.Size = new System.Drawing.Size(394, 286);
+            this.ListelemeDGW.Size = new System.Drawing.Size(394, 297);
             this.ListelemeDGW.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Controls.Add(this.BTN_YilZedGraph);
-            this.groupBox1.Controls.Add(this.BTN_AylikYillikZedGraph);
+            this.groupBox1.Controls.Add(this.BTN_AylikYillikZedgraph);
             this.groupBox1.Controls.Add(this.BTN_ODEMEDURUM);
             this.groupBox1.Controls.Add(this.Listele_BTN);
             this.groupBox1.Controls.Add(this.TC_TBX);
@@ -237,30 +235,17 @@
             this.groupBox1.Controls.Add(this.SehirListele_BTN);
             this.groupBox1.Location = new System.Drawing.Point(22, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(884, 317);
+            this.groupBox1.Size = new System.Drawing.Size(884, 323);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LİSTELEME İŞLEMLERİ";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // BTN_AylikYillikZedGraph
-            // 
-            this.BTN_AylikYillikZedGraph.BackColor = System.Drawing.Color.White;
-            this.BTN_AylikYillikZedGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BTN_AylikYillikZedGraph.Location = new System.Drawing.Point(11, 263);
-            this.BTN_AylikYillikZedGraph.Name = "BTN_AylikYillikZedGraph";
-            this.BTN_AylikYillikZedGraph.Size = new System.Drawing.Size(347, 23);
-            this.BTN_AylikYillikZedGraph.TabIndex = 18;
-            this.BTN_AylikYillikZedGraph.Text = "9 - Aidat Miktarı Aylık ZedGraph\r\n\r\n\r\n";
-            this.BTN_AylikYillikZedGraph.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BTN_AylikYillikZedGraph.UseVisualStyleBackColor = false;
-            this.BTN_AylikYillikZedGraph.Click += new System.EventHandler(this.BTN_AylikYillikZedGraph_Click);
-            // 
             // BTN_ODEMEDURUM
             // 
             this.BTN_ODEMEDURUM.BackColor = System.Drawing.Color.White;
             this.BTN_ODEMEDURUM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BTN_ODEMEDURUM.Location = new System.Drawing.Point(11, 233);
+            this.BTN_ODEMEDURUM.Location = new System.Drawing.Point(11, 255);
             this.BTN_ODEMEDURUM.Name = "BTN_ODEMEDURUM";
             this.BTN_ODEMEDURUM.Size = new System.Drawing.Size(347, 23);
             this.BTN_ODEMEDURUM.TabIndex = 17;
@@ -273,9 +258,9 @@
             // 
             this.Listele_BTN.BackColor = System.Drawing.Color.White;
             this.Listele_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Listele_BTN.Location = new System.Drawing.Point(205, 77);
+            this.Listele_BTN.Location = new System.Drawing.Point(205, 91);
             this.Listele_BTN.Name = "Listele_BTN";
-            this.Listele_BTN.Size = new System.Drawing.Size(153, 19);
+            this.Listele_BTN.Size = new System.Drawing.Size(153, 35);
             this.Listele_BTN.TabIndex = 16;
             this.Listele_BTN.Text = "3- TC\'ye Göre Kullanıcı Bul\r\n\r\n\r\n";
             this.Listele_BTN.UseVisualStyleBackColor = false;
@@ -283,7 +268,7 @@
             // 
             // TC_TBX
             // 
-            this.TC_TBX.Location = new System.Drawing.Point(11, 77);
+            this.TC_TBX.Location = new System.Drawing.Point(11, 99);
             this.TC_TBX.Name = "TC_TBX";
             this.TC_TBX.Size = new System.Drawing.Size(174, 20);
             this.TC_TBX.TabIndex = 15;
@@ -292,11 +277,11 @@
             // 
             this.ZG_Sehirler_BTN.BackColor = System.Drawing.Color.White;
             this.ZG_Sehirler_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ZG_Sehirler_BTN.Location = new System.Drawing.Point(11, 203);
+            this.ZG_Sehirler_BTN.Location = new System.Drawing.Point(11, 221);
             this.ZG_Sehirler_BTN.Name = "ZG_Sehirler_BTN";
-            this.ZG_Sehirler_BTN.Size = new System.Drawing.Size(347, 24);
+            this.ZG_Sehirler_BTN.Size = new System.Drawing.Size(347, 28);
             this.ZG_Sehirler_BTN.TabIndex = 14;
-            this.ZG_Sehirler_BTN.Text = "7- Üyelerin Şehirlere Göre Dağılımı ZedGraph\r\n";
+            this.ZG_Sehirler_BTN.Text = "7- Üyelerin Şehirlere Göre Zedgraph Grafiği\r\n\r\n";
             this.ZG_Sehirler_BTN.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ZG_Sehirler_BTN.UseVisualStyleBackColor = false;
             this.ZG_Sehirler_BTN.Click += new System.EventHandler(this.ZG_Sehirler_BTN_Click);
@@ -305,9 +290,9 @@
             // 
             this.BorcDurumu_BTN.BackColor = System.Drawing.Color.White;
             this.BorcDurumu_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BorcDurumu_BTN.Location = new System.Drawing.Point(11, 175);
+            this.BorcDurumu_BTN.Location = new System.Drawing.Point(11, 192);
             this.BorcDurumu_BTN.Name = "BorcDurumu_BTN";
-            this.BorcDurumu_BTN.Size = new System.Drawing.Size(347, 22);
+            this.BorcDurumu_BTN.Size = new System.Drawing.Size(347, 23);
             this.BorcDurumu_BTN.TabIndex = 13;
             this.BorcDurumu_BTN.Text = "6- Borç Durumuna Göre Listele\r\n";
             this.BorcDurumu_BTN.UseVisualStyleBackColor = false;
@@ -320,7 +305,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(1131, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(938, 25);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -419,7 +404,7 @@
             this.groupBox2.Controls.Add(this.UyeKayitBTN);
             this.groupBox2.Controls.Add(this.MailGonderBTN);
             this.groupBox2.Controls.Add(this.BilgiYazdirBTN);
-            this.groupBox2.Location = new System.Drawing.Point(22, 397);
+            this.groupBox2.Location = new System.Drawing.Point(22, 423);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(884, 54);
             this.groupBox2.TabIndex = 18;
@@ -429,25 +414,25 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // BTN_YilZedGraph
+            // BTN_AylikYillikZedgraph
             // 
-            this.BTN_YilZedGraph.BackColor = System.Drawing.Color.White;
-            this.BTN_YilZedGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BTN_YilZedGraph.Location = new System.Drawing.Point(11, 294);
-            this.BTN_YilZedGraph.Name = "BTN_YilZedGraph";
-            this.BTN_YilZedGraph.Size = new System.Drawing.Size(347, 23);
-            this.BTN_YilZedGraph.TabIndex = 19;
-            this.BTN_YilZedGraph.Text = "10 - Aidat Miktarı Yıllık ZedGraph\r\n\r\n\r\n";
-            this.BTN_YilZedGraph.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BTN_YilZedGraph.UseVisualStyleBackColor = false;
-            this.BTN_YilZedGraph.Click += new System.EventHandler(this.BTN_YilZedGraph_Click);
+            this.BTN_AylikYillikZedgraph.BackColor = System.Drawing.Color.White;
+            this.BTN_AylikYillikZedgraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTN_AylikYillikZedgraph.Location = new System.Drawing.Point(11, 284);
+            this.BTN_AylikYillikZedgraph.Name = "BTN_AylikYillikZedgraph";
+            this.BTN_AylikYillikZedgraph.Size = new System.Drawing.Size(347, 23);
+            this.BTN_AylikYillikZedgraph.TabIndex = 18;
+            this.BTN_AylikYillikZedgraph.Text = "9 - Aidat Gelirinin Aylık ve Yıllık Bazda ZedGraph \r\n\r\n";
+            this.BTN_AylikYillikZedgraph.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BTN_AylikYillikZedgraph.UseVisualStyleBackColor = false;
+            this.BTN_AylikYillikZedgraph.Click += new System.EventHandler(this.BTN_AylikYillikZedgraph_Click);
             // 
             // UyeBilgileriniListelemeİslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1131, 489);
+            this.ClientSize = new System.Drawing.Size(938, 489);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
@@ -490,7 +475,6 @@
         private System.Windows.Forms.Button Listele_BTN;
         private System.Windows.Forms.TextBox TC_TBX;
         private System.Windows.Forms.Button BTN_ODEMEDURUM;
-        private System.Windows.Forms.Button BTN_AylikYillikZedGraph;
-        private System.Windows.Forms.Button BTN_YilZedGraph;
+        private System.Windows.Forms.Button BTN_AylikYillikZedgraph;
     }
 }

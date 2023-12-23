@@ -141,10 +141,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KullanıcıArabirimi\MailIslemleriEkrani.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\MailIslemleriEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KullanıcıArabirimi\MailIslemleriEkrani.Designer.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\MailIslemleriEkrani.Designer.cs">
       <DependentUpon>MailIslemleriEkrani.cs</DependentUpon>
     </Compile>
     <Compile Include="KullanıcıArabirimi\Personel\TarihlerArasiOdemeDurumBilgisi.cs">
@@ -152,6 +152,12 @@
     </Compile>
     <Compile Include="KullanıcıArabirimi\Personel\TarihlerArasiOdemeDurumBilgisi.Designer.cs">
       <DependentUpon>TarihlerArasiOdemeDurumBilgisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Personel\ZedGraph_YillikOdeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Personel\ZedGraph_YillikOdeme.Designer.cs">
+      <DependentUpon>ZedGraph_YillikOdeme.cs</DependentUpon>
     </Compile>
     <Compile Include="KullanıcıArabirimi\Uye\OdemeIslemleriEkrani.cs">
       <SubType>Form</SubType>
@@ -183,10 +189,16 @@
     <Compile Include="KullanıcıArabirimi\Uye\UyeIslemlerEkrani.Designer.cs">
       <DependentUpon>UyeIslemlerEkrani.cs</DependentUpon>
     </Compile>
-    <Compile Include="KullanıcıArabirimi\ZedGraph_Sehirler.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\ZedGraph_AylikYillikOdeme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KullanıcıArabirimi\ZedGraph_Sehirler.Designer.cs">
+    <Compile Include="KullanıcıArabirimi\Personel\ZedGraph_AylikYillikOdeme.Designer.cs">
+      <DependentUpon>ZedGraph_AylikYillikOdeme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Personel\ZedGraph_Sehirler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullanıcıArabirimi\Personel\ZedGraph_Sehirler.Designer.cs">
       <DependentUpon>ZedGraph_Sehirler.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -224,7 +236,7 @@
     <EmbeddedResource Include="KullanıcıArabirimi\Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KullanıcıArabirimi\MailIslemleriEkrani.resx">
+    <EmbeddedResource Include="KullanıcıArabirimi\Personel\MailIslemleriEkrani.resx">
       <DependentUpon>MailIslemleriEkrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KullanıcıArabirimi\Personel\TarihlerArasiOdemeDurumBilgisi.resx">
@@ -235,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KullanıcıArabirimi\Personel\PersonelLogin.resx">
       <DependentUpon>PersonelLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullanıcıArabirimi\Personel\ZedGraph_YillikOdeme.resx">
+      <DependentUpon>ZedGraph_YillikOdeme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KullanıcıArabirimi\Uye\OdemeIslemleriEkrani.resx">
       <DependentUpon>OdemeIslemleriEkrani.cs</DependentUpon>
@@ -251,7 +266,10 @@
     <EmbeddedResource Include="KullanıcıArabirimi\Uye\UyeIslemlerEkrani.resx">
       <DependentUpon>UyeIslemlerEkrani.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KullanıcıArabirimi\ZedGraph_Sehirler.resx">
+    <EmbeddedResource Include="KullanıcıArabirimi\Personel\ZedGraph_AylikYillikOdeme.resx">
+      <DependentUpon>ZedGraph_AylikYillikOdeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullanıcıArabirimi\Personel\ZedGraph_Sehirler.resx">
       <DependentUpon>ZedGraph_Sehirler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

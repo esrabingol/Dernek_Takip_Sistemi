@@ -54,6 +54,7 @@
             this.chbox_tekrarParola.TabIndex = 19;
             this.chbox_tekrarParola.Text = "şifre göster";
             this.chbox_tekrarParola.UseVisualStyleBackColor = true;
+            this.chbox_tekrarParola.Click += new System.EventHandler(this.chbox_tekrarParola_CheckedChanged);
             // 
             // chbox_yeniParola
             // 
@@ -65,6 +66,7 @@
             this.chbox_yeniParola.TabIndex = 18;
             this.chbox_yeniParola.Text = "şifre göster";
             this.chbox_yeniParola.UseVisualStyleBackColor = true;
+            this.chbox_yeniParola.Click += new System.EventHandler(this.chbox_yeniParola_CheckedChanged);
             // 
             // chbox_mevcutParola
             // 
@@ -76,6 +78,7 @@
             this.chbox_mevcutParola.TabIndex = 17;
             this.chbox_mevcutParola.Text = "şifre göster";
             this.chbox_mevcutParola.UseVisualStyleBackColor = true;
+            this.chbox_mevcutParola.Click += new System.EventHandler(this.chbox_mevcutParola_CheckedChanged);
             // 
             // label3
             // 

@@ -29,7 +29,9 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
         }
         private void btn_guncelle_Click(object sender, EventArgs e)
         {
-            try
+            if(cbox_aktiflik.SelectedItem != null || string.IsNullOrEmpty(txt_sehir.Text)  || string.IsNullOrEmpty(txt_mail.Text) || string.IsNullOrEmpty(txt_telefonNo.Text))
+            {
+     try
             {
                 string updateQuery = $"UPDATE UyeKayitTablosu SET UyeninDurumBilgisi = @UyeninDurumBilgisi,UyeSehir = @UyeSehir,UyeMailAdresi = @UyeMailAdresi,UyeTelefonNumarasi = @UyeTelefonNumarasi WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
                 using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection.Connect()))
@@ -47,6 +49,12 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             {
                 MessageBox.Show("Güncelleme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Güncellemek İstediğiniz Alanı Seçiniz...");
+            }
+       
         }
 
         private void UyeIslemlerEkrani_Load(object sender, EventArgs e)
@@ -119,6 +127,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
 
         private void btn_odemeYap_Click(object sender, EventArgs e)
         {
+            
             OdemeIslemleriEkrani odemeIslemleriEkrani = new OdemeIslemleriEkrani(tcKimlikNumarasi);
             odemeIslemleriEkrani.Show();
             

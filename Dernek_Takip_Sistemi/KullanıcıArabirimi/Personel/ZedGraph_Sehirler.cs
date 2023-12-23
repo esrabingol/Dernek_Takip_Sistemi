@@ -31,22 +31,37 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
         {
             connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
             DataTable UserDT = new DataTable();
-
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT UyeAdi, UyeSehir FROM UyeKayitTablosu", connect.Connect()))
             {
                 dataAdapter.Fill(UserDT);
             }
-
             if (UserDT != null && UserDT.Rows.Count > 0)
             {
+                Dictionary<string, int> sehirSayisi = new Dictionary<string, int>();
+
+                foreach (DataRow row in UserDT.Rows)
+                {
+                    string sehir = row["UyeSehir"].ToString();
+                    if (!sehirSayisi.ContainsKey(sehir))
+                    {
+                        sehirSayisi.Add(sehir, 1);
+                    }
+                    else
+                    {
+                        sehirSayisi[sehir]++;
+                    }
+                }
+
                 PointPairList pointPairList = new PointPairList();
 
-                for (int i = 0; i < UserDT.Rows.Count; i++)
+                int x = 1; // Sütunlar arasındaki boşluğu sağlamak için 1'den başlatıyoruz
+                foreach (var kvp in sehirSayisi)
                 {
-                    string x = UserDT.Rows[i]["UyeAdi"].ToString();
-                    double y = i + 1; // Her şehir için artan bir sayı değeri
+                    string sehir = kvp.Key;
+                    int kullaniciSayisi = kvp.Value;
 
-                    pointPairList.Add(i, y, x);
+                    pointPairList.Add(x, kullaniciSayisi, sehir);
+                    x += 2; // Her sütun sonrası 1 boşluk bırakmak için
                 }
 
                 CreateGraphics(zedGraphControl1, pointPairList);
@@ -55,36 +70,30 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
             {
                 MessageBox.Show("Veri bulunamadı.");
             }
-
         }
 
         private void CreateGraphics(ZedGraphControl zedGraphControl1, PointPairList pointPairs)
         {
-      
             GraphPane graphPane = zedGraphControl1.GraphPane;
 
-            // Grafik ayarları
             graphPane.Title.Text = "Üyelerin Şehirlere Göre Dağılımı";
-            graphPane.XAxis.Title.Text = "Üye"; // Üye adları X ekseni
-            graphPane.YAxis.Title.Text = "Şehir"; // Şehirler Y ekseni
+            graphPane.XAxis.Title.Text = "Şehir";
+            graphPane.YAxis.Title.Text = "Üye Sayısı";
 
-            // Nokta grafiği oluşturma ve noktaların etiketlenmesi
-            LineItem myCurve = graphPane.AddCurve("Veri", pointPairs, System.Drawing.Color.Blue, SymbolType.Circle);
-            myCurve.Line.IsVisible = false; // Çizgiyi gizleyerek sadece noktaları gösterme
-            myCurve.Symbol.Fill = new Fill(Color.Blue); // Noktaların rengini belirleme
+            BarItem bar = graphPane.AddBar("Üye Sayısı", pointPairs, Color.Green);
+            bar.Bar.Fill = new Fill(Color.Blue);
 
-            // Noktaların etiketlerini ekleme
+            // Her bir sütunun ortasına şehir adını gösterme
             for (int i = 0; i < pointPairs.Count; i++)
             {
-                TextObj text = new TextObj(pointPairs[i].Tag.ToString(), pointPairs[i].X, pointPairs[i].Y, CoordType.AxisXYScale, AlignH.Left, AlignV.Center);
-                text.FontSpec.FontColor = Color.Black; // Etiket rengini belirleme
-                text.FontSpec.Size = 8; // Etiket boyutunu ayarlama
+                TextObj text = new TextObj(pointPairs[i].Tag.ToString(), pointPairs[i].X, pointPairs[i].Y, CoordType.AxisXYScale, AlignH.Center, AlignV.Bottom);
+                text.FontSpec.FontColor = Color.Black;
+                text.FontSpec.Size = 8;
                 graphPane.GraphObjList.Add(text);
             }
 
-            // Grafik görünümü ayarları
-            graphPane.Chart.Fill = new Fill(System.Drawing.Color.White, System.Drawing.Color.LightGray, 45.0f);
-            zedGraphControl1.AxisChange();
+            graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            zedGraphControl1.AxisChange(); 
         }
 
         private void geridon_TSB_Click(object sender, EventArgs e)
