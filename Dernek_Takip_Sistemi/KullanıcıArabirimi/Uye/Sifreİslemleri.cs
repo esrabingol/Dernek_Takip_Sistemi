@@ -48,7 +48,22 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                 txt_sifreTekrar.PasswordChar = '*';
         }
 
-        private void btn_kaydet_Click(object sender, EventArgs e)
+        private void GeriDon_BTN_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani();
+            uyeIslemlerEkrani.Show();
+           
+        }
+
+        private void CKS_BTN_Click(object sender, EventArgs e)
+        {
+            Giris giris = new Giris();
+            giris.Show();
+            this.Close();
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             string veritabaniSifre;
 
@@ -83,22 +98,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             {
                 MessageBox.Show("Mevcut şifre hatalı. Lütfen  şifreyi tekrar giriniz");
             }
-
-        }
-
-        private void GeriDon_BTN_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani();
-            uyeIslemlerEkrani.Show();
-           
-        }
-
-        private void CKS_BTN_Click(object sender, EventArgs e)
-        {
-            Giris giris = new Giris();
-            giris.Show();
-            this.Close();
         }
     }
 }

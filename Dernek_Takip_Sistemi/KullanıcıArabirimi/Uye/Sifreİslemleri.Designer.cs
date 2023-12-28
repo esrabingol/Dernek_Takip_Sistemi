@@ -34,23 +34,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_kaydet = new System.Windows.Forms.Button();
             this.txt_sifreTekrar = new System.Windows.Forms.TextBox();
             this.txt_yeniSifre = new System.Windows.Forms.TextBox();
             this.txt_eskiSifre = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.GeriDon_BTN = new System.Windows.Forms.ToolStripButton();
             this.CKS_BTN = new System.Windows.Forms.ToolStripButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chbox_tekrarParola
             // 
             this.chbox_tekrarParola.AutoSize = true;
+            this.chbox_tekrarParola.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.chbox_tekrarParola.Location = new System.Drawing.Point(207, 162);
             this.chbox_tekrarParola.Margin = new System.Windows.Forms.Padding(2);
             this.chbox_tekrarParola.Name = "chbox_tekrarParola";
-            this.chbox_tekrarParola.Size = new System.Drawing.Size(77, 17);
+            this.chbox_tekrarParola.Size = new System.Drawing.Size(89, 17);
             this.chbox_tekrarParola.TabIndex = 19;
             this.chbox_tekrarParola.Text = "şifre göster";
             this.chbox_tekrarParola.UseVisualStyleBackColor = true;
@@ -59,10 +60,11 @@
             // chbox_yeniParola
             // 
             this.chbox_yeniParola.AutoSize = true;
+            this.chbox_yeniParola.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.chbox_yeniParola.Location = new System.Drawing.Point(207, 109);
             this.chbox_yeniParola.Margin = new System.Windows.Forms.Padding(2);
             this.chbox_yeniParola.Name = "chbox_yeniParola";
-            this.chbox_yeniParola.Size = new System.Drawing.Size(77, 17);
+            this.chbox_yeniParola.Size = new System.Drawing.Size(89, 17);
             this.chbox_yeniParola.TabIndex = 18;
             this.chbox_yeniParola.Text = "şifre göster";
             this.chbox_yeniParola.UseVisualStyleBackColor = true;
@@ -71,10 +73,11 @@
             // chbox_mevcutParola
             // 
             this.chbox_mevcutParola.AutoSize = true;
-            this.chbox_mevcutParola.Location = new System.Drawing.Point(207, 41);
+            this.chbox_mevcutParola.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chbox_mevcutParola.Location = new System.Drawing.Point(207, 54);
             this.chbox_mevcutParola.Margin = new System.Windows.Forms.Padding(2);
             this.chbox_mevcutParola.Name = "chbox_mevcutParola";
-            this.chbox_mevcutParola.Size = new System.Drawing.Size(77, 17);
+            this.chbox_mevcutParola.Size = new System.Drawing.Size(89, 17);
             this.chbox_mevcutParola.TabIndex = 17;
             this.chbox_mevcutParola.Text = "şifre göster";
             this.chbox_mevcutParola.UseVisualStyleBackColor = true;
@@ -83,48 +86,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(20, 145);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.Size = new System.Drawing.Size(125, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Yeni Parola (Tekrar):";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(20, 92);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 15;
             this.label2.Text = "Yeni Parola:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 24);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(20, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 14;
             this.label1.Text = "Mevcut Parola:";
             // 
-            // btn_kaydet
-            // 
-            this.btn_kaydet.BackColor = System.Drawing.Color.Lime;
-            this.btn_kaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_kaydet.Location = new System.Drawing.Point(81, 201);
-            this.btn_kaydet.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_kaydet.Name = "btn_kaydet";
-            this.btn_kaydet.Size = new System.Drawing.Size(115, 28);
-            this.btn_kaydet.TabIndex = 13;
-            this.btn_kaydet.Text = "Kaydet";
-            this.btn_kaydet.UseVisualStyleBackColor = false;
-            this.btn_kaydet.Click += new System.EventHandler(this.btn_kaydet_Click);
-            // 
             // txt_sifreTekrar
             // 
+            this.txt_sifreTekrar.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txt_sifreTekrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_sifreTekrar.Location = new System.Drawing.Point(23, 160);
             this.txt_sifreTekrar.Margin = new System.Windows.Forms.Padding(2);
             this.txt_sifreTekrar.Name = "txt_sifreTekrar";
@@ -134,6 +129,8 @@
             // 
             // txt_yeniSifre
             // 
+            this.txt_yeniSifre.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txt_yeniSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_yeniSifre.Location = new System.Drawing.Point(23, 108);
             this.txt_yeniSifre.Margin = new System.Windows.Forms.Padding(2);
             this.txt_yeniSifre.Name = "txt_yeniSifre";
@@ -143,7 +140,9 @@
             // 
             // txt_eskiSifre
             // 
-            this.txt_eskiSifre.Location = new System.Drawing.Point(23, 39);
+            this.txt_eskiSifre.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txt_eskiSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_eskiSifre.Location = new System.Drawing.Point(23, 54);
             this.txt_eskiSifre.Margin = new System.Windows.Forms.Padding(2);
             this.txt_eskiSifre.Name = "txt_eskiSifre";
             this.txt_eskiSifre.PasswordChar = '*';
@@ -152,12 +151,13 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.GeriDon_BTN,
             this.CKS_BTN});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(371, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(326, 25);
             this.toolStrip1.TabIndex = 20;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -182,11 +182,33 @@
             this.CKS_BTN.Text = "Çıkış Yap";
             this.CKS_BTN.Click += new System.EventHandler(this.CKS_BTN_Click);
             // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Lime;
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.Black;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(179, 208);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.ShadowDecoration.BorderRadius = 7;
+            this.guna2GradientButton1.ShadowDecoration.Color = System.Drawing.Color.IndianRed;
+            this.guna2GradientButton1.Size = new System.Drawing.Size(117, 25);
+            this.guna2GradientButton1.TabIndex = 21;
+            this.guna2GradientButton1.Text = "KAYDET";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            // 
             // Sifreİslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 255);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(326, 255);
+            this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.chbox_tekrarParola);
             this.Controls.Add(this.chbox_yeniParola);
@@ -194,7 +216,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_kaydet);
             this.Controls.Add(this.txt_sifreTekrar);
             this.Controls.Add(this.txt_yeniSifre);
             this.Controls.Add(this.txt_eskiSifre);
@@ -215,12 +236,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_kaydet;
         private System.Windows.Forms.TextBox txt_sifreTekrar;
         private System.Windows.Forms.TextBox txt_yeniSifre;
         private System.Windows.Forms.TextBox txt_eskiSifre;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton GeriDon_BTN;
         private System.Windows.Forms.ToolStripButton CKS_BTN;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
     }
 }

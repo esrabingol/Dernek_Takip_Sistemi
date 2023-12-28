@@ -34,9 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView_listeleme = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.BTN_Listele = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.TSB_Return = new System.Windows.Forms.ToolStripButton();
+            this.Guno_btn = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listeleme)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,23 +58,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(27, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.Size = new System.Drawing.Size(119, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Başlangıç Tarihi :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(273, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(84, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Bitiş Tarihi :";
             // 
             // dataGridView_listeleme
             // 
+            this.dataGridView_listeleme.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             this.dataGridView_listeleme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_listeleme.Location = new System.Drawing.Point(30, 151);
             this.dataGridView_listeleme.Name = "dataGridView_listeleme";
@@ -84,24 +87,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(126, 35);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(99, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(236, 20);
+            this.label3.Size = new System.Drawing.Size(266, 22);
             this.label3.TabIndex = 5;
             this.label3.Text = "Üye Ödemeleri Durum Bilgisi";
-            // 
-            // BTN_Listele
-            // 
-            this.BTN_Listele.BackColor = System.Drawing.Color.Lime;
-            this.BTN_Listele.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BTN_Listele.Location = new System.Drawing.Point(144, 122);
-            this.BTN_Listele.Name = "BTN_Listele";
-            this.BTN_Listele.Size = new System.Drawing.Size(190, 23);
-            this.BTN_Listele.TabIndex = 6;
-            this.BTN_Listele.Text = "LİSTELE";
-            this.BTN_Listele.UseVisualStyleBackColor = false;
-            this.BTN_Listele.Click += new System.EventHandler(this.BTN_Listele_Click);
             // 
             // toolStrip1
             // 
@@ -123,13 +114,33 @@
             this.TSB_Return.Text = "toolStripButton2";
             this.TSB_Return.Click += new System.EventHandler(this.TSB_Return_Click);
             // 
+            // Guno_btn
+            // 
+            this.Guno_btn.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Guno_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Guno_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Guno_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Guno_btn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Guno_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Guno_btn.FillColor = System.Drawing.Color.White;
+            this.Guno_btn.FillColor2 = System.Drawing.Color.LimeGreen;
+            this.Guno_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.Guno_btn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Guno_btn.Location = new System.Drawing.Point(154, 122);
+            this.Guno_btn.Name = "Guno_btn";
+            this.Guno_btn.Size = new System.Drawing.Size(180, 23);
+            this.Guno_btn.TabIndex = 8;
+            this.Guno_btn.Text = "LİSTELE";
+            this.Guno_btn.Click += new System.EventHandler(this.Guno_btn_Click);
+            // 
             // TarihlerArasiOdemeDurumBilgisi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(492, 311);
+            this.Controls.Add(this.Guno_btn);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.BTN_Listele);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView_listeleme);
             this.Controls.Add(this.label2);
@@ -154,8 +165,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView_listeleme;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button BTN_Listele;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton TSB_Return;
+        private Guna.UI2.WinForms.Guna2GradientButton Guno_btn;
     }
 }

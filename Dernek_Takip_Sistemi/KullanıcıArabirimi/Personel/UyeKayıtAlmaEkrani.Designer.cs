@@ -48,7 +48,6 @@
             this.EPostaTB = new System.Windows.Forms.TextBox();
             this.AylikOdemeTB = new System.Windows.Forms.TextBox();
             this.SehirCB = new System.Windows.Forms.ComboBox();
-            this.KaydetBTN = new System.Windows.Forms.Button();
             this.CinsiyetCB = new System.Windows.Forms.ComboBox();
             this.UyelikDurumuCB = new System.Windows.Forms.ComboBox();
             this.DogumtarihiLB = new System.Windows.Forms.Label();
@@ -61,11 +60,13 @@
             this.lbl_sifreTekrar = new System.Windows.Forms.Label();
             this.chbox_parola = new System.Windows.Forms.CheckBox();
             this.txt_sifreTekrar = new System.Windows.Forms.TextBox();
+            this.guno_kaydet = new Guna.UI2.WinForms.Guna2GradientButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TckimliknoTB
             // 
+            this.TckimliknoTB.BackColor = System.Drawing.SystemColors.MenuBar;
             this.TckimliknoTB.Location = new System.Drawing.Point(194, 90);
             this.TckimliknoTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TckimliknoTB.Name = "TckimliknoTB";
@@ -87,9 +88,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(296, 48);
+            this.label2.Location = new System.Drawing.Point(296, 36);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(231, 31);
@@ -207,6 +208,7 @@
             // 
             // isimTB
             // 
+            this.isimTB.BackColor = System.Drawing.SystemColors.MenuBar;
             this.isimTB.Location = new System.Drawing.Point(194, 141);
             this.isimTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.isimTB.Name = "isimTB";
@@ -215,6 +217,7 @@
             // 
             // soyisimTB
             // 
+            this.soyisimTB.BackColor = System.Drawing.SystemColors.MenuBar;
             this.soyisimTB.Location = new System.Drawing.Point(194, 184);
             this.soyisimTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.soyisimTB.Name = "soyisimTB";
@@ -223,7 +226,7 @@
             // 
             // KanGrubuLB
             // 
-            this.KanGrubuLB.BackColor = System.Drawing.Color.White;
+            this.KanGrubuLB.BackColor = System.Drawing.Color.WhiteSmoke;
             this.KanGrubuLB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.KanGrubuLB.FormattingEnabled = true;
             this.KanGrubuLB.Items.AddRange(new object[] {
@@ -242,6 +245,7 @@
             // 
             // TelefonNumarasiTB
             // 
+            this.TelefonNumarasiTB.BackColor = System.Drawing.SystemColors.MenuBar;
             this.TelefonNumarasiTB.Location = new System.Drawing.Point(579, 235);
             this.TelefonNumarasiTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TelefonNumarasiTB.Name = "TelefonNumarasiTB";
@@ -250,6 +254,7 @@
             // 
             // EPostaTB
             // 
+            this.EPostaTB.BackColor = System.Drawing.SystemColors.MenuBar;
             this.EPostaTB.Location = new System.Drawing.Point(579, 135);
             this.EPostaTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EPostaTB.Name = "EPostaTB";
@@ -258,6 +263,7 @@
             // 
             // AylikOdemeTB
             // 
+            this.AylikOdemeTB.BackColor = System.Drawing.SystemColors.MenuBar;
             this.AylikOdemeTB.Location = new System.Drawing.Point(579, 88);
             this.AylikOdemeTB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AylikOdemeTB.Name = "AylikOdemeTB";
@@ -356,19 +362,9 @@
             this.SehirCB.Size = new System.Drawing.Size(156, 21);
             this.SehirCB.TabIndex = 24;
             // 
-            // KaydetBTN
-            // 
-            this.KaydetBTN.BackColor = System.Drawing.Color.Lime;
-            this.KaydetBTN.Location = new System.Drawing.Point(594, 364);
-            this.KaydetBTN.Name = "KaydetBTN";
-            this.KaydetBTN.Size = new System.Drawing.Size(156, 27);
-            this.KaydetBTN.TabIndex = 25;
-            this.KaydetBTN.Text = "KAYDET ";
-            this.KaydetBTN.UseVisualStyleBackColor = false;
-            this.KaydetBTN.Click += new System.EventHandler(this.KaydetBTN_Click_1);
-            // 
             // CinsiyetCB
             // 
+            this.CinsiyetCB.BackColor = System.Drawing.SystemColors.MenuBar;
             this.CinsiyetCB.FormattingEnabled = true;
             this.CinsiyetCB.Items.AddRange(new object[] {
             "Kadın ",
@@ -380,6 +376,7 @@
             // 
             // UyelikDurumuCB
             // 
+            this.UyelikDurumuCB.BackColor = System.Drawing.SystemColors.MenuBar;
             this.UyelikDurumuCB.FormattingEnabled = true;
             this.UyelikDurumuCB.Items.AddRange(new object[] {
             "Aktif ",
@@ -435,6 +432,7 @@
             // 
             // txt_Sifre
             // 
+            this.txt_Sifre.BackColor = System.Drawing.SystemColors.MenuBar;
             this.txt_Sifre.Location = new System.Drawing.Point(579, 270);
             this.txt_Sifre.Name = "txt_Sifre";
             this.txt_Sifre.Size = new System.Drawing.Size(156, 20);
@@ -452,8 +450,9 @@
             // 
             // date_dogumTarihi
             // 
+            this.date_dogumTarihi.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
             this.date_dogumTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_dogumTarihi.Location = new System.Drawing.Point(194, 232);
+            this.date_dogumTarihi.Location = new System.Drawing.Point(194, 239);
             this.date_dogumTarihi.Name = "date_dogumTarihi";
             this.date_dogumTarihi.Size = new System.Drawing.Size(156, 20);
             this.date_dogumTarihi.TabIndex = 38;
@@ -475,14 +474,15 @@
             this.chbox_parola.Location = new System.Drawing.Point(617, 342);
             this.chbox_parola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbox_parola.Name = "chbox_parola";
-            this.chbox_parola.Size = new System.Drawing.Size(89, 17);
+            this.chbox_parola.Size = new System.Drawing.Size(93, 17);
             this.chbox_parola.TabIndex = 43;
-            this.chbox_parola.Text = "şifre göster";
+            this.chbox_parola.Text = "Şifre Göster";
             this.chbox_parola.UseVisualStyleBackColor = true;
             this.chbox_parola.CheckedChanged += new System.EventHandler(this.chbox_parola_CheckedChanged);
             // 
             // txt_sifreTekrar
             // 
+            this.txt_sifreTekrar.BackColor = System.Drawing.SystemColors.MenuBar;
             this.txt_sifreTekrar.Location = new System.Drawing.Point(579, 313);
             this.txt_sifreTekrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_sifreTekrar.Name = "txt_sifreTekrar";
@@ -490,12 +490,31 @@
             this.txt_sifreTekrar.Size = new System.Drawing.Size(156, 20);
             this.txt_sifreTekrar.TabIndex = 42;
             // 
+            // guno_kaydet
+            // 
+            this.guno_kaydet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guno_kaydet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guno_kaydet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_kaydet.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_kaydet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guno_kaydet.FillColor = System.Drawing.Color.White;
+            this.guno_kaydet.FillColor2 = System.Drawing.Color.Lime;
+            this.guno_kaydet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.guno_kaydet.ForeColor = System.Drawing.Color.Black;
+            this.guno_kaydet.Location = new System.Drawing.Point(601, 364);
+            this.guno_kaydet.Name = "guno_kaydet";
+            this.guno_kaydet.Size = new System.Drawing.Size(134, 32);
+            this.guno_kaydet.TabIndex = 45;
+            this.guno_kaydet.Text = "KAYDET";
+            this.guno_kaydet.Click += new System.EventHandler(this.guno_kaydet_Click);
+            // 
             // UyeKayıtAlmaEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(808, 403);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(808, 411);
+            this.Controls.Add(this.guno_kaydet);
             this.Controls.Add(this.lbl_sifreTekrar);
             this.Controls.Add(this.chbox_parola);
             this.Controls.Add(this.txt_sifreTekrar);
@@ -506,7 +525,6 @@
             this.Controls.Add(this.DogumtarihiLB);
             this.Controls.Add(this.UyelikDurumuCB);
             this.Controls.Add(this.CinsiyetCB);
-            this.Controls.Add(this.KaydetBTN);
             this.Controls.Add(this.SehirCB);
             this.Controls.Add(this.AylikOdemeTB);
             this.Controls.Add(this.EPostaTB);
@@ -561,7 +579,6 @@
         private System.Windows.Forms.TextBox EPostaTB;
         private System.Windows.Forms.TextBox AylikOdemeTB;
         private System.Windows.Forms.ComboBox SehirCB;
-        private System.Windows.Forms.Button KaydetBTN;
         private System.Windows.Forms.ComboBox CinsiyetCB;
         private System.Windows.Forms.ComboBox UyelikDurumuCB;
         private System.Windows.Forms.Label DogumtarihiLB;
@@ -574,5 +591,6 @@
         private System.Windows.Forms.Label lbl_sifreTekrar;
         private System.Windows.Forms.CheckBox chbox_parola;
         private System.Windows.Forms.TextBox txt_sifreTekrar;
+        private Guna.UI2.WinForms.Guna2GradientButton guno_kaydet;
     }
 }

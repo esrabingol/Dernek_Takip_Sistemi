@@ -137,6 +137,21 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                 TCgirTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
             }
         }
+
+        private void guno_goruntule_Click(object sender, EventArgs e)
+        {
+            string Tckimlik = TCgirTB.Text;
+            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            DataTable UserDT = new DataTable();
+            if (String.IsNullOrWhiteSpace(TCgirTB.Text))
+                MessageBox.Show("TC Kimlik Numarası Alanı Boş Olamaz!");
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu WHERE TCKimlikNumarasi ='{Tckimlik}'", connect.Connect()))
+            {
+                dataAdapter.Fill(UserDT);
+
+            }
+            UyeGoruntuleDGW.DataSource = UserDT;
+        }
     }
 }
 

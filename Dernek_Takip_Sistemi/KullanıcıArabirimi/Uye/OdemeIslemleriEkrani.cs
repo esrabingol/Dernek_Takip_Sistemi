@@ -34,48 +34,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             this.uye_islemleri = uye_Islemleri;
         }
 
-        private void btn_tamamla_Click(object sender, EventArgs e)
-        {
-            if (OdenecekTutar_TB.Text != null)
-            {
-                try
-                {
-                    // OdemeTablosu'na yeni ödeme ekle
-                    string odemeQuery = "INSERT INTO OdemeTablosu (TCKimlikNumarasi, OdemeMiktari, OdemeTarihi) VALUES (@TCKimlikNumarasi, @OdemeMiktari, @OdemeTarihi)";
-                    using (SqlCommand insertCommand = new SqlCommand(odemeQuery, connection.Connect()))
-                    {
-                        insertCommand.Parameters.AddWithValue("@TCKimlikNumarasi", tcKimlikNumarasi);
-                        insertCommand.Parameters.AddWithValue("@OdemeMiktari", OdenecekTutar_TB.Text);
-                        insertCommand.Parameters.AddWithValue("@OdemeTarihi", DateTime.Now);
-                        insertCommand.ExecuteNonQuery();
-
-                        MessageBox.Show("Ödemeniz başarıyla gerçekleştirildi.");
-
-                    }
-
-                    //BorcTablosu'nu güncelle
-                    string updateQuery = $"UPDATE BorcTablosu SET BorcMiktari = BorcMiktari - @OdenenMiktar WHERE TCKimlikNumarasi = @TCKimlikNumarasi";
-                    using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection.Connect()))
-                    {
-                        updateCommand.Parameters.AddWithValue("@TCKimlikNumarasi", tcKimlikNumarasi);
-                        updateCommand.Parameters.AddWithValue("@OdenenMiktar", Convert.ToDecimal(OdenecekTutar_TB.Text));
-                        updateCommand.ExecuteNonQuery();
-                    }
-
-                    this.Close();
-                    UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani(tcKimlikNumarasi);
-                    uyeIslemlerEkrani.ShowDialog();
-            
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ödeme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-                MessageBox.Show("Ödenecek tutar giriniz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
 
         private void Odeme_Load(object sender, EventArgs e)
         {
@@ -157,6 +115,49 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             this.Hide();
             UyeIslemlerEkrani uyeIslemler = new UyeIslemlerEkrani();
             uyeIslemler.ShowDialog();
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            if (OdenecekTutar_TB.Text != null)
+            {
+                try
+                {
+                    // OdemeTablosu'na yeni ödeme ekle
+                    string odemeQuery = "INSERT INTO OdemeTablosu (TCKimlikNumarasi, OdemeMiktari, OdemeTarihi) VALUES (@TCKimlikNumarasi, @OdemeMiktari, @OdemeTarihi)";
+                    using (SqlCommand insertCommand = new SqlCommand(odemeQuery, connection.Connect()))
+                    {
+                        insertCommand.Parameters.AddWithValue("@TCKimlikNumarasi", tcKimlikNumarasi);
+                        insertCommand.Parameters.AddWithValue("@OdemeMiktari", OdenecekTutar_TB.Text);
+                        insertCommand.Parameters.AddWithValue("@OdemeTarihi", DateTime.Now);
+                        insertCommand.ExecuteNonQuery();
+
+                        MessageBox.Show("Ödemeniz başarıyla gerçekleştirildi.");
+
+                    }
+
+                    //BorcTablosu'nu güncelle
+                    string updateQuery = $"UPDATE BorcTablosu SET BorcMiktari = BorcMiktari - @OdenenMiktar WHERE TCKimlikNumarasi = @TCKimlikNumarasi";
+                    using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection.Connect()))
+                    {
+                        updateCommand.Parameters.AddWithValue("@TCKimlikNumarasi", tcKimlikNumarasi);
+                        updateCommand.Parameters.AddWithValue("@OdenenMiktar", Convert.ToDecimal(OdenecekTutar_TB.Text));
+                        updateCommand.ExecuteNonQuery();
+                    }
+
+                    this.Close();
+                    UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani(tcKimlikNumarasi);
+                    uyeIslemlerEkrani.ShowDialog();
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ödeme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+                MessageBox.Show("Ödenecek tutar giriniz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

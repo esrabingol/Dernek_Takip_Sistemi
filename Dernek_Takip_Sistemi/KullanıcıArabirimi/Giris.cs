@@ -24,9 +24,13 @@ namespace Dernek_Takip_Sistemi
 
         }
 
-        private void btn_Personel_Click(object sender, EventArgs e)
+        private void Giris_Load(object sender, EventArgs e)
         {
-         
+            connection.UpdatePaymentSystem();
+        }
+
+        private void guno_personel_Click(object sender, EventArgs e)
+        {
 
             this.Hide();
 
@@ -34,19 +38,13 @@ namespace Dernek_Takip_Sistemi
             PersonelLogin personelLogin = new PersonelLogin();
             personelLogin.ShowDialog();
 
-  
         }
 
-        private void btn_Uye_Click(object sender, EventArgs e)
+        private void guno_giris_Click(object sender, EventArgs e)
         {
             this.Hide();
             UyeGirisEkrani uyeGiris = new UyeGirisEkrani();
             uyeGiris.ShowDialog();
-        }
-
-        private void Giris_Load(object sender, EventArgs e)
-        {
-            connection.UpdatePaymentSystem();
         }
     }
 }

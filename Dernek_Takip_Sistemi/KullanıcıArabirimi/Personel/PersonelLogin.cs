@@ -41,7 +41,34 @@ namespace Dernek_Takip_Sistemi
             }
         }
 
-        private void btn_Personellgn_Click(object sender, EventArgs e)
+
+
+        private void TSB_Personel_Click(object sender, EventArgs e)
+        {
+            Giris giris = new Giris();
+            giris.Show();
+            this.Hide();
+        }
+
+        private void KullaniciAdiTB_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (PersonelAdiTB.Text == "Kullanıcı Adı")
+            {
+                PersonelAdiTB.Text = "";
+                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
+            }
+        }
+
+        private void KullaniciAdiTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(PersonelAdiTB.Text))
+            {
+                PersonelAdiTB.Text = "Kullanıcı Adı";
+                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
+            }
+        }
+
+        private void guno_GirisBTN_Click(object sender, EventArgs e)
         {
 
             if (String.IsNullOrWhiteSpace(PersonelAdiTB.Text))
@@ -55,7 +82,7 @@ namespace Dernek_Takip_Sistemi
                 return;
             }
             DataTable personelDataT = new DataTable();//veri görüntülemek için datatable oluşturulur
-                                                       //sql deki tablonun c deki karşılığı bu tabloda olacaktır.
+                                                      //sql deki tablonun c deki karşılığı bu tabloda olacaktır.
             SqlDataAdapter da = new SqlDataAdapter($"Select * from PersonelTablosu Where PersonelKullaniciAdi = '{PersonelAdiTB.Text}'", connection.Connect()); // sql connection dan connect() fonk çağrılır
 
             da.Fill(dataTable: personelDataT); //personelDataT doldurmak(fill) için
@@ -86,31 +113,6 @@ namespace Dernek_Takip_Sistemi
 
 
 
-            }
-        }
-
-        private void TSB_Personel_Click(object sender, EventArgs e)
-        {
-            Giris giris = new Giris();
-            giris.Show();
-            this.Hide();
-        }
-
-        private void KullaniciAdiTB_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (PersonelAdiTB.Text == "Kullanıcı Adı")
-            {
-                PersonelAdiTB.Text = "";
-                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
-            }
-        }
-
-        private void KullaniciAdiTB_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(PersonelAdiTB.Text))
-            {
-                PersonelAdiTB.Text = "Kullanıcı Adı";
-                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
             }
         }
     }

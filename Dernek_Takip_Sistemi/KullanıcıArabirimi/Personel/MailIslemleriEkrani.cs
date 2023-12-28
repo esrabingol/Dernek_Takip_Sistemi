@@ -53,7 +53,14 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
             }
         }
 
-        private void Mail_BTN_Click(object sender, EventArgs e)
+        private void logout_TSB_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Giris giris = new Giris();
+            giris.Show();
+        }
+
+        private void guno_Mail_BTN_Click(object sender, EventArgs e)
         {
             string gonderenMail = PersonelMail_TB.Text;
             string aliciMail = MAdressUye_TB.Text;
@@ -68,13 +75,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
             }
 
             MessageBox.Show("Mail Başarı ile  gönderildi.");
-        }
-
-        private void logout_TSB_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Giris giris = new Giris();
-            giris.Show();
         }
     }
 }

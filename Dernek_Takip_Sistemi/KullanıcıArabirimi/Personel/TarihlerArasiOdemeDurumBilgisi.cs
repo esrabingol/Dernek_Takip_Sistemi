@@ -23,8 +23,17 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
             connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
         }
 
-        private void BTN_Listele_Click(object sender, EventArgs e)
+
+        private void TSB_Return_Click(object sender, EventArgs e)
         {
+            this.Close();
+            UyeBilgileriniListelemeİslemleri uyeislemleri = new UyeBilgileriniListelemeİslemleri();
+            uyeislemleri.Show();
+        }
+
+        private void Guno_btn_Click(object sender, EventArgs e)
+        {
+
             DateTime BaslangicTarihi = dateTimePicker_baslangic.Value;
             DateTime BitisTarihi = dateTimePicker_bitis.Value;
 
@@ -43,7 +52,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
 
                     dataGridView_listeleme.DataSource = dataTable;
 
-                  
+
                 }
             }
             catch (Exception ex)
@@ -51,14 +60,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
                 MessageBox.Show("İstenilen Tarihler arası ödeme yapılmamıştır.: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-        }
-
-        private void TSB_Return_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            UyeBilgileriniListelemeİslemleri uyeislemleri = new UyeBilgileriniListelemeİslemleri();
-            uyeislemleri.Show();
         }
     }
 }

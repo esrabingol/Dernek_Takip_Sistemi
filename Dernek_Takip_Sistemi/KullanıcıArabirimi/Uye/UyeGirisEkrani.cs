@@ -73,7 +73,22 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
             }
         }
 
-        private void btn_Uyelogin_Click(object sender, EventArgs e)
+        private void UsfregorCB_CheckedChanged(object sender, EventArgs e)
+        {
+            //checkBox işaretli ise
+            if (UsfregorCB.Checked)
+            {
+                //karakteri göster.
+                SifreTB.PasswordChar = '\0';
+            }
+            //değilse karakterlerin yerine * koy.
+            else
+            {
+                SifreTB.PasswordChar = '*';
+            }
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             DataLayer.Baglanti.VeriTabaniBaglantisi connect;
             if (String.IsNullOrEmpty(UKullaniciAdiTB.Text))
@@ -96,7 +111,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 
             dataAdapter.Fill(dataTable: kullaniciDataT);
 
-            if(kullaniciDataT.Rows.Count >0)
+            if (kullaniciDataT.Rows.Count > 0)
             {
                 var sifre = kullaniciDataT.Rows[0]["UyeSifre"].ToString();
                 var kullaniciAdi = kullaniciDataT.Rows[0]["UyeMailAdresi"].ToString();
@@ -104,7 +119,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 
                 if (UKullaniciAdiTB.Text == kullaniciAdi)
                 {
-                    if(SifreTB.Text == sifre)
+                    if (SifreTB.Text == sifre)
                     {
                         MessageBox.Show("Kullanıcı Girişi Başarılı,Hoşgeldiniz.");
                         UyeIslemlerEkrani uye = new UyeIslemlerEkrani(tcKimlikNumarasi);
@@ -116,21 +131,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                         MessageBox.Show("Kullanıcı Adı veya Şifre Hatalıdır.");
                     }
                 }
-            }
-        }
-
-        private void UsfregorCB_CheckedChanged(object sender, EventArgs e)
-        {
-            //checkBox işaretli ise
-            if (UsfregorCB.Checked)
-            {
-                //karakteri göster.
-                SifreTB.PasswordChar = '\0';
-            }
-            //değilse karakterlerin yerine * koy.
-            else
-            {
-                SifreTB.PasswordChar = '*';
             }
         }
     }

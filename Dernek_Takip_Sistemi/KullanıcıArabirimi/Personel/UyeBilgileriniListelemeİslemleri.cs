@@ -194,13 +194,20 @@ namespace Dernek_Takip_Sistemi
 
         private void BilgiYazdirBTN_Click(object sender, EventArgs e)
         {
-            // Veritabanından verileri çekmiş olduğunuz DataGridView'i kullanarak yazdırma işlemini gerçekleştirin.
-            PrintDocument printDocument = new PrintDocument();
-            printDocument.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+            if(ListelemeDGW.Rows.Count>0)
+            {       // Veritabanından verileri çekmiş olduğunuz DataGridView'i kullanarak yazdırma işlemini gerçekleştirin.
+                PrintDocument printDocument = new PrintDocument();
+                printDocument.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
 
-            PrintPreviewDialog previewDialog = new PrintPreviewDialog();
-            previewDialog.Document = printDocument;
-            previewDialog.ShowDialog();
+                PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+                previewDialog.Document = printDocument;
+                previewDialog.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Yazdırmak İstediğiniz Tabloyu Listeleyiniz.");
+            }
+      
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)

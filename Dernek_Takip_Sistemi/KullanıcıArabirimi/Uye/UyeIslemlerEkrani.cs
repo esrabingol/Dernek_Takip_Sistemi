@@ -28,35 +28,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
         {
 
         }
-        private void btn_guncelle_Click(object sender, EventArgs e)
-        {
-            if(cbox_aktiflik.SelectedItem != null || string.IsNullOrEmpty(txt_sehir.Text)  || string.IsNullOrEmpty(txt_mail.Text) || string.IsNullOrEmpty(txt_telefonNo.Text))
-            {
-     try
-            {
-                string updateQuery = $"UPDATE UyeKayitTablosu SET UyeninDurumBilgisi = @UyeninDurumBilgisi,UyeSehir = @UyeSehir,UyeMailAdresi = @UyeMailAdresi,UyeTelefonNumarasi = @UyeTelefonNumarasi WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
-                using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection.Connect()))
-                {
-                    updateCommand.Parameters.AddWithValue("@UyeninDurumBilgisi", cbox_aktiflik.SelectedItem);
-                    updateCommand.Parameters.AddWithValue("@UyeSehir", txt_sehir.Text);
-                    updateCommand.Parameters.AddWithValue("@UyeMailAdresi", txt_mail.Text);
-                    updateCommand.Parameters.AddWithValue("@UyeTelefonNumarasi", txt_telefonNo.Text);
-                    updateCommand.ExecuteNonQuery();
-              
-                    MessageBox.Show("Başarıyla güncellendi!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Güncelleme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            }
-            else
-            {
-                MessageBox.Show("Lütfen Güncellemek İstediğiniz Alanı Seçiniz...");
-            }
-       
-        }
 
         private void UyeIslemlerEkrani_Load(object sender, EventArgs e)
         {
@@ -120,20 +91,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             dgv_odemeler.DataSource = OdemeDT;
         }
 
-        private void btn_sifre_Click(object sender, EventArgs e)
-        {
-            Sifreİslemleri sifre = new Sifreİslemleri(tcKimlikNumarasi);
-            sifre.Show();
-        }
-
-        private void btn_odemeYap_Click(object sender, EventArgs e)
-        {
-            
-            OdemeIslemleriEkrani odemeIslemleriEkrani = new OdemeIslemleriEkrani(tcKimlikNumarasi);
-            odemeIslemleriEkrani.Show();
-            
-        }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Giris giris = new Giris();
@@ -145,6 +102,51 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+
+            Sifreİslemleri sifre = new Sifreİslemleri(tcKimlikNumarasi);
+            sifre.Show();
+        }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+
+            if (cbox_aktiflik.SelectedItem != null || string.IsNullOrEmpty(txt_sehir.Text) || string.IsNullOrEmpty(txt_mail.Text) || string.IsNullOrEmpty(txt_telefonNo.Text))
+            {
+                try
+                {
+                    string updateQuery = $"UPDATE UyeKayitTablosu SET UyeninDurumBilgisi = @UyeninDurumBilgisi,UyeSehir = @UyeSehir,UyeMailAdresi = @UyeMailAdresi,UyeTelefonNumarasi = @UyeTelefonNumarasi WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
+                    using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection.Connect()))
+                    {
+                        updateCommand.Parameters.AddWithValue("@UyeninDurumBilgisi", cbox_aktiflik.SelectedItem);
+                        updateCommand.Parameters.AddWithValue("@UyeSehir", txt_sehir.Text);
+                        updateCommand.Parameters.AddWithValue("@UyeMailAdresi", txt_mail.Text);
+                        updateCommand.Parameters.AddWithValue("@UyeTelefonNumarasi", txt_telefonNo.Text);
+                        updateCommand.ExecuteNonQuery();
+
+                        MessageBox.Show("Başarıyla güncellendi!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Güncelleme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Güncellemek İstediğiniz Alanı Seçiniz...");
+            }
+
+        }
+
+        private void guna2GradientButton3_Click(object sender, EventArgs e)
+        {
+
+            OdemeIslemleriEkrani odemeIslemleriEkrani = new OdemeIslemleriEkrani(tcKimlikNumarasi);
+            odemeIslemleriEkrani.Show();
         }
     }
 }

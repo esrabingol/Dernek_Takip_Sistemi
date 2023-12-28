@@ -34,7 +34,86 @@ namespace Dernek_Takip_Sistemi
 
         }
 
-        private void KaydetBTN_Click_1(object sender, EventArgs e)
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        { }
+
+        private void UKayitReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UyeBilgileriniListelemeİslemleri giris = new UyeBilgileriniListelemeİslemleri();
+            giris.ShowDialog();
+
+        }
+
+        private void UyeYazdir_BTN_Click(object sender, EventArgs e)
+        {
+            // Bilgileri metin formatında bir değişkene topla
+            string Tckimlik = TckimliknoTB.Text;
+            string isim = isimTB.Text;
+            string soyisim = soyisimTB.Text;
+            string DogumTarihi = date_dogumTarihi.Text;
+            string cinsiyet = CinsiyetCB.Text;
+            string UyeKanGrubu = KanGrubuLB.Text;
+            string sehir = SehirCB.Text;
+            string UyelikDurumu = UyelikDurumuCB.Text;
+            string AylikOdeme = AylikOdemeTB.Text;
+            string EPosta = EPostaTB.Text;
+            string TelefonNumarasi = TelefonNumarasiTB.Text;
+
+            string textToPrint = $"TC Kimlik Numarasi: {Tckimlik}\n" +
+                                 $"Isim: {isim}\n" +
+                                 $"Soyisim: {soyisim}\n" +
+                                 $"Dogum Tarihi: {DogumTarihi}\n" +
+                                 $"Cinsiyet: {cinsiyet}\n" +
+                                 $"Uye Kan Grubu: {UyeKanGrubu}\n" +
+                                 $"Uyelik Durumu: {UyelikDurumu}\n" +
+                                 $"Aylik Odeme : {AylikOdeme}\n" +
+                                 $"Uye Eposta: {EPosta}\n" +
+                                 $"Telefon Numarasi : {TelefonNumarasi}\n";
+
+            // Kullanıcıya dosya kaydetme penceresi aç
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Files|*.pdf";
+            saveFileDialog.Title = "Save as PDF";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                // Seçilen dosya yoluna bilgileri yaz
+                File.WriteAllText(filePath, textToPrint);
+            }
+
+        }
+
+        private void UyeKayıtAlmaEkrani_Load(object sender, EventArgs e)
+        {
+            if (personelGirismi)
+            {
+                txt_Sifre.Visible = false;
+                lbl_Sifre.Visible = false;
+                txt_sifreTekrar.Visible = false;
+                lbl_sifreTekrar.Visible = false;
+                chbox_parola.Visible= false;
+            }
+        }
+
+        private void chbox_parola_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbox_parola.Checked)
+            {
+                txt_Sifre.PasswordChar = '\0';
+                txt_sifreTekrar.PasswordChar = '\0';
+            }
+            else
+            {
+                txt_Sifre.PasswordChar = '*';
+                txt_sifreTekrar.PasswordChar = '*';
+            }
+        }
+
+        private void guno_kaydet_Click(object sender, EventArgs e)
         {
             if (personelGirismi)
             {
@@ -152,84 +231,6 @@ namespace Dernek_Takip_Sistemi
                     }
 
                 }
-            }
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        { }
-
-        private void UKayitReturn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            UyeBilgileriniListelemeİslemleri giris = new UyeBilgileriniListelemeİslemleri();
-            giris.ShowDialog();
-
-        }
-
-        private void UyeYazdir_BTN_Click(object sender, EventArgs e)
-        {
-            // Bilgileri metin formatında bir değişkene topla
-            string Tckimlik = TckimliknoTB.Text;
-            string isim = isimTB.Text;
-            string soyisim = soyisimTB.Text;
-            string DogumTarihi = date_dogumTarihi.Text;
-            string cinsiyet = CinsiyetCB.Text;
-            string UyeKanGrubu = KanGrubuLB.Text;
-            string sehir = SehirCB.Text;
-            string UyelikDurumu = UyelikDurumuCB.Text;
-            string AylikOdeme = AylikOdemeTB.Text;
-            string EPosta = EPostaTB.Text;
-            string TelefonNumarasi = TelefonNumarasiTB.Text;
-
-            string textToPrint = $"TC Kimlik Numarasi: {Tckimlik}\n" +
-                                 $"Isim: {isim}\n" +
-                                 $"Soyisim: {soyisim}\n" +
-                                 $"Dogum Tarihi: {DogumTarihi}\n" +
-                                 $"Cinsiyet: {cinsiyet}\n" +
-                                 $"Uye Kan Grubu: {UyeKanGrubu}\n" +
-                                 $"Uyelik Durumu: {UyelikDurumu}\n" +
-                                 $"Aylik Odeme : {AylikOdeme}\n" +
-                                 $"Uye Eposta: {EPosta}\n" +
-                                 $"Telefon Numarasi : {TelefonNumarasi}\n";
-
-            // Kullanıcıya dosya kaydetme penceresi aç
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "PDF Files|*.pdf";
-            saveFileDialog.Title = "Save as PDF";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = saveFileDialog.FileName;
-
-                // Seçilen dosya yoluna bilgileri yaz
-                File.WriteAllText(filePath, textToPrint);
-            }
-
-        }
-
-        private void UyeKayıtAlmaEkrani_Load(object sender, EventArgs e)
-        {
-            if (personelGirismi)
-            {
-                txt_Sifre.Visible = false;
-                lbl_Sifre.Visible = false;
-                txt_sifreTekrar.Visible = false;
-                lbl_sifreTekrar.Visible = false;
-                chbox_parola.Visible= false;
-            }
-        }
-
-        private void chbox_parola_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbox_parola.Checked)
-            {
-                txt_Sifre.PasswordChar = '\0';
-                txt_sifreTekrar.PasswordChar = '\0';
-            }
-            else
-            {
-                txt_Sifre.PasswordChar = '*';
-                txt_sifreTekrar.PasswordChar = '*';
             }
         }
     }
