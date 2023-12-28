@@ -8,19 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Dernek_Takip_Sistemi.Class1;
+
 
 namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
 {
     public partial class Sifreİslemleri : Form
     {
         string tcKimlikNumarasi;
-        VeriTabaniBaglantisi connection;
+        DataLayer.Baglanti.VeriTabaniBaglantisi connection;
         public Sifreİslemleri(string tcKimlikNumarasi)
         {
             InitializeComponent();
             this.tcKimlikNumarasi = tcKimlikNumarasi;
-            connection = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
         }
 
         private void chbox_mevcutParola_CheckedChanged(object sender, EventArgs e)

@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Dernek_Takip_Sistemi.Class1;
 
 namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 {
@@ -76,7 +75,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 
         private void btn_Uyelogin_Click(object sender, EventArgs e)
         {
-            VeriTabaniBaglantisi connect;
+            DataLayer.Baglanti.VeriTabaniBaglantisi connect;
             if (String.IsNullOrEmpty(UKullaniciAdiTB.Text))
             {
                 MessageBox.Show("Kullanıcı Adı Alanı Boş Geçilemez");
@@ -89,7 +88,8 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                 return;
             }
 
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
             DataTable kullaniciDataT = new DataTable();
 
             SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select * from UyeKayitTablosu Where UyeMailAdresi='{UKullaniciAdiTB.Text}'", connect.Connect());

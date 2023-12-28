@@ -10,13 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZedGraph;
-using static Dernek_Takip_Sistemi.Class1;
+
 
 namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 {
     public partial class ZedGraph_AylikYillikOdeme : Form
     {
-        VeriTabaniBaglantisi connect;
+        DataLayer.Baglanti.VeriTabaniBaglantisi connect;
         public ZedGraph_AylikYillikOdeme()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
         private void ZedGraph_AylikYillikOdeme_Load(object sender, EventArgs e)
         {
 
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
             DataTable dataTable = new DataTable();
 
 

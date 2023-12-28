@@ -8,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Dernek_Takip_Sistemi.Class1;
+
 
 namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
 {
     public partial class OdemeIslemleriEkrani : Form
     {
         String tcKimlikNumarasi;
-        VeriTabaniBaglantisi connection;
+        DataLayer.Baglanti.VeriTabaniBaglantisi connection;
         UyeIslemlerEkrani uye_islemleri;
 
         public OdemeIslemleriEkrani(string tcKimlikNumarasi)
@@ -23,14 +23,14 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             InitializeComponent();
             this.tcKimlikNumarasi = tcKimlikNumarasi;
 
-            connection = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
         }
         public OdemeIslemleriEkrani(string tcKimlikNumarasi, UyeIslemlerEkrani uye_Islemleri)
         {
             InitializeComponent();
             this.tcKimlikNumarasi = tcKimlikNumarasi;
-
-            connection = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
             this.uye_islemleri = uye_Islemleri;
         }
 

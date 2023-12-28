@@ -1,26 +1,20 @@
-﻿using Org.BouncyCastle.Asn1.X509.SigI;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Data.OleDb;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Dernek_Takip_Sistemi.Class1;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using DataLayer;
+
+
 
 namespace Dernek_Takip_Sistemi
 {
     public partial class PersonelLogin : Form
     {
+        DataLayer.Baglanti.VeriTabaniBaglantisi connection;
         public PersonelLogin()
         {
             InitializeComponent();
+            connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
         }
 
         private void txtBox_prsonelnumber_TextChanged(object sender, EventArgs e)
@@ -49,7 +43,6 @@ namespace Dernek_Takip_Sistemi
 
         private void btn_Personellgn_Click(object sender, EventArgs e)
         {
-            VeriTabaniBaglantisi connect;
 
             if (String.IsNullOrWhiteSpace(PersonelAdiTB.Text))
             {
@@ -61,10 +54,9 @@ namespace Dernek_Takip_Sistemi
                 MessageBox.Show("Şifre Alanı Boş Olamaz!");
                 return;
             }
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
             DataTable personelDataT = new DataTable();//veri görüntülemek için datatable oluşturulur
                                                        //sql deki tablonun c deki karşılığı bu tabloda olacaktır.
-            SqlDataAdapter da = new SqlDataAdapter($"Select * from PersonelTablosu Where PersonelKullaniciAdi = '{PersonelAdiTB.Text}'", connect.Connect()); // sql connection dan connect() fonk çağrılır
+            SqlDataAdapter da = new SqlDataAdapter($"Select * from PersonelTablosu Where PersonelKullaniciAdi = '{PersonelAdiTB.Text}'", connection.Connect()); // sql connection dan connect() fonk çağrılır
 
             da.Fill(dataTable: personelDataT); //personelDataT doldurmak(fill) için
 

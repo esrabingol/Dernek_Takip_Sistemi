@@ -1,34 +1,31 @@
-﻿//using iText.IO.Font.Constants;
-//using iText.Kernel.Pdf;
+﻿
 using iTextSharp.text;
 using System;
-//using System.Collections.Generic;
-//using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
-//using System.Linq;
-//using System.Runtime.Remoting.Contexts;
-//using System.Text;
-//using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using static Dernek_Takip_Sistemi.Class1;
+
 
 
 namespace Dernek_Takip_Sistemi
 {
     public partial class UyeKayıtAlmaEkrani : Form
     {
-        VeriTabaniBaglantisi connect;
+        DataLayer.Baglanti.VeriTabaniBaglantisi connection;
+
+     
+
         Boolean personelGirismi = false;
         public UyeKayıtAlmaEkrani(Boolean personelGirismi)
         {
             InitializeComponent();
             this.personelGirismi = personelGirismi;
+       
 
         }
 
@@ -79,10 +76,10 @@ namespace Dernek_Takip_Sistemi
                 MessageBox.Show("Şehir  Alanı Boş Olamaz!");
             else
             {
-                connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+                //connection = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
                 DataTable personelDataT = new DataTable();
 
-                SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{TckimliknoTB.Text}'", connect.Connect());
+                SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{TckimliknoTB.Text}'", connection.Connect());
 
                 da.Fill(personelDataT);
 
@@ -96,7 +93,7 @@ namespace Dernek_Takip_Sistemi
                     {
                         //uye kayit tablosu
                         using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO UyeKayitTablosu (TCKimlikNumarasi, UyeAdi, UyeSoyadi, UyeDogumTarihi, UyeCinsiyet, UyeKanGrubu, UyeSehir, UyeninDurumBilgisi, UyeninAylıkOdemeMiktari, UyeMailAdresi, UyeTelefonNumarasi, UyeSifre) " +
-                                                                       "VALUES (@TCKimlikNumarasi, @UyeAdi, @UyeSoyadi, @UyeDogumTarihi, @UyeCinsiyet, @UyeKanGrubu, @UyeSehir, @UyeninDurumBilgisi, @UyeninAylıkOdemeMiktari, @UyeMailAdresi, @UyeTelefonNumarasi, @UyeSifre)", connect.Connect()))
+                                                                       "VALUES (@TCKimlikNumarasi, @UyeAdi, @UyeSoyadi, @UyeDogumTarihi, @UyeCinsiyet, @UyeKanGrubu, @UyeSehir, @UyeninDurumBilgisi, @UyeninAylıkOdemeMiktari, @UyeMailAdresi, @UyeTelefonNumarasi, @UyeSifre)", connection.Connect()))
                         {
                             sqlCommand.Parameters.AddWithValue("@TCKimlikNumarasi", TckimliknoTB.Text);
                             sqlCommand.Parameters.AddWithValue("@UyeAdi", isimTB.Text);
@@ -122,15 +119,15 @@ namespace Dernek_Takip_Sistemi
 
                         //borc tablosu
                         using (SqlCommand command = new SqlCommand("INSERT INTO BorcTablosu (TCKimlikNumarasi, BorcMiktari)" +
-                                                                 $"VALUES ('{TckimliknoTB.Text}', '{AylikOdemeTB.Text}')", connect.Connect()))
+                                                                 $"VALUES ('{TckimliknoTB.Text}', '{AylikOdemeTB.Text}')", connection.Connect()))
 
                         {
                             command.ExecuteNonQuery();
                         }
 
                         // Aidat Tablosu
-                        using (SqlCommand command = new SqlCommand("INSERT INTO AidatTablosu (TCKimlikNumarasi, AidatMiktari, SonOdemeTarihi, OdendiMi)" +
-                                                                   $"VALUES ('{TckimliknoTB.Text}', '{AylikOdemeTB.Text}', @SonOdemeTarihi, @OdendiMi) ", connect.Connect()))
+                        using (SqlCommand command = new SqlCommand("INSERT INTO AidatTablosu (TCKimlikNumarasi, AidatMiktari, SonOdemeTarihi)" +
+                                                                   $"VALUES ('{TckimliknoTB.Text}', '{AylikOdemeTB.Text}', @SonOdemeTarihi) ", connection.Connect()))
 
                         {
                             // Şuanki tarihi
@@ -141,7 +138,6 @@ namespace Dernek_Takip_Sistemi
 
 
                             command.Parameters.AddWithValue("@SonOdemeTarihi", nextMonth);
-                            command.Parameters.AddWithValue("@OdendiMi", 0);
                             command.ExecuteNonQuery();
                         }
 

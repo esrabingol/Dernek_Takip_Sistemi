@@ -13,9 +13,15 @@ namespace Dernek_Takip_Sistemi
 {
     public partial class Giris : Form
     {
+        DataLayer.Baglanti.VeriTabaniBaglantisi connection;
+
+
         public Giris()
         {
+           
             InitializeComponent();
+            connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
         }
 
         private void btn_Personel_Click(object sender, EventArgs e)
@@ -36,6 +42,11 @@ namespace Dernek_Takip_Sistemi
             this.Hide();
             UyeGirisEkrani uyeGiris = new UyeGirisEkrani();
             uyeGiris.ShowDialog();
+        }
+
+        private void Giris_Load(object sender, EventArgs e)
+        {
+            connection.UpdatePaymentSystem();
         }
     }
 }

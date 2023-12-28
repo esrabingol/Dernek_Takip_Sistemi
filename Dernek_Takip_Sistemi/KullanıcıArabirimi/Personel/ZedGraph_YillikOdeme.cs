@@ -10,13 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZedGraph;
-using static Dernek_Takip_Sistemi.Class1;
+
 
 namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
 {
     public partial class ZedGraph_YillikOdeme : Form
     {
-        VeriTabaniBaglantisi connect;
+        DataLayer.Baglanti.VeriTabaniBaglantisi connection;
+
         public ZedGraph_YillikOdeme()
         {
             InitializeComponent();
@@ -24,19 +25,19 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
 
         private void ZedGraph_YillikOdeme_Load(object sender, EventArgs e)
         {
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
             DataTable dataTable = new DataTable();
 
 
 
             try
             {
-                if (connect != null && connect.Connect().State == ConnectionState.Closed)
+                if (connection != null && connection.Connect().State == ConnectionState.Closed)
                 {
-                    connect.Connect().Open();
+                    connection .Connect().Open();
                 }
 
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT YEAR(OdemeTarihi) AS Yil, SUM(OdemeMiktari) AS ToplamOdeme FROM OdemeTablosu GROUP BY YEAR(OdemeTarihi)", connect.Connect()))
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT YEAR(OdemeTarihi) AS Yil, SUM(OdemeMiktari) AS ToplamOdeme FROM OdemeTablosu GROUP BY YEAR(OdemeTarihi)", connection.Connect()))
                 {
                     dataAdapter.Fill(dataTable);
                 }
@@ -65,9 +66,9 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
             }
             finally
             {
-                if (connect != null && connect.Connect().State == ConnectionState.Open)
+                if (connection != null && connection.Connect().State == ConnectionState.Open)
                 {
-                    connect.Connect().Close();
+                    connection.Connect().Close();
                 }
             }
         }

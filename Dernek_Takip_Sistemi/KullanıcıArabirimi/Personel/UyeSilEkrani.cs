@@ -9,13 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using static Dernek_Takip_Sistemi.Class1;
 
 namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 {
     public partial class UyeSilGüncelleEkrani : Form
     {
-        VeriTabaniBaglantisi connect;
+        DataLayer.Baglanti.VeriTabaniBaglantisi connect;
         public UyeSilGüncelleEkrani()
         {
             InitializeComponent();
@@ -24,12 +23,12 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 
         private void UyeGoruntuleBTN_Click(object sender, EventArgs e)
         {
-            string TcNumarasi = TCgirTB.Text;
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            string Tckimlik = TCgirTB.Text;
+            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
             DataTable UserDT = new DataTable();
             if (String.IsNullOrWhiteSpace(TCgirTB.Text))
                 MessageBox.Show("TC Kimlik Numarası Alanı Boş Olamaz!");
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu WHERE TCKimlikNumarasi ='{TcNumarasi}'", connect.Connect()))
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu WHERE TCKimlikNumarasi ='{Tckimlik}'", connect.Connect()))
             {
                 dataAdapter.Fill(UserDT);
 
@@ -39,7 +38,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 
         private void UyeSilBTN_Click(object sender, EventArgs e)
         {
-            string TcNumarasi = TCgirTB.Text;
+            string Tckimlik = TCgirTB.Text;
          
             // Kullanıcıya silme işlemi için onay iste
             DialogResult result = MessageBox.Show("Bu üye silinecek. Emin misiniz?", "Üye Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -51,7 +50,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     // SQL sorgusunu hazırla
-                    string sqlSorgusu = $"DELETE FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{TcNumarasi}'";
+                    string sqlSorgusu = $"DELETE FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{Tckimlik}'";
 
                     // SQL sorgusunu çalıştır
                     using (SqlCommand sqlCommand = new SqlCommand(sqlSorgusu, connection))

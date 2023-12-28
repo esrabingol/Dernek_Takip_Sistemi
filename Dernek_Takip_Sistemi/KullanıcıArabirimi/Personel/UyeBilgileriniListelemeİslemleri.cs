@@ -17,24 +17,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using static Dernek_Takip_Sistemi.Class1;
 
 namespace Dernek_Takip_Sistemi
 {
     public partial class UyeBilgileriniListelemeİslemleri : Form
     {
-        VeriTabaniBaglantisi connect;
-        Boolean personelGirisMi;
+        DataLayer.Baglanti.VeriTabaniBaglantisi connect;
         public UyeBilgileriniListelemeİslemleri()
         {
             InitializeComponent();
-            this.personelGirisMi = true;
         }
 
         private void KanGrubu_BTN_Click(object sender, EventArgs e)
         {
             string kanGrubu;
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
             DataTable UserDT = new DataTable();
 
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeKanGrubu FROM UyeKayitTablosu", connect.Connect()))
@@ -50,12 +48,13 @@ namespace Dernek_Takip_Sistemi
         }
         private void SehirListele_BTN_Click(object sender, EventArgs e)
         {
-            //string UyeSehirleri;
+        
 
             if (sehirler_CB.SelectedItem != null)
             {
                 string secilenSehir = sehirler_CB.SelectedItem.ToString(); // Seçilen şehri al
-                connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+                connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
                 DataTable UserDT = new DataTable();
 
 
@@ -89,7 +88,7 @@ namespace Dernek_Takip_Sistemi
             this.Hide();
 
             // Yeni formu oluştur ve göster
-            UyeKayıtAlmaEkrani kayitAl = new UyeKayıtAlmaEkrani(personelGirisMi);
+            UyeKayıtAlmaEkrani kayitAl = new UyeKayıtAlmaEkrani(true);
             kayitAl.ShowDialog();
 
             // Form2 kapatıldığında tekrar Form1'i göster
@@ -186,18 +185,6 @@ namespace Dernek_Takip_Sistemi
             mailIslemleri.ShowDialog();
         }
 
-        private void BorcDurumu_BTN_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ZG_Sehirler_BTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ZedGraph_Sehirler zedGraph_Sehirler = new ZedGraph_Sehirler();
-            zedGraph_Sehirler.Show();
-        }
-
         private void TSB_Logout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -254,7 +241,8 @@ namespace Dernek_Takip_Sistemi
         }
         private void guno_TumUyelerBTN_Click(object sender, EventArgs e)
         {
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
             DataTable UserDT = new DataTable();
 
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu", connect.Connect()))
@@ -270,7 +258,8 @@ namespace Dernek_Takip_Sistemi
             if (sehirler_CB.SelectedItem != null)
             {
                 string secilenSehir = sehirler_CB.SelectedItem.ToString(); // Seçilen şehri al
-                connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+                connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
                 DataTable UserDT = new DataTable();
 
 
@@ -300,7 +289,8 @@ namespace Dernek_Takip_Sistemi
             if (TC_TBX.Text != null)
             {
                 string tckimlik = TC_TBX.Text.ToString();
-                connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+                connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
                 DataTable UserDT = new DataTable();
 
                 using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select* from UyeKayitTablosu WHERE TCKimlikNumarasi ='{tckimlik}'", connect.Connect()))
@@ -325,7 +315,8 @@ namespace Dernek_Takip_Sistemi
         private void guno_durumaGore_Click(object sender, EventArgs e)
         {
             string UyeDurum;
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
             DataTable UserDT = new DataTable();
 
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeninDurumBilgisi FROM UyeKayitTablosu", connect.Connect()))
@@ -338,7 +329,8 @@ namespace Dernek_Takip_Sistemi
         private void guno_KanGrubu_Click(object sender, EventArgs e)
         {
             string kanGrubu;
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
             DataTable UserDT = new DataTable();
 
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeKanGrubu FROM UyeKayitTablosu", connect.Connect()))
@@ -353,7 +345,8 @@ namespace Dernek_Takip_Sistemi
         private void guno_BorcDurumu_Click(object sender, EventArgs e)
         {
 
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+
             DataTable UserDT = new DataTable();
 
             using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM BorcTablosu", connect.Connect()))
