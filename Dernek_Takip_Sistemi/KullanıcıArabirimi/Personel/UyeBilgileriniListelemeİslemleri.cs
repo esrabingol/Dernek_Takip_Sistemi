@@ -80,48 +80,8 @@ namespace Dernek_Takip_Sistemi
             }
         }
 
-        private void Listele_BTN_Click(object sender, EventArgs e)
-        {
-            if (TC_TBX.Text != null)
-            {
-                string tckimlik = TC_TBX.Text.ToString();
-                connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-                DataTable UserDT = new DataTable();
-
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select* from UyeKayitTablosu WHERE TCKimlikNumarasi ='{tckimlik}'", connect.Connect()))
-                {
-                    dataAdapter.Fill(UserDT);
-                }
-                if (UserDT.Rows.Count > 0)
-                {
-                    ListelemeDGW.DataSource = UserDT;
-                }
-                else
-                {
-                    MessageBox.Show("Seçilen Tc Numarasına ait kullanıcı Bulunamadı");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Tc Kimlik Numarası Giriniz ..");
-            }
-            }
+ 
         
-
-        private void DurumBTN_Click(object sender, EventArgs e)
-        {
-            string UyeDurum;
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-            DataTable UserDT = new DataTable();
-
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeninDurumBilgisi FROM UyeKayitTablosu", connect.Connect()))
-            {
-                dataAdapter.Fill(UserDT);
-            }
-            ListelemeDGW.DataSource = UserDT;
-        }
-
-
         private void UyeKayitBTN_Click(object sender, EventArgs e)
         {
 
@@ -143,20 +103,6 @@ namespace Dernek_Takip_Sistemi
 
             UyeSilGüncelleEkrani uyeSilme = new UyeSilGüncelleEkrani();
             uyeSilme.ShowDialog();
-
-        }
-
-        private void TumUyeleriGorBTN_Click(object sender, EventArgs e)
-        {
-
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-            DataTable UserDT = new DataTable();
-
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu", connect.Connect()))
-            {
-                dataAdapter.Fill(UserDT);
-            }
-            ListelemeDGW.DataSource = UserDT;
 
         }
 
@@ -243,14 +189,6 @@ namespace Dernek_Takip_Sistemi
         private void BorcDurumu_BTN_Click(object sender, EventArgs e)
         {
 
-            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-            DataTable UserDT = new DataTable();
-
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM BorcTablosu", connect.Connect()))
-            {
-                dataAdapter.Fill(UserDT);
-            }
-            ListelemeDGW.DataSource = UserDT;
         }
 
         private void ZG_Sehirler_BTN_Click(object sender, EventArgs e)
@@ -309,30 +247,145 @@ namespace Dernek_Takip_Sistemi
             }
         }
 
-    
-
+   
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+        private void guno_TumUyelerBTN_Click(object sender, EventArgs e)
+        {
+            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            DataTable UserDT = new DataTable();
 
-        private void BTN_ODEMEDURUM_Click(object sender, EventArgs e)
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu", connect.Connect()))
+            {
+                dataAdapter.Fill(UserDT);
+            }
+            ListelemeDGW.DataSource = UserDT;
+        }
+
+        private void guno_SehreGoreListeleBtn_Click(object sender, EventArgs e)
+        {
+         
+            if (sehirler_CB.SelectedItem != null)
+            {
+                string secilenSehir = sehirler_CB.SelectedItem.ToString(); // Seçilen şehri al
+                connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+                DataTable UserDT = new DataTable();
+
+
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeSehir FROM UyeKayitTablosu WHERE UyeSehir = '{secilenSehir}'", connect.Connect()))
+                {
+                    dataAdapter.Fill(UserDT);
+                }
+
+                if (UserDT.Rows.Count > 0)
+                {
+                    ListelemeDGW.DataSource = UserDT;
+
+                }
+                else
+                {
+                    MessageBox.Show("Seçilen Şehire ait kullanıcı bulunamadı.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen bir şehir seçin.");
+            }
+        }
+
+        private void guno_TC_Click(object sender, EventArgs e)
+        {
+            if (TC_TBX.Text != null)
+            {
+                string tckimlik = TC_TBX.Text.ToString();
+                connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+                DataTable UserDT = new DataTable();
+
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select* from UyeKayitTablosu WHERE TCKimlikNumarasi ='{tckimlik}'", connect.Connect()))
+                {
+                    dataAdapter.Fill(UserDT);
+                }
+                if (UserDT.Rows.Count > 0)
+                {
+                    ListelemeDGW.DataSource = UserDT;
+                }
+                else
+                {
+                    MessageBox.Show("Seçilen Tc Numarasına ait kullanıcı Bulunamadı");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tc Kimlik Numarası Giriniz ..");
+            }
+        }
+
+        private void guno_durumaGore_Click(object sender, EventArgs e)
+        {
+            string UyeDurum;
+            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            DataTable UserDT = new DataTable();
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeninDurumBilgisi FROM UyeKayitTablosu", connect.Connect()))
+            {
+                dataAdapter.Fill(UserDT);
+            }
+            ListelemeDGW.DataSource = UserDT;
+        }
+
+        private void guno_KanGrubu_Click(object sender, EventArgs e)
+        {
+            string kanGrubu;
+            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            DataTable UserDT = new DataTable();
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeKanGrubu FROM UyeKayitTablosu", connect.Connect()))
+            {
+                dataAdapter.Fill(UserDT);
+
+            }
+
+            ListelemeDGW.DataSource = UserDT;
+        }
+
+        private void guno_BorcDurumu_Click(object sender, EventArgs e)
+        {
+
+            connect = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            DataTable UserDT = new DataTable();
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM BorcTablosu", connect.Connect()))
+            {
+                dataAdapter.Fill(UserDT);
+            }
+            ListelemeDGW.DataSource = UserDT;
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ZedGraph_Sehirler zedGraph_Sehirler = new ZedGraph_Sehirler();
+            zedGraph_Sehirler.Show();
+        }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
             this.Close();
             TarihlerArasiOdemeDurumBilgisi durumBilgisi = new TarihlerArasiOdemeDurumBilgisi();
             durumBilgisi.Show();
 
-
         }
 
-        private void BTN_AylikYillikZedGraph_Click(object sender, EventArgs e)
+        private void guno_AylikZ_Click(object sender, EventArgs e)
         {
             this.Close();
             ZedGraph_AylikYillikOdeme zedGraph_AylikYillikOdeme = new ZedGraph_AylikYillikOdeme();
             zedGraph_AylikYillikOdeme.Show();
         }
 
-        private void BTN_YilZedGraph_Click(object sender, EventArgs e)
+        private void guno_YıillikZ_Click(object sender, EventArgs e)
         {
             this.Close();
             ZedGraph_YillikOdeme graph_YillikOdeme = new ZedGraph_YillikOdeme();

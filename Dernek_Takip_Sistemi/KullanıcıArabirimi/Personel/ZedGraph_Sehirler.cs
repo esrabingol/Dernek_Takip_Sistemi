@@ -83,17 +83,44 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
             BarItem bar = graphPane.AddBar("Üye Sayısı", pointPairs, Color.Green);
             bar.Bar.Fill = new Fill(Color.Blue);
 
-            // Her bir sütunun ortasına şehir adını gösterme
+            graphPane.XAxis.Type = AxisType.Text; // X eksenini metin tipine ayarla
+
+            // X ekseninde şehir isimlerini gösterme
+            string[] labels = new string[pointPairs.Count];
             for (int i = 0; i < pointPairs.Count; i++)
             {
-                TextObj text = new TextObj(pointPairs[i].Tag.ToString(), pointPairs[i].X, pointPairs[i].Y, CoordType.AxisXYScale, AlignH.Center, AlignV.Bottom);
-                text.FontSpec.FontColor = Color.Black;
-                text.FontSpec.Size = 8;
-                graphPane.GraphObjList.Add(text);
+                labels[i] = pointPairs[i].Tag.ToString();
             }
+            graphPane.XAxis.Scale.TextLabels = labels;
+
+            // Y eksenini int formatına ayarla
+            graphPane.YAxis.Scale.Format = "F0"; // Y eksenindeki sayıları tam sayı olarak göstermek için
+            graphPane.YAxis.Scale.MajorStep = 1; // Y eksenindeki büyük çizgilerin aralığını ayarla
+            graphPane.YAxis.Type = AxisType.Linear; // Y eksenini lineer tipine ayarla
 
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
-            zedGraphControl1.AxisChange(); 
+            zedGraphControl1.AxisChange();
+            //GraphPane graphPane = zedGraphControl1.GraphPane;
+
+            //graphPane.Title.Text = "Üyelerin Şehirlere Göre Dağılımı";
+            //graphPane.XAxis.Title.Text = "Şehir";
+            //graphPane.YAxis.Title.Text = "Üye Sayısı";
+
+            //BarItem bar = graphPane.AddBar("Üye Sayısı", pointPairs, Color.Green);
+            //bar.Bar.Fill = new Fill(Color.Blue);
+
+            //graphPane.XAxis.Type = AxisType.Text; // X eksenini metin tipine ayarla
+
+            //// X ekseninde şehir isimlerini gösterme
+            //string[] labels = new string[pointPairs.Count];
+            //for (int i = 0; i < pointPairs.Count; i++)
+            //{
+            //    labels[i] = pointPairs[i].Tag.ToString();
+            //}
+            //graphPane.XAxis.Scale.TextLabels = labels;
+
+            //graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            //zedGraphControl1.AxisChange();
         }
 
         private void geridon_TSB_Click(object sender, EventArgs e)

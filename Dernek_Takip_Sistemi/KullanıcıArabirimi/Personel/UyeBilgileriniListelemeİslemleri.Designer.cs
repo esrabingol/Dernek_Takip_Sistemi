@@ -30,19 +30,10 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.BaslikLB = new System.Windows.Forms.Label();
-            this.SehirListele_BTN = new System.Windows.Forms.Button();
-            this.KanGrubu_BTN = new System.Windows.Forms.Button();
-            this.TumUyeleriGorBTN = new System.Windows.Forms.Button();
-            this.DurumBTN = new System.Windows.Forms.Button();
             this.sehirler_CB = new System.Windows.Forms.ComboBox();
             this.ListelemeDGW = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BTN_AylikYillikZedGraph = new System.Windows.Forms.Button();
-            this.BTN_ODEMEDURUM = new System.Windows.Forms.Button();
-            this.Listele_BTN = new System.Windows.Forms.Button();
             this.TC_TBX = new System.Windows.Forms.TextBox();
-            this.ZG_Sehirler_BTN = new System.Windows.Forms.Button();
-            this.BorcDurumu_BTN = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.TSB_Logout = new System.Windows.Forms.ToolStripButton();
             this.pdfkaydet_BTN = new System.Windows.Forms.Button();
@@ -52,7 +43,16 @@
             this.UyeSilBTN = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.BTN_YilZedGraph = new System.Windows.Forms.Button();
+            this.guno_TumUyelerBTN = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guno_SehreGoreListeleBtn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guno_TC = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guno_durumaGore = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guno_KanGrubu = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guno_BorcDurumu = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guno_AylikZ = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guno_YıillikZ = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.ListelemeDGW)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -62,7 +62,7 @@
             // BaslikLB
             // 
             this.BaslikLB.AutoSize = true;
-            this.BaslikLB.BackColor = System.Drawing.Color.Gainsboro;
+            this.BaslikLB.BackColor = System.Drawing.Color.Transparent;
             this.BaslikLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BaslikLB.ForeColor = System.Drawing.Color.Black;
             this.BaslikLB.Location = new System.Drawing.Point(344, 36);
@@ -70,54 +70,6 @@
             this.BaslikLB.Size = new System.Drawing.Size(183, 25);
             this.BaslikLB.TabIndex = 4;
             this.BaslikLB.Text = "Genel Bilgi Ekranı";
-            // 
-            // SehirListele_BTN
-            // 
-            this.SehirListele_BTN.BackColor = System.Drawing.Color.White;
-            this.SehirListele_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.SehirListele_BTN.Location = new System.Drawing.Point(205, 50);
-            this.SehirListele_BTN.Name = "SehirListele_BTN";
-            this.SehirListele_BTN.Size = new System.Drawing.Size(153, 21);
-            this.SehirListele_BTN.TabIndex = 2;
-            this.SehirListele_BTN.Text = "2- Şehire Göre Listele\r\n\r\n";
-            this.SehirListele_BTN.UseVisualStyleBackColor = false;
-            this.SehirListele_BTN.Click += new System.EventHandler(this.SehirListele_BTN_Click);
-            // 
-            // KanGrubu_BTN
-            // 
-            this.KanGrubu_BTN.BackColor = System.Drawing.Color.White;
-            this.KanGrubu_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.KanGrubu_BTN.Location = new System.Drawing.Point(11, 143);
-            this.KanGrubu_BTN.Name = "KanGrubu_BTN";
-            this.KanGrubu_BTN.Size = new System.Drawing.Size(347, 26);
-            this.KanGrubu_BTN.TabIndex = 1;
-            this.KanGrubu_BTN.Text = "5- Kan Grubuna Göre Listele\r\n";
-            this.KanGrubu_BTN.UseVisualStyleBackColor = false;
-            this.KanGrubu_BTN.Click += new System.EventHandler(this.KanGrubu_BTN_Click);
-            // 
-            // TumUyeleriGorBTN
-            // 
-            this.TumUyeleriGorBTN.BackColor = System.Drawing.Color.White;
-            this.TumUyeleriGorBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TumUyeleriGorBTN.Location = new System.Drawing.Point(6, 19);
-            this.TumUyeleriGorBTN.Name = "TumUyeleriGorBTN";
-            this.TumUyeleriGorBTN.Size = new System.Drawing.Size(352, 25);
-            this.TumUyeleriGorBTN.TabIndex = 10;
-            this.TumUyeleriGorBTN.Text = "1- Tüm Üyeleri Ve Bilgilerini Listele\r\n\r\n";
-            this.TumUyeleriGorBTN.UseVisualStyleBackColor = false;
-            this.TumUyeleriGorBTN.Click += new System.EventHandler(this.TumUyeleriGorBTN_Click);
-            // 
-            // DurumBTN
-            // 
-            this.DurumBTN.BackColor = System.Drawing.Color.White;
-            this.DurumBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DurumBTN.Location = new System.Drawing.Point(11, 112);
-            this.DurumBTN.Name = "DurumBTN";
-            this.DurumBTN.Size = new System.Drawing.Size(347, 25);
-            this.DurumBTN.TabIndex = 3;
-            this.DurumBTN.Text = "4- Aktif/ Pasif Durumuna Göre Listele\r\n\r\n\r\n";
-            this.DurumBTN.UseVisualStyleBackColor = false;
-            this.DurumBTN.Click += new System.EventHandler(this.DurumBTN_Click);
             // 
             // sehirler_CB
             // 
@@ -214,27 +166,28 @@
             // 
             this.ListelemeDGW.BackgroundColor = System.Drawing.Color.White;
             this.ListelemeDGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListelemeDGW.Location = new System.Drawing.Point(457, 19);
+            this.ListelemeDGW.Location = new System.Drawing.Point(391, 23);
             this.ListelemeDGW.Name = "ListelemeDGW";
-            this.ListelemeDGW.Size = new System.Drawing.Size(394, 286);
+            this.ListelemeDGW.Size = new System.Drawing.Size(471, 294);
             this.ListelemeDGW.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Controls.Add(this.BTN_YilZedGraph);
-            this.groupBox1.Controls.Add(this.BTN_AylikYillikZedGraph);
-            this.groupBox1.Controls.Add(this.BTN_ODEMEDURUM);
-            this.groupBox1.Controls.Add(this.Listele_BTN);
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.guno_YıillikZ);
+            this.groupBox1.Controls.Add(this.guno_AylikZ);
+            this.groupBox1.Controls.Add(this.guna2GradientButton2);
+            this.groupBox1.Controls.Add(this.guna2GradientButton1);
+            this.groupBox1.Controls.Add(this.guno_BorcDurumu);
+            this.groupBox1.Controls.Add(this.guno_KanGrubu);
+            this.groupBox1.Controls.Add(this.guno_durumaGore);
+            this.groupBox1.Controls.Add(this.guno_TC);
+            this.groupBox1.Controls.Add(this.guno_SehreGoreListeleBtn);
+            this.groupBox1.Controls.Add(this.guno_TumUyelerBTN);
             this.groupBox1.Controls.Add(this.TC_TBX);
-            this.groupBox1.Controls.Add(this.ZG_Sehirler_BTN);
-            this.groupBox1.Controls.Add(this.BorcDurumu_BTN);
             this.groupBox1.Controls.Add(this.ListelemeDGW);
-            this.groupBox1.Controls.Add(this.KanGrubu_BTN);
             this.groupBox1.Controls.Add(this.sehirler_CB);
-            this.groupBox1.Controls.Add(this.DurumBTN);
-            this.groupBox1.Controls.Add(this.TumUyeleriGorBTN);
-            this.groupBox1.Controls.Add(this.SehirListele_BTN);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.Location = new System.Drawing.Point(22, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(884, 317);
@@ -243,75 +196,12 @@
             this.groupBox1.Text = "LİSTELEME İŞLEMLERİ";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // BTN_AylikYillikZedGraph
-            // 
-            this.BTN_AylikYillikZedGraph.BackColor = System.Drawing.Color.White;
-            this.BTN_AylikYillikZedGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BTN_AylikYillikZedGraph.Location = new System.Drawing.Point(11, 263);
-            this.BTN_AylikYillikZedGraph.Name = "BTN_AylikYillikZedGraph";
-            this.BTN_AylikYillikZedGraph.Size = new System.Drawing.Size(347, 23);
-            this.BTN_AylikYillikZedGraph.TabIndex = 18;
-            this.BTN_AylikYillikZedGraph.Text = "9 - Aidat Miktarı Aylık ZedGraph\r\n\r\n\r\n";
-            this.BTN_AylikYillikZedGraph.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BTN_AylikYillikZedGraph.UseVisualStyleBackColor = false;
-            this.BTN_AylikYillikZedGraph.Click += new System.EventHandler(this.BTN_AylikYillikZedGraph_Click);
-            // 
-            // BTN_ODEMEDURUM
-            // 
-            this.BTN_ODEMEDURUM.BackColor = System.Drawing.Color.White;
-            this.BTN_ODEMEDURUM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BTN_ODEMEDURUM.Location = new System.Drawing.Point(11, 233);
-            this.BTN_ODEMEDURUM.Name = "BTN_ODEMEDURUM";
-            this.BTN_ODEMEDURUM.Size = new System.Drawing.Size(347, 23);
-            this.BTN_ODEMEDURUM.TabIndex = 17;
-            this.BTN_ODEMEDURUM.Text = "8-Ödeme Durum Bilgisi Listeleme\r\n\r\n";
-            this.BTN_ODEMEDURUM.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BTN_ODEMEDURUM.UseVisualStyleBackColor = false;
-            this.BTN_ODEMEDURUM.Click += new System.EventHandler(this.BTN_ODEMEDURUM_Click);
-            // 
-            // Listele_BTN
-            // 
-            this.Listele_BTN.BackColor = System.Drawing.Color.White;
-            this.Listele_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Listele_BTN.Location = new System.Drawing.Point(205, 77);
-            this.Listele_BTN.Name = "Listele_BTN";
-            this.Listele_BTN.Size = new System.Drawing.Size(153, 19);
-            this.Listele_BTN.TabIndex = 16;
-            this.Listele_BTN.Text = "3- TC\'ye Göre Kullanıcı Bul\r\n\r\n\r\n";
-            this.Listele_BTN.UseVisualStyleBackColor = false;
-            this.Listele_BTN.Click += new System.EventHandler(this.Listele_BTN_Click);
-            // 
             // TC_TBX
             // 
             this.TC_TBX.Location = new System.Drawing.Point(11, 77);
             this.TC_TBX.Name = "TC_TBX";
             this.TC_TBX.Size = new System.Drawing.Size(174, 20);
             this.TC_TBX.TabIndex = 15;
-            // 
-            // ZG_Sehirler_BTN
-            // 
-            this.ZG_Sehirler_BTN.BackColor = System.Drawing.Color.White;
-            this.ZG_Sehirler_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ZG_Sehirler_BTN.Location = new System.Drawing.Point(11, 203);
-            this.ZG_Sehirler_BTN.Name = "ZG_Sehirler_BTN";
-            this.ZG_Sehirler_BTN.Size = new System.Drawing.Size(347, 24);
-            this.ZG_Sehirler_BTN.TabIndex = 14;
-            this.ZG_Sehirler_BTN.Text = "7- Üyelerin Şehirlere Göre Dağılımı ZedGraph\r\n";
-            this.ZG_Sehirler_BTN.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ZG_Sehirler_BTN.UseVisualStyleBackColor = false;
-            this.ZG_Sehirler_BTN.Click += new System.EventHandler(this.ZG_Sehirler_BTN_Click);
-            // 
-            // BorcDurumu_BTN
-            // 
-            this.BorcDurumu_BTN.BackColor = System.Drawing.Color.White;
-            this.BorcDurumu_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BorcDurumu_BTN.Location = new System.Drawing.Point(11, 175);
-            this.BorcDurumu_BTN.Name = "BorcDurumu_BTN";
-            this.BorcDurumu_BTN.Size = new System.Drawing.Size(347, 22);
-            this.BorcDurumu_BTN.TabIndex = 13;
-            this.BorcDurumu_BTN.Text = "6- Borç Durumuna Göre Listele\r\n";
-            this.BorcDurumu_BTN.UseVisualStyleBackColor = false;
-            this.BorcDurumu_BTN.Click += new System.EventHandler(this.BorcDurumu_BTN_Click);
             // 
             // toolStrip1
             // 
@@ -320,7 +210,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(1131, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(907, 25);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -429,25 +319,193 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // BTN_YilZedGraph
+            // guno_TumUyelerBTN
             // 
-            this.BTN_YilZedGraph.BackColor = System.Drawing.Color.White;
-            this.BTN_YilZedGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BTN_YilZedGraph.Location = new System.Drawing.Point(11, 294);
-            this.BTN_YilZedGraph.Name = "BTN_YilZedGraph";
-            this.BTN_YilZedGraph.Size = new System.Drawing.Size(347, 23);
-            this.BTN_YilZedGraph.TabIndex = 19;
-            this.BTN_YilZedGraph.Text = "10 - Aidat Miktarı Yıllık ZedGraph\r\n\r\n\r\n";
-            this.BTN_YilZedGraph.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BTN_YilZedGraph.UseVisualStyleBackColor = false;
-            this.BTN_YilZedGraph.Click += new System.EventHandler(this.BTN_YilZedGraph_Click);
+            this.guno_TumUyelerBTN.BackColor = System.Drawing.Color.Sienna;
+            this.guno_TumUyelerBTN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guno_TumUyelerBTN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guno_TumUyelerBTN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_TumUyelerBTN.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_TumUyelerBTN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guno_TumUyelerBTN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guno_TumUyelerBTN.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guno_TumUyelerBTN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guno_TumUyelerBTN.ForeColor = System.Drawing.Color.Black;
+            this.guno_TumUyelerBTN.Location = new System.Drawing.Point(11, 23);
+            this.guno_TumUyelerBTN.Name = "guno_TumUyelerBTN";
+            this.guno_TumUyelerBTN.Size = new System.Drawing.Size(347, 21);
+            this.guno_TumUyelerBTN.TabIndex = 20;
+            this.guno_TumUyelerBTN.Text = "1- Tüm Üyeleri Ve Bilgilerini Listele";
+            this.guno_TumUyelerBTN.Click += new System.EventHandler(this.guno_TumUyelerBTN_Click);
+            // 
+            // guno_SehreGoreListeleBtn
+            // 
+            this.guno_SehreGoreListeleBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guno_SehreGoreListeleBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guno_SehreGoreListeleBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_SehreGoreListeleBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_SehreGoreListeleBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guno_SehreGoreListeleBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guno_SehreGoreListeleBtn.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guno_SehreGoreListeleBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guno_SehreGoreListeleBtn.ForeColor = System.Drawing.Color.Black;
+            this.guno_SehreGoreListeleBtn.Location = new System.Drawing.Point(191, 50);
+            this.guno_SehreGoreListeleBtn.Name = "guno_SehreGoreListeleBtn";
+            this.guno_SehreGoreListeleBtn.Size = new System.Drawing.Size(167, 21);
+            this.guno_SehreGoreListeleBtn.TabIndex = 21;
+            this.guno_SehreGoreListeleBtn.Text = "2- Şehire Göre Listele";
+            this.guno_SehreGoreListeleBtn.Click += new System.EventHandler(this.guno_SehreGoreListeleBtn_Click);
+            // 
+            // guno_TC
+            // 
+            this.guno_TC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guno_TC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guno_TC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_TC.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_TC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guno_TC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guno_TC.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guno_TC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guno_TC.ForeColor = System.Drawing.Color.Black;
+            this.guno_TC.Location = new System.Drawing.Point(191, 76);
+            this.guno_TC.Name = "guno_TC";
+            this.guno_TC.Size = new System.Drawing.Size(167, 21);
+            this.guno_TC.TabIndex = 22;
+            this.guno_TC.Text = "3-TC\'ye Göre Kullanıcı Bul";
+            this.guno_TC.Click += new System.EventHandler(this.guno_TC_Click);
+            // 
+            // guno_durumaGore
+            // 
+            this.guno_durumaGore.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guno_durumaGore.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guno_durumaGore.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_durumaGore.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_durumaGore.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guno_durumaGore.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guno_durumaGore.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guno_durumaGore.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guno_durumaGore.ForeColor = System.Drawing.Color.Black;
+            this.guno_durumaGore.Location = new System.Drawing.Point(11, 116);
+            this.guno_durumaGore.Name = "guno_durumaGore";
+            this.guno_durumaGore.Size = new System.Drawing.Size(347, 21);
+            this.guno_durumaGore.TabIndex = 23;
+            this.guno_durumaGore.Text = "4-Aktif/ Pasif Duruma Göre Listele";
+            this.guno_durumaGore.Click += new System.EventHandler(this.guno_durumaGore_Click);
+            // 
+            // guno_KanGrubu
+            // 
+            this.guno_KanGrubu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guno_KanGrubu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guno_KanGrubu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_KanGrubu.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_KanGrubu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guno_KanGrubu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guno_KanGrubu.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guno_KanGrubu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guno_KanGrubu.ForeColor = System.Drawing.Color.Black;
+            this.guno_KanGrubu.Location = new System.Drawing.Point(11, 148);
+            this.guno_KanGrubu.Name = "guno_KanGrubu";
+            this.guno_KanGrubu.Size = new System.Drawing.Size(347, 21);
+            this.guno_KanGrubu.TabIndex = 24;
+            this.guno_KanGrubu.Text = "5-Kan Grubuna Göre Listele";
+            this.guno_KanGrubu.Click += new System.EventHandler(this.guno_KanGrubu_Click);
+            // 
+            // guno_BorcDurumu
+            // 
+            this.guno_BorcDurumu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guno_BorcDurumu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guno_BorcDurumu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_BorcDurumu.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_BorcDurumu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guno_BorcDurumu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guno_BorcDurumu.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guno_BorcDurumu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guno_BorcDurumu.ForeColor = System.Drawing.Color.Black;
+            this.guno_BorcDurumu.Location = new System.Drawing.Point(11, 175);
+            this.guno_BorcDurumu.Name = "guno_BorcDurumu";
+            this.guno_BorcDurumu.Size = new System.Drawing.Size(347, 21);
+            this.guno_BorcDurumu.TabIndex = 25;
+            this.guno_BorcDurumu.Text = "6- Borç Durumuna Göre Listele";
+            this.guno_BorcDurumu.Click += new System.EventHandler(this.guno_BorcDurumu_Click);
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.Black;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(11, 206);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(347, 21);
+            this.guna2GradientButton1.TabIndex = 26;
+            this.guna2GradientButton1.Text = "7-Üyelerin Şehilere Göre Dağılımı Zedgraph";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.Black;
+            this.guna2GradientButton2.Location = new System.Drawing.Point(11, 236);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.Size = new System.Drawing.Size(347, 21);
+            this.guna2GradientButton2.TabIndex = 27;
+            this.guna2GradientButton2.Text = "8-Ödeme Durum Bilgisi Listeleme";
+            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
+            // 
+            // guno_AylikZ
+            // 
+            this.guno_AylikZ.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guno_AylikZ.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guno_AylikZ.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_AylikZ.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_AylikZ.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guno_AylikZ.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guno_AylikZ.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guno_AylikZ.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guno_AylikZ.ForeColor = System.Drawing.Color.Black;
+            this.guno_AylikZ.Location = new System.Drawing.Point(11, 267);
+            this.guno_AylikZ.Name = "guno_AylikZ";
+            this.guno_AylikZ.Size = new System.Drawing.Size(347, 21);
+            this.guno_AylikZ.TabIndex = 28;
+            this.guno_AylikZ.Text = "9 - Aidat Miktarı Aylık ZedGraph";
+            this.guno_AylikZ.Click += new System.EventHandler(this.guno_AylikZ_Click);
+            // 
+            // guno_YıillikZ
+            // 
+            this.guno_YıillikZ.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guno_YıillikZ.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guno_YıillikZ.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_YıillikZ.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guno_YıillikZ.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guno_YıillikZ.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guno_YıillikZ.FillColor2 = System.Drawing.Color.LightSteelBlue;
+            this.guno_YıillikZ.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guno_YıillikZ.ForeColor = System.Drawing.Color.Black;
+            this.guno_YıillikZ.Location = new System.Drawing.Point(11, 294);
+            this.guno_YıillikZ.Name = "guno_YıillikZ";
+            this.guno_YıillikZ.Size = new System.Drawing.Size(347, 21);
+            this.guno_YıillikZ.TabIndex = 29;
+            this.guno_YıillikZ.Text = "10 - Aidat Miktarı Yıllık ZedGraph";
+            this.guno_YıillikZ.Click += new System.EventHandler(this.guno_YıillikZ_Click);
             // 
             // UyeBilgileriniListelemeİslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1131, 489);
+            this.ClientSize = new System.Drawing.Size(907, 451);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
@@ -471,26 +529,26 @@
         private System.Windows.Forms.Label BaslikLB;
         private System.Windows.Forms.Button UyeKayitBTN;
         private System.Windows.Forms.Button UyeSilBTN;
-        private System.Windows.Forms.Button SehirListele_BTN;
-        private System.Windows.Forms.Button KanGrubu_BTN;
-        private System.Windows.Forms.Button TumUyeleriGorBTN;
-        private System.Windows.Forms.Button DurumBTN;
         private System.Windows.Forms.ComboBox sehirler_CB;
         private System.Windows.Forms.DataGridView ListelemeDGW;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button BilgiYazdirBTN;
-        private System.Windows.Forms.Button BorcDurumu_BTN;
         private System.Windows.Forms.Button MailGonderBTN;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton TSB_Logout;
         private System.Windows.Forms.Button pdfkaydet_BTN;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button ZG_Sehirler_BTN;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.Button Listele_BTN;
         private System.Windows.Forms.TextBox TC_TBX;
-        private System.Windows.Forms.Button BTN_ODEMEDURUM;
-        private System.Windows.Forms.Button BTN_AylikYillikZedGraph;
-        private System.Windows.Forms.Button BTN_YilZedGraph;
+        private Guna.UI2.WinForms.Guna2GradientButton guno_TumUyelerBTN;
+        private Guna.UI2.WinForms.Guna2GradientButton guno_SehreGoreListeleBtn;
+        private Guna.UI2.WinForms.Guna2GradientButton guno_TC;
+        private Guna.UI2.WinForms.Guna2GradientButton guno_durumaGore;
+        private Guna.UI2.WinForms.Guna2GradientButton guno_KanGrubu;
+        private Guna.UI2.WinForms.Guna2GradientButton guno_BorcDurumu;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
+        private Guna.UI2.WinForms.Guna2GradientButton guno_YıillikZ;
+        private Guna.UI2.WinForms.Guna2GradientButton guno_AylikZ;
     }
 }
