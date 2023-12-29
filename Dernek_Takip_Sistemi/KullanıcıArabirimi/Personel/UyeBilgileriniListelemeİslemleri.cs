@@ -356,7 +356,7 @@ namespace Dernek_Takip_Sistemi
 
             DataTable UserDT = new DataTable();
 
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM BorcTablosu", connect.Connect()))
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM BorcTablosu WHERE Borc <> 0", connect.Connect()))
             {
                 dataAdapter.Fill(UserDT);
             }

@@ -65,16 +65,26 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
 
             //Hesap Hareketleri Tab
 
-            //Borç Bilgileri
-            string borcQuery = $"SELECT BorcMiktari FROM BorcTablosu WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
-            using (SqlCommand command = new SqlCommand(borcQuery, connection.Connect()))
+            //Borç Bilgisi ve Son Odeme Tarihi goruntuleme
+            string query = $@"
+                        SELECT a.SonOdemeTarihi, b.BorcMiktari
+                        FROM AidatTablosu a
+                        LEFT JOIN BorcTablosu b ON a.TCKimlikNumarasi = b.TCKimlikNumarasi  WHERE a.TCKimlikNumarasi = '{tcKimlikNumarasi}'";
+            using (SqlCommand command = new SqlCommand(query, connection.Connect()))
             {
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
                 {
+                    // DateTime olarak tarihi al
+                    DateTime sonOdemeTarihi = reader.GetDateTime(reader.GetOrdinal("SonOdemeTarihi"));
+
+                    // Sadece gün, ay ve yıl bilgilerini al
+                    string formattedDate = sonOdemeTarihi.ToString("dd.MM.yyyy");
+
                     lbl_borc.Text = reader["BorcMiktari"].ToString();
-       
+                    lbl_tarih.Text = formattedDate;
+
                 }
                 reader.Close();
             }

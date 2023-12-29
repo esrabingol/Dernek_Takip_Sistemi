@@ -155,7 +155,7 @@ namespace Dernek_Takip_Sistemi
                 MessageBox.Show("Şehir  Alanı Boş Olamaz!");
             else
             {
-                //connection = new VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+                connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
                 DataTable personelDataT = new DataTable();
 
                 SqlDataAdapter da = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{TckimliknoTB.Text}'", connection.Connect());

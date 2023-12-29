@@ -60,8 +60,7 @@ namespace DataLayer
                                 DateTime sonOdemeTarihi = reader.GetDateTime(reader.GetOrdinal("SonOdemeTarihi"));
 
                                 // Bugün
-                                //DateTime current = DateTime.Now;
-                                DateTime current = new DateTime(2024, 01, 29);
+                                DateTime current = DateTime.Now;
                                 // Son Odeme Tarihi Gecmis mi
                                 int result = DateTime.Compare(current, sonOdemeTarihi);
 
