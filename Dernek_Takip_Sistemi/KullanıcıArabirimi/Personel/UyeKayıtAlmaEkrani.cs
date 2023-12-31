@@ -1,4 +1,5 @@
 ﻿
+using Dernek_Takip_Sistemi.KullanıcıArabirimi;
 using iTextSharp.text;
 using System;
 using System.Data;
@@ -41,8 +42,16 @@ namespace Dernek_Takip_Sistemi
         private void UKayitReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            UyeBilgileriniListelemeİslemleri giris = new UyeBilgileriniListelemeİslemleri();
-            giris.ShowDialog();
+            if (personelGirismi)
+            {
+                UyeBilgileriniListelemeİslemleri giris = new UyeBilgileriniListelemeİslemleri();
+                giris.ShowDialog();
+            }
+            else
+            {
+                UyeGirisEkrani giris = new UyeGirisEkrani();
+                giris.ShowDialog();
+            }
 
         }
 
