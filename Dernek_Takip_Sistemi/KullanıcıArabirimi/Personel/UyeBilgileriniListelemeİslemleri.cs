@@ -75,16 +75,13 @@ namespace Dernek_Takip_Sistemi
                         {
                             if (cell.Value != null)
                             {
-                                // Örnek olarak, string bir türe dönüştürme işlemi:
                                 string cellValue = cell.Value.ToString(); // Hücre değerini string'e dönüştür
 
-                                // Burada cellValue değerini PDF'e eklemek için kullanabilirsiniz
                                 table.AddCell(new Cell().Add(new Paragraph(cellValue)));
                             }
                             else
                             {
                                 // Eğer hücre değeri null ise, nasıl işlem yapılacağını belirleyin
-                                // Örneğin, boş bir değer ekleyebilirsiniz:
                                 table.AddCell(new Cell().Add(new Paragraph("")));
                             }
                         }
@@ -177,7 +174,9 @@ namespace Dernek_Takip_Sistemi
         {
             DataTable UserDT = new DataTable();
 
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu", connect.Connect()))
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT " +
+                $"TCKimlikNumarasi,UyeAdi,UyeSoyadi,UyeCinsiyet,UyeKanGrubu,UyeSehir,UyeninDurumBilgisi,UyeninAylıkOdemeMiktari,UyeMailAdresi,UyeTelefonNumarasi,UyeDogumTarihi" +
+                " FROM UyeKayitTablosu", connect.Connect()))
             {
                 dataAdapter.Fill(UserDT);
             }
@@ -193,58 +192,47 @@ namespace Dernek_Takip_Sistemi
                 DataTable UserDT = new DataTable();
 
 
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeSehir FROM UyeKayitTablosu WHERE UyeSehir = '{secilenSehir}'", connect.Connect()))
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeSoyadi,UyeSehir FROM UyeKayitTablosu WHERE UyeSehir = '{secilenSehir}'", connect.Connect()))
                 {
                     dataAdapter.Fill(UserDT);
                 }
 
                 if (UserDT.Rows.Count > 0)
-                {
                     ListelemeDGW.DataSource = UserDT;
-
-                }
                 else
-                {
-                    MessageBox.Show("Seçilen Şehire ait kullanıcı bulunamadı.");
-                }
+                    MessageBox.Show("Seçilen şehire ait kullanıcı bulunamadı.");
             }
             else
-            {
-                MessageBox.Show("Lütfen bir şehir seçin.");
-            }
+                MessageBox.Show("Lütfen bir şehir seçiniz.");
         }
 
         private void guno_TC_Click(object sender, EventArgs e)
         {
-            if (TC_TBX.Text != null)
+            if (String.IsNullOrWhiteSpace(TC_TBX.Text))
             {
                 string tckimlik = TC_TBX.Text.ToString();
                 DataTable UserDT = new DataTable();
 
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"Select* from UyeKayitTablosu WHERE TCKimlikNumarasi ='{tckimlik}'", connect.Connect()))
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT " +
+                    $"TCKimlikNumarasi,UyeAdi,UyeSoyadi,UyeCinsiyet,UyeKanGrubu,UyeSehir,UyeninDurumBilgisi,UyeninAylıkOdemeMiktari,UyeMailAdresi,UyeTelefonNumarasi,UyeDogumTarihi " +
+                    $"FROM UyeKayitTablosu WHERE TCKimlikNumarasi ='{tckimlik}'", connect.Connect()))
                 {
                     dataAdapter.Fill(UserDT);
                 }
                 if (UserDT.Rows.Count > 0)
-                {
                     ListelemeDGW.DataSource = UserDT;
-                }
                 else
-                {
-                    MessageBox.Show("Seçilen Tc Numarasına ait kullanıcı Bulunamadı");
-                }
+                    MessageBox.Show("Girilen TC kimlik numarasına ait kullanıcı bulunamadı!");
             }
             else
-            {
-                MessageBox.Show("Tc Kimlik Numarası Giriniz ..");
-            }
+                MessageBox.Show("Lütfen TC Kimlik Numarası Giriniz..");
         }
 
         private void guno_durumaGore_Click(object sender, EventArgs e)
         {
             DataTable UserDT = new DataTable();
 
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeninDurumBilgisi FROM UyeKayitTablosu", connect.Connect()))
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeSoyadi, UyeninDurumBilgisi FROM UyeKayitTablosu", connect.Connect()))
             {
                 dataAdapter.Fill(UserDT);
             }
@@ -255,10 +243,9 @@ namespace Dernek_Takip_Sistemi
         {
             DataTable UserDT = new DataTable();
 
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeKanGrubu FROM UyeKayitTablosu", connect.Connect()))
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi,UyeAdi,UyeSoyadi,UyeKanGrubu FROM UyeKayitTablosu", connect.Connect()))
             {
                 dataAdapter.Fill(UserDT);
-
             }
 
             ListelemeDGW.DataSource = UserDT;
@@ -287,7 +274,6 @@ namespace Dernek_Takip_Sistemi
             this.Close();
             TarihlerArasiOdemeDurumBilgisi durumBilgisi = new TarihlerArasiOdemeDurumBilgisi();
             durumBilgisi.Show();
-
         }
 
         private void guno_AylikZ_Click(object sender, EventArgs e)

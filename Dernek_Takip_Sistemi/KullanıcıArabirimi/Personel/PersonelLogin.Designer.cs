@@ -44,23 +44,23 @@
 			// 
 			this.lbl_personelnumber.AutoSize = true;
 			this.lbl_personelnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.lbl_personelnumber.Location = new System.Drawing.Point(16, 91);
+			this.lbl_personelnumber.Location = new System.Drawing.Point(105, 93);
 			this.lbl_personelnumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lbl_personelnumber.Name = "lbl_personelnumber";
-			this.lbl_personelnumber.Size = new System.Drawing.Size(198, 20);
+			this.lbl_personelnumber.Size = new System.Drawing.Size(132, 20);
 			this.lbl_personelnumber.TabIndex = 0;
-			this.lbl_personelnumber.Text = "Personel Sistem Adı : \r\n";
+			this.lbl_personelnumber.Text = "Kullanıcı Adı : \r\n";
 			// 
 			// lbl_PersonelPassword
 			// 
 			this.lbl_PersonelPassword.AutoSize = true;
 			this.lbl_PersonelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.lbl_PersonelPassword.Location = new System.Drawing.Point(89, 143);
+			this.lbl_PersonelPassword.Location = new System.Drawing.Point(176, 147);
 			this.lbl_PersonelPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lbl_PersonelPassword.Name = "lbl_PersonelPassword";
-			this.lbl_PersonelPassword.Size = new System.Drawing.Size(140, 20);
+			this.lbl_PersonelPassword.Size = new System.Drawing.Size(61, 20);
 			this.lbl_PersonelPassword.TabIndex = 1;
-			this.lbl_PersonelPassword.Text = "Sistem Şifresi :";
+			this.lbl_PersonelPassword.Text = "Şifre :";
 			// 
 			// SifreTB
 			// 
@@ -75,15 +75,12 @@
 			// PersonelAdiTB
 			// 
 			this.PersonelAdiTB.BackColor = System.Drawing.SystemColors.MenuBar;
-			this.PersonelAdiTB.ForeColor = System.Drawing.SystemColors.GrayText;
+			this.PersonelAdiTB.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.PersonelAdiTB.Location = new System.Drawing.Point(271, 91);
 			this.PersonelAdiTB.Margin = new System.Windows.Forms.Padding(4);
 			this.PersonelAdiTB.Name = "PersonelAdiTB";
 			this.PersonelAdiTB.Size = new System.Drawing.Size(204, 22);
 			this.PersonelAdiTB.TabIndex = 5;
-			this.PersonelAdiTB.Text = "Kullanıcı Adı";
-			this.PersonelAdiTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KullaniciAdiTB_MouseClick);
-			this.PersonelAdiTB.Leave += new System.EventHandler(this.KullaniciAdiTB_Leave);
 			// 
 			// label1
 			// 
@@ -103,7 +100,7 @@
             this.TSB_Personel});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(643, 31);
+			this.toolStrip1.Size = new System.Drawing.Size(643, 27);
 			this.toolStrip1.TabIndex = 9;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
@@ -113,7 +110,7 @@
 			this.TSB_Personel.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Custom_Icon_Design_Flatastic_8_Go_back_16;
 			this.TSB_Personel.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.TSB_Personel.Name = "TSB_Personel";
-			this.TSB_Personel.Size = new System.Drawing.Size(29, 28);
+			this.TSB_Personel.Size = new System.Drawing.Size(29, 24);
 			this.TSB_Personel.Text = "toolStripButton1";
 			this.TSB_Personel.Click += new System.EventHandler(this.TSB_Personel_Click);
 			// 
@@ -129,7 +126,7 @@
 			this.guno_GirisBTN.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
 			this.guno_GirisBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
 			this.guno_GirisBTN.ForeColor = System.Drawing.Color.Black;
-			this.guno_GirisBTN.Location = new System.Drawing.Point(311, 196);
+			this.guno_GirisBTN.Location = new System.Drawing.Point(303, 185);
 			this.guno_GirisBTN.Margin = new System.Windows.Forms.Padding(4);
 			this.guno_GirisBTN.Name = "guno_GirisBTN";
 			this.guno_GirisBTN.Size = new System.Drawing.Size(125, 36);
@@ -169,7 +166,7 @@
 			this.Controls.Add(this.lbl_personelnumber);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "PersonelLogin";
-			this.Text = "Form1";
+			this.Text = "Personel Girişi";
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.ResumeLayout(false);

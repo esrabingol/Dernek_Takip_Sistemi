@@ -68,9 +68,8 @@
 			this.BaslikLB.Location = new System.Drawing.Point(451, 39);
 			this.BaslikLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.BaslikLB.Name = "BaslikLB";
-			this.BaslikLB.Size = new System.Drawing.Size(266, 33);
+			this.BaslikLB.Size = new System.Drawing.Size(0, 33);
 			this.BaslikLB.TabIndex = 4;
-			this.BaslikLB.Text = "Genel Bilgi Ekranı";
 			// 
 			// sehirler_CB
 			// 
@@ -158,8 +157,8 @@
             "Kilis",
             "Osmaniye",
             "Düzce"});
-			this.sehirler_CB.Location = new System.Drawing.Point(15, 62);
-			this.sehirler_CB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.sehirler_CB.Location = new System.Drawing.Point(24, 75);
+			this.sehirler_CB.Margin = new System.Windows.Forms.Padding(4);
 			this.sehirler_CB.Name = "sehirler_CB";
 			this.sehirler_CB.Size = new System.Drawing.Size(231, 25);
 			this.sehirler_CB.TabIndex = 12;
@@ -168,8 +167,8 @@
 			// 
 			this.ListelemeDGW.BackgroundColor = System.Drawing.Color.WhiteSmoke;
 			this.ListelemeDGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.ListelemeDGW.Location = new System.Drawing.Point(507, 31);
-			this.ListelemeDGW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.ListelemeDGW.Location = new System.Drawing.Point(532, 41);
+			this.ListelemeDGW.Margin = new System.Windows.Forms.Padding(4);
 			this.ListelemeDGW.Name = "ListelemeDGW";
 			this.ListelemeDGW.RowHeadersWidth = 51;
 			this.ListelemeDGW.Size = new System.Drawing.Size(628, 359);
@@ -177,7 +176,7 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+			this.groupBox1.BackColor = System.Drawing.Color.AliceBlue;
 			this.groupBox1.Controls.Add(this.guno_YıillikZ);
 			this.groupBox1.Controls.Add(this.guno_AylikZ);
 			this.groupBox1.Controls.Add(this.guna2GradientButton2);
@@ -192,11 +191,11 @@
 			this.groupBox1.Controls.Add(this.ListelemeDGW);
 			this.groupBox1.Controls.Add(this.sehirler_CB);
 			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.groupBox1.Location = new System.Drawing.Point(29, 79);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Location = new System.Drawing.Point(29, 47);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.groupBox1.Size = new System.Drawing.Size(1179, 390);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+			this.groupBox1.Size = new System.Drawing.Size(1179, 421);
 			this.groupBox1.TabIndex = 13;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "LİSTELEME İŞLEMLERİ";
@@ -212,8 +211,8 @@
 			this.guno_YıillikZ.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guno_YıillikZ.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guno_YıillikZ.ForeColor = System.Drawing.Color.Black;
-			this.guno_YıillikZ.Location = new System.Drawing.Point(15, 362);
-			this.guno_YıillikZ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guno_YıillikZ.Location = new System.Drawing.Point(24, 375);
+			this.guno_YıillikZ.Margin = new System.Windows.Forms.Padding(4);
 			this.guno_YıillikZ.Name = "guno_YıillikZ";
 			this.guno_YıillikZ.Size = new System.Drawing.Size(463, 26);
 			this.guno_YıillikZ.TabIndex = 29;
@@ -231,8 +230,8 @@
 			this.guno_AylikZ.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guno_AylikZ.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guno_AylikZ.ForeColor = System.Drawing.Color.Black;
-			this.guno_AylikZ.Location = new System.Drawing.Point(15, 329);
-			this.guno_AylikZ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guno_AylikZ.Location = new System.Drawing.Point(24, 342);
+			this.guno_AylikZ.Margin = new System.Windows.Forms.Padding(4);
 			this.guno_AylikZ.Name = "guno_AylikZ";
 			this.guno_AylikZ.Size = new System.Drawing.Size(463, 26);
 			this.guno_AylikZ.TabIndex = 28;
@@ -250,8 +249,8 @@
 			this.guna2GradientButton2.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guna2GradientButton2.ForeColor = System.Drawing.Color.Black;
-			this.guna2GradientButton2.Location = new System.Drawing.Point(15, 290);
-			this.guna2GradientButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guna2GradientButton2.Location = new System.Drawing.Point(24, 303);
+			this.guna2GradientButton2.Margin = new System.Windows.Forms.Padding(4);
 			this.guna2GradientButton2.Name = "guna2GradientButton2";
 			this.guna2GradientButton2.Size = new System.Drawing.Size(463, 26);
 			this.guna2GradientButton2.TabIndex = 27;
@@ -269,8 +268,8 @@
 			this.guna2GradientButton1.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guna2GradientButton1.ForeColor = System.Drawing.Color.Black;
-			this.guna2GradientButton1.Location = new System.Drawing.Point(15, 254);
-			this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guna2GradientButton1.Location = new System.Drawing.Point(24, 267);
+			this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(4);
 			this.guna2GradientButton1.Name = "guna2GradientButton1";
 			this.guna2GradientButton1.Size = new System.Drawing.Size(463, 26);
 			this.guna2GradientButton1.TabIndex = 26;
@@ -288,8 +287,8 @@
 			this.guno_BorcDurumu.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guno_BorcDurumu.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guno_BorcDurumu.ForeColor = System.Drawing.Color.Black;
-			this.guno_BorcDurumu.Location = new System.Drawing.Point(15, 215);
-			this.guno_BorcDurumu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guno_BorcDurumu.Location = new System.Drawing.Point(24, 228);
+			this.guno_BorcDurumu.Margin = new System.Windows.Forms.Padding(4);
 			this.guno_BorcDurumu.Name = "guno_BorcDurumu";
 			this.guno_BorcDurumu.Size = new System.Drawing.Size(463, 26);
 			this.guno_BorcDurumu.TabIndex = 25;
@@ -307,8 +306,8 @@
 			this.guno_KanGrubu.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guno_KanGrubu.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guno_KanGrubu.ForeColor = System.Drawing.Color.Black;
-			this.guno_KanGrubu.Location = new System.Drawing.Point(15, 182);
-			this.guno_KanGrubu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guno_KanGrubu.Location = new System.Drawing.Point(24, 195);
+			this.guno_KanGrubu.Margin = new System.Windows.Forms.Padding(4);
 			this.guno_KanGrubu.Name = "guno_KanGrubu";
 			this.guno_KanGrubu.Size = new System.Drawing.Size(463, 26);
 			this.guno_KanGrubu.TabIndex = 24;
@@ -326,8 +325,8 @@
 			this.guno_durumaGore.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guno_durumaGore.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guno_durumaGore.ForeColor = System.Drawing.Color.Black;
-			this.guno_durumaGore.Location = new System.Drawing.Point(15, 143);
-			this.guno_durumaGore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guno_durumaGore.Location = new System.Drawing.Point(24, 156);
+			this.guno_durumaGore.Margin = new System.Windows.Forms.Padding(4);
 			this.guno_durumaGore.Name = "guno_durumaGore";
 			this.guno_durumaGore.Size = new System.Drawing.Size(463, 26);
 			this.guno_durumaGore.TabIndex = 23;
@@ -345,8 +344,8 @@
 			this.guno_TC.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guno_TC.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guno_TC.ForeColor = System.Drawing.Color.Black;
-			this.guno_TC.Location = new System.Drawing.Point(255, 94);
-			this.guno_TC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guno_TC.Location = new System.Drawing.Point(264, 107);
+			this.guno_TC.Margin = new System.Windows.Forms.Padding(4);
 			this.guno_TC.Name = "guno_TC";
 			this.guno_TC.Size = new System.Drawing.Size(223, 26);
 			this.guno_TC.TabIndex = 22;
@@ -364,8 +363,8 @@
 			this.guno_SehreGoreListeleBtn.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guno_SehreGoreListeleBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guno_SehreGoreListeleBtn.ForeColor = System.Drawing.Color.Black;
-			this.guno_SehreGoreListeleBtn.Location = new System.Drawing.Point(255, 62);
-			this.guno_SehreGoreListeleBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guno_SehreGoreListeleBtn.Location = new System.Drawing.Point(264, 75);
+			this.guno_SehreGoreListeleBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.guno_SehreGoreListeleBtn.Name = "guno_SehreGoreListeleBtn";
 			this.guno_SehreGoreListeleBtn.Size = new System.Drawing.Size(223, 26);
 			this.guno_SehreGoreListeleBtn.TabIndex = 21;
@@ -384,8 +383,8 @@
 			this.guno_TumUyelerBTN.FillColor2 = System.Drawing.Color.LightSteelBlue;
 			this.guno_TumUyelerBTN.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guno_TumUyelerBTN.ForeColor = System.Drawing.Color.Black;
-			this.guno_TumUyelerBTN.Location = new System.Drawing.Point(15, 28);
-			this.guno_TumUyelerBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guno_TumUyelerBTN.Location = new System.Drawing.Point(24, 41);
+			this.guno_TumUyelerBTN.Margin = new System.Windows.Forms.Padding(4);
 			this.guno_TumUyelerBTN.Name = "guno_TumUyelerBTN";
 			this.guno_TumUyelerBTN.Size = new System.Drawing.Size(463, 26);
 			this.guno_TumUyelerBTN.TabIndex = 20;
@@ -394,8 +393,8 @@
 			// 
 			// TC_TBX
 			// 
-			this.TC_TBX.Location = new System.Drawing.Point(15, 95);
-			this.TC_TBX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.TC_TBX.Location = new System.Drawing.Point(24, 108);
+			this.TC_TBX.Margin = new System.Windows.Forms.Padding(4);
 			this.TC_TBX.Name = "TC_TBX";
 			this.TC_TBX.Size = new System.Drawing.Size(231, 23);
 			this.TC_TBX.TabIndex = 15;
@@ -429,10 +428,10 @@
 			this.pdfkaydet_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.pdfkaydet_BTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Custom_Icon_Design_Flatastic_3_Filetype_pdf_24;
 			this.pdfkaydet_BTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.pdfkaydet_BTN.Location = new System.Drawing.Point(927, 12);
-			this.pdfkaydet_BTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pdfkaydet_BTN.Location = new System.Drawing.Point(952, 12);
+			this.pdfkaydet_BTN.Margin = new System.Windows.Forms.Padding(4);
 			this.pdfkaydet_BTN.Name = "pdfkaydet_BTN";
-			this.pdfkaydet_BTN.Size = new System.Drawing.Size(208, 50);
+			this.pdfkaydet_BTN.Size = new System.Drawing.Size(208, 52);
 			this.pdfkaydet_BTN.TabIndex = 17;
 			this.pdfkaydet_BTN.Text = "Pdf Olarak Kaydet";
 			this.pdfkaydet_BTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -446,10 +445,10 @@
 			this.MailGonderBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.MailGonderBTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.eposta;
 			this.MailGonderBTN.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-			this.MailGonderBTN.Location = new System.Drawing.Point(507, 10);
-			this.MailGonderBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.MailGonderBTN.Location = new System.Drawing.Point(532, 12);
+			this.MailGonderBTN.Margin = new System.Windows.Forms.Padding(4);
 			this.MailGonderBTN.Name = "MailGonderBTN";
-			this.MailGonderBTN.Size = new System.Drawing.Size(167, 49);
+			this.MailGonderBTN.Size = new System.Drawing.Size(167, 52);
 			this.MailGonderBTN.TabIndex = 15;
 			this.MailGonderBTN.Text = "Mail Gönder";
 			this.MailGonderBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -462,10 +461,10 @@
 			this.BilgiYazdirBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.BilgiYazdirBTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.Iconshock_Real_Vista_Text_Print_32;
 			this.BilgiYazdirBTN.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-			this.BilgiYazdirBTN.Location = new System.Drawing.Point(711, 12);
-			this.BilgiYazdirBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.BilgiYazdirBTN.Location = new System.Drawing.Point(742, 12);
+			this.BilgiYazdirBTN.Margin = new System.Windows.Forms.Padding(4);
 			this.BilgiYazdirBTN.Name = "BilgiYazdirBTN";
-			this.BilgiYazdirBTN.Size = new System.Drawing.Size(177, 46);
+			this.BilgiYazdirBTN.Size = new System.Drawing.Size(177, 52);
 			this.BilgiYazdirBTN.TabIndex = 14;
 			this.BilgiYazdirBTN.Text = " Bilgileri Yazdır";
 			this.BilgiYazdirBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -478,10 +477,10 @@
 			this.UyeKayitBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.UyeKayitBTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.user;
 			this.UyeKayitBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.UyeKayitBTN.Location = new System.Drawing.Point(228, 12);
-			this.UyeKayitBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.UyeKayitBTN.Location = new System.Drawing.Point(249, 12);
+			this.UyeKayitBTN.Margin = new System.Windows.Forms.Padding(4);
 			this.UyeKayitBTN.Name = "UyeKayitBTN";
-			this.UyeKayitBTN.Size = new System.Drawing.Size(249, 47);
+			this.UyeKayitBTN.Size = new System.Drawing.Size(249, 52);
 			this.UyeKayitBTN.TabIndex = 6;
 			this.UyeKayitBTN.Text = "Yeni Üye Kaydetme İşlemi";
 			this.UyeKayitBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -494,10 +493,10 @@
 			this.UyeSilBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.UyeSilBTN.Image = global::Dernek_Takip_Sistemi.Properties.Resources.warning;
 			this.UyeSilBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.UyeSilBTN.Location = new System.Drawing.Point(15, 14);
-			this.UyeSilBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.UyeSilBTN.Location = new System.Drawing.Point(15, 12);
+			this.UyeSilBTN.Margin = new System.Windows.Forms.Padding(4);
 			this.UyeSilBTN.Name = "UyeSilBTN";
-			this.UyeSilBTN.Size = new System.Drawing.Size(197, 46);
+			this.UyeSilBTN.Size = new System.Drawing.Size(197, 52);
 			this.UyeSilBTN.TabIndex = 9;
 			this.UyeSilBTN.Text = "Üye Silme İşlemi";
 			this.UyeSilBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -506,17 +505,17 @@
 			// 
 			// groupBox2
 			// 
-			this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
+			this.groupBox2.BackColor = System.Drawing.Color.AliceBlue;
 			this.groupBox2.Controls.Add(this.UyeSilBTN);
 			this.groupBox2.Controls.Add(this.pdfkaydet_BTN);
 			this.groupBox2.Controls.Add(this.UyeKayitBTN);
 			this.groupBox2.Controls.Add(this.MailGonderBTN);
 			this.groupBox2.Controls.Add(this.BilgiYazdirBTN);
-			this.groupBox2.Location = new System.Drawing.Point(29, 489);
-			this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox2.Location = new System.Drawing.Point(29, 476);
+			this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.groupBox2.Size = new System.Drawing.Size(1179, 66);
+			this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+			this.groupBox2.Size = new System.Drawing.Size(1179, 72);
 			this.groupBox2.TabIndex = 18;
 			this.groupBox2.TabStop = false;
 			// 
@@ -529,14 +528,14 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(1239, 570);
+			this.ClientSize = new System.Drawing.Size(1239, 561);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.BaslikLB);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "UyeBilgileriniListelemeİslemleri";
-			this.Text = "UyeBilgileriniListelemeİslemleri";
+			this.Text = "Personel Anasayfa";
 			((System.ComponentModel.ISupportInitialize)(this.ListelemeDGW)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();

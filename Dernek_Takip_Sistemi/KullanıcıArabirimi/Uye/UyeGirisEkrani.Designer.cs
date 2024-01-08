@@ -60,7 +60,7 @@
             this.TSB_Uye});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(521, 27);
+			this.toolStrip1.Size = new System.Drawing.Size(521, 31);
 			this.toolStrip1.TabIndex = 17;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
@@ -113,6 +113,7 @@
 			// 
 			// UKullaniciAdiTB
 			// 
+			this.UKullaniciAdiTB.BackColor = System.Drawing.Color.White;
 			this.UKullaniciAdiTB.ForeColor = System.Drawing.SystemColors.GrayText;
 			this.UKullaniciAdiTB.Location = new System.Drawing.Point(189, 112);
 			this.UKullaniciAdiTB.Margin = new System.Windows.Forms.Padding(4);
@@ -178,7 +179,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Gainsboro;
+			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(521, 298);
 			this.Controls.Add(this.lbl_personelnumber);
 			this.Controls.Add(this.guna2GradientButton1);
@@ -192,7 +193,7 @@
 			this.Controls.Add(this.UsfregorCB);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "UyeGirisEkrani";
-			this.Text = "UyeGirisEkrani";
+			this.Text = "Üye Girişi";
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.ResumeLayout(false);

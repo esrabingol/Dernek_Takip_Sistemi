@@ -31,8 +31,6 @@ namespace Dernek_Takip_Sistemi
 			}
 		}
 
-
-
         private void TSB_Personel_Click(object sender, EventArgs e)
         {
             Giris giris = new Giris();
@@ -40,25 +38,7 @@ namespace Dernek_Takip_Sistemi
             this.Hide();
         }
 
-        private void KullaniciAdiTB_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (PersonelAdiTB.Text == "Kullanıcı Adı")
-            {
-                PersonelAdiTB.Text = "";
-                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
-            }
-        }
-
-        private void KullaniciAdiTB_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(PersonelAdiTB.Text))
-            {
-                PersonelAdiTB.Text = "Kullanıcı Adı";
-                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
-            }
-        }
-
-        private void guno_GirisBTN_Click(object sender, EventArgs e)
+		private void guno_GirisBTN_Click(object sender, EventArgs e)
         {
 
             if (String.IsNullOrWhiteSpace(PersonelAdiTB.Text))
@@ -98,5 +78,5 @@ namespace Dernek_Takip_Sistemi
                 }
             }
         }
-    }
+	}
 }

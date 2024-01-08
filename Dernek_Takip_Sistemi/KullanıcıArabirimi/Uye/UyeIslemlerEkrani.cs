@@ -108,6 +108,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
+            this.Close();
             Sifreİslemleri sifre = new Sifreİslemleri(tcKimlikNumarasi);
             sifre.Show();
         }

@@ -30,7 +30,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
 
             try
             {
-                string updateQuery = $"SELECT * FROM Odeme_Tablosu WHERE OdemeTarihi BETWEEN @BaslangicTarihi AND @BitisTarihi";
+                string updateQuery = $"SELECT TCKimlikNumarasi, OdemeMiktari, OdemeTarihi FROM Odeme_Tablosu WHERE OdemeTarihi BETWEEN @BaslangicTarihi AND @BitisTarihi";
                 using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection.Connect()))
                 {
                     updateCommand.Parameters.AddWithValue("@BaslangicTarihi", BaslangicTarihi);

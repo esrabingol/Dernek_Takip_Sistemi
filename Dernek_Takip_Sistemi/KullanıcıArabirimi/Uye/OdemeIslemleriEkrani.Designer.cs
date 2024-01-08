@@ -58,7 +58,7 @@
 			// 
 			this.KalanBorcu_LB.AutoSize = true;
 			this.KalanBorcu_LB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.KalanBorcu_LB.Location = new System.Drawing.Point(57, 172);
+			this.KalanBorcu_LB.Location = new System.Drawing.Point(57, 177);
 			this.KalanBorcu_LB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.KalanBorcu_LB.Name = "KalanBorcu_LB";
 			this.KalanBorcu_LB.Size = new System.Drawing.Size(181, 20);
@@ -69,7 +69,7 @@
 			// 
 			this.OdenecekTutar_LB.AutoSize = true;
 			this.OdenecekTutar_LB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.OdenecekTutar_LB.Location = new System.Drawing.Point(0, 139);
+			this.OdenecekTutar_LB.Location = new System.Drawing.Point(11, 138);
 			this.OdenecekTutar_LB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.OdenecekTutar_LB.Name = "OdenecekTutar_LB";
 			this.OdenecekTutar_LB.Size = new System.Drawing.Size(227, 20);
@@ -80,20 +80,20 @@
 			// 
 			this.OdemeBaslik_LB.AutoSize = true;
 			this.OdemeBaslik_LB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.OdemeBaslik_LB.Location = new System.Drawing.Point(203, 46);
+			this.OdemeBaslik_LB.Location = new System.Drawing.Point(179, 43);
 			this.OdemeBaslik_LB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.OdemeBaslik_LB.Name = "OdemeBaslik_LB";
-			this.OdemeBaslik_LB.Size = new System.Drawing.Size(221, 29);
+			this.OdemeBaslik_LB.Size = new System.Drawing.Size(156, 29);
 			this.OdemeBaslik_LB.TabIndex = 3;
-			this.OdemeBaslik_LB.Text = "Ödeme İşlemleri ";
+			this.OdemeBaslik_LB.Text = "Ödeme Yap";
 			// 
 			// OdenecekTutar_TB
 			// 
 			this.OdenecekTutar_TB.BackColor = System.Drawing.SystemColors.MenuBar;
 			this.OdenecekTutar_TB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.OdenecekTutar_TB.ForeColor = System.Drawing.SystemColors.GrayText;
-			this.OdenecekTutar_TB.Location = new System.Drawing.Point(296, 135);
-			this.OdenecekTutar_TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.OdenecekTutar_TB.Location = new System.Drawing.Point(295, 135);
+			this.OdenecekTutar_TB.Margin = new System.Windows.Forms.Padding(4);
 			this.OdenecekTutar_TB.Name = "OdenecekTutar_TB";
 			this.OdenecekTutar_TB.Size = new System.Drawing.Size(105, 26);
 			this.OdenecekTutar_TB.TabIndex = 5;
@@ -105,7 +105,7 @@
 			// 
 			this.lbl_aidat.AutoSize = true;
 			this.lbl_aidat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.lbl_aidat.Location = new System.Drawing.Point(291, 107);
+			this.lbl_aidat.Location = new System.Drawing.Point(291, 105);
 			this.lbl_aidat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lbl_aidat.Name = "lbl_aidat";
 			this.lbl_aidat.Size = new System.Drawing.Size(183, 20);
@@ -130,7 +130,7 @@
             this.toolStripButton1});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(672, 27);
+			this.toolStrip1.Size = new System.Drawing.Size(579, 31);
 			this.toolStrip1.TabIndex = 8;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
@@ -148,7 +148,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.label3.Location = new System.Drawing.Point(187, 208);
+			this.label3.Location = new System.Drawing.Point(174, 213);
 			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(64, 20);
@@ -158,11 +158,12 @@
 			// dateTimePicker1
 			// 
 			this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuBar;
+			this.dateTimePicker1.Enabled = false;
 			this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-			this.dateTimePicker1.Location = new System.Drawing.Point(296, 202);
-			this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dateTimePicker1.Location = new System.Drawing.Point(295, 208);
+			this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
 			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(328, 26);
+			this.dateTimePicker1.Size = new System.Drawing.Size(261, 26);
 			this.dateTimePicker1.TabIndex = 10;
 			// 
 			// guna2GradientButton1
@@ -176,8 +177,8 @@
 			this.guna2GradientButton1.FillColor2 = System.Drawing.Color.LimeGreen;
 			this.guna2GradientButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.guna2GradientButton1.ForeColor = System.Drawing.Color.Black;
-			this.guna2GradientButton1.Location = new System.Drawing.Point(464, 265);
-			this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guna2GradientButton1.Location = new System.Drawing.Point(304, 265);
+			this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(4);
 			this.guna2GradientButton1.Name = "guna2GradientButton1";
 			this.guna2GradientButton1.Size = new System.Drawing.Size(161, 42);
 			this.guna2GradientButton1.TabIndex = 11;
@@ -189,7 +190,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(672, 320);
+			this.ClientSize = new System.Drawing.Size(579, 320);
 			this.Controls.Add(this.guna2GradientButton1);
 			this.Controls.Add(this.dateTimePicker1);
 			this.Controls.Add(this.label3);
@@ -201,9 +202,9 @@
 			this.Controls.Add(this.OdenecekTutar_LB);
 			this.Controls.Add(this.KalanBorcu_LB);
 			this.Controls.Add(this.AylikOdeme_LB);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "OdemeIslemleriEkrani";
-			this.Text = "OdemeIslemleriEkrani";
+			this.Text = "Ödeme Yap";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OdemeIslemleriEkrani_FormClosing);
 			this.Load += new System.EventHandler(this.Odeme_Load);
 			this.toolStrip1.ResumeLayout(false);

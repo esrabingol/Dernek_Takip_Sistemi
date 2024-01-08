@@ -86,9 +86,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                         this.Hide();
                     }
                     else
-                    {
                         MessageBox.Show("Kullanıcı Adı veya Şifre Hatalıdır.");
-                    }
                 }
             }
         }

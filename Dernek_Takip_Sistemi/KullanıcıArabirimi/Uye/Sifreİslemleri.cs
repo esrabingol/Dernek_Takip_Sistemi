@@ -39,45 +39,31 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
 
 		private void chbox_yeniParola_CheckedChanged(object sender, EventArgs e)
         {
-			if (chbox_mevcutParola.Checked)
+			if (chbox_yeniParola.Checked)
 			{
-				chbox_mevcutParola.Image = Properties.Resources.opened_eye;
-				txt_eskiSifre.PasswordChar = '\0';
+				chbox_yeniParola.Image = Properties.Resources.opened_eye;
+				txt_yeniSifre.PasswordChar = '\0';
 			}
 			else
 			{
-				chbox_mevcutParola.Image = Properties.Resources.closed_eye;
-				txt_eskiSifre.PasswordChar = '*';
+				chbox_yeniParola.Image = Properties.Resources.closed_eye;
+				txt_yeniSifre.PasswordChar = '*';
 			}
 		}
 
 		private void chbox_tekrarParola_CheckedChanged(object sender, EventArgs e)
         {
-			if (chbox_mevcutParola.Checked)
+			if (chbox_tekrarParola.Checked)
 			{
-				chbox_mevcutParola.Image = Properties.Resources.opened_eye;
-				txt_eskiSifre.PasswordChar = '\0';
+				chbox_tekrarParola.Image = Properties.Resources.opened_eye;
+				txt_sifreTekrar.PasswordChar = '\0';
 			}
 			else
 			{
-				chbox_mevcutParola.Image = Properties.Resources.closed_eye;
-				txt_eskiSifre.PasswordChar = '*';
+				chbox_tekrarParola.Image = Properties.Resources.closed_eye;
+				txt_sifreTekrar.PasswordChar = '*';
 			}
 		}
-
-		private void GeriDon_BTN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani(tcKimlikNumarasi);
-            uyeIslemlerEkrani.Show();
-        }
-
-        private void CKS_BTN_Click(object sender, EventArgs e)
-        {
-            Giris giris = new Giris();
-            giris.Show();
-            this.Hide();
-        }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
@@ -111,9 +97,19 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
 
             }
             else
-            {
                 MessageBox.Show("Mevcut şifre hatalı. Lütfen  şifreyi tekrar giriniz");
-            }
         }
+
+		private void Sifreİslemleri_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			this.Hide();
+			UyeIslemlerEkrani geriDonİslemi = new UyeIslemlerEkrani(tcKimlikNumarasi);
+			geriDonİslemi.ShowDialog();
+		}
+
+		private void TSB_GeriDon_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }
