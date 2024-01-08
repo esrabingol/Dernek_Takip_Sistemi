@@ -63,6 +63,16 @@ namespace Dernek_Takip_Sistemi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap closed_eye {
+            get {
+                object obj = ResourceManager.GetObject("closed_eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Custom_Icon_Design_Flatastic_3_Filetype_pdf_24 {
             get {
                 object obj = ResourceManager.GetObject("Custom-Icon-Design-Flatastic-3-Filetype-pdf.24", resourceCulture);
@@ -126,6 +136,16 @@ namespace Dernek_Takip_Sistemi.Properties {
         internal static System.Drawing.Bitmap logout {
             get {
                 object obj = ResourceManager.GetObject("logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap opened_eye {
+            get {
+                object obj = ResourceManager.GetObject("opened_eye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -26,7 +26,7 @@ namespace DataLayer
             {
                 if (baglan?.State != ConnectionState.Open)
                 {
-                    connectionString = $"Data Source=LAPTOP-IPQTP7GR;Initial Catalog={dynamicConnectionString};Integrated Security=True";
+                    connectionString = $"Data Source=NESLIHAN\\SQLEXPRESS;Initial Catalog={dynamicConnectionString};Integrated Security=True";
 
                     baglan = new SqlConnection(connectionString);
                     baglan.Open();
@@ -61,6 +61,7 @@ namespace DataLayer
 
                                 // Bugün
                                 DateTime current = DateTime.Now;
+
                                 // Son Odeme Tarihi Gecmis mi
                                 int result = DateTime.Compare(current, sonOdemeTarihi);
 
@@ -107,6 +108,4 @@ namespace DataLayer
             }
         }
     }
-
-    }
-
+}

@@ -17,29 +17,19 @@ namespace Dernek_Takip_Sistemi
             connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
         }
 
-        private void txtBox_prsonelnumber_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtBox_prsonelpassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void sfregorCB_CheckedChanged(object sender, EventArgs e)
         {
-            //checkBox işaretli ise
-            if (sfregorCB.Checked)
-            {
-                //karakteri göster.
-                SifreTB.PasswordChar = '\0';
-            }
-            //değilse karakterlerin yerine * koy.
-            else
-            {
-                SifreTB.PasswordChar = '*';
-            }
-        }
+			if (sfregorCB.Checked)
+			{
+				sfregorCB.Image = Properties.Resources.opened_eye;
+				SifreTB.PasswordChar = '\0';
+			}
+			else
+			{
+				sfregorCB.Image = Properties.Resources.closed_eye;
+				SifreTB.PasswordChar = '*';
+			}
+		}
 
 
 
@@ -97,22 +87,15 @@ namespace Dernek_Takip_Sistemi
                 {
                     if (SifreTB.Text == sifre)
                     {
-
-                        MessageBox.Show("Personel Giriş Başarılı, Hoşgeldiniz");
                         UyeBilgileriniListelemeİslemleri listelemeİslemleri = new UyeBilgileriniListelemeİslemleri();
                         listelemeİslemleri.Show();
                         this.Hide();
-
                     }
                     else
                     {
                         MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-
-
-
             }
         }
     }

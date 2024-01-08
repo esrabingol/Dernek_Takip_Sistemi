@@ -20,12 +20,11 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
         public ZedGraph_AylikYillikOdeme()
         {
             InitializeComponent();
-        }
+			connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+		}
 
         private void ZedGraph_AylikYillikOdeme_Load(object sender, EventArgs e)
         {
-
-            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
             DataTable dataTable = new DataTable();
 
 
@@ -36,7 +35,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                     connect.Connect().Open();
                 }
 
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT OdemeMiktari, MONTH(OdemeTarihi) AS Ay FROM OdemeTablosu", connect.Connect()))
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT OdemeMiktari, MONTH(OdemeTarihi) AS Ay FROM Odeme_Tablosu", connect.Connect()))
                 {
                     dataAdapter.Fill(dataTable);
                 }
@@ -95,8 +94,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 
             zedGraphControl_aylikodeme.AxisChange();
             zedGraphControl_aylikodeme.Invalidate();
-
-
         }
 
         private void TSB_RETURN_Click(object sender, EventArgs e)
@@ -104,7 +101,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
             this.Close();
             UyeBilgileriniListelemeİslemleri ublistele = new UyeBilgileriniListelemeİslemleri();
             ublistele.Show();
-
         }
     }
 }

@@ -15,11 +15,13 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 {
     public partial class UyeGirisEkrani : Form
     {
-        public UyeGirisEkrani()
-        {
+		DataLayer.Baglanti.VeriTabaniBaglantisi connect;
 
+		public UyeGirisEkrani()
+        {
             InitializeComponent();
-        }
+			connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+		}
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -30,67 +32,27 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 
         private void TSB_Uye_Click(object sender, EventArgs e)
         {
-            
             this.Hide();
             Giris giris = new Giris();
             giris.Show();
-         
-        }
-
-        private void KullaniciAdiTB_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (UKullaniciAdiTB.Text == "Kullanıcı Adı")
-            {
-                UKullaniciAdiTB.Text = "";
-                UKullaniciAdiTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
-            }
-        }
-
-        private void KullaniciAdiTB_MouseLeave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(UKullaniciAdiTB.Text))
-            {
-                UKullaniciAdiTB.Text = "Kullanıcı Adı";
-                UKullaniciAdiTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
-            }
-        }
-
-        private void SifreTB_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (SifreTB.Text == "Şifre")
-            {
-                SifreTB.Text = "";
-                SifreTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
-            }
-        }
-
-        private void SifreTB_MouseLeave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(SifreTB.Text))
-            {
-                SifreTB.Text = "Şifre";
-                SifreTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
-            }
         }
 
         private void UsfregorCB_CheckedChanged(object sender, EventArgs e)
         {
-            //checkBox işaretli ise
-            if (UsfregorCB.Checked)
-            {
-                //karakteri göster.
-                SifreTB.PasswordChar = '\0';
-            }
-            //değilse karakterlerin yerine * koy.
-            else
-            {
-                SifreTB.PasswordChar = '*';
-            }
-        }
+			if (UsfregorCB.Checked)
+			{
+				UsfregorCB.Image = Properties.Resources.opened_eye;
+				SifreTB.PasswordChar = '\0';
+			}
+			else
+			{
+				UsfregorCB.Image = Properties.Resources.closed_eye;
+				SifreTB.PasswordChar = '*';
+			}
+		}
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            DataLayer.Baglanti.VeriTabaniBaglantisi connect;
             if (String.IsNullOrEmpty(UKullaniciAdiTB.Text))
             {
                 MessageBox.Show("Kullanıcı Adı Alanı Boş Geçilemez");
@@ -102,8 +64,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                 MessageBox.Show("Şifre Alanı Boş Geçilemez");
                 return;
             }
-
-            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
 
             DataTable kullaniciDataT = new DataTable();
 
@@ -121,7 +81,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                 {
                     if (SifreTB.Text == sifre)
                     {
-                        MessageBox.Show("Kullanıcı Girişi Başarılı,Hoşgeldiniz.");
                         UyeIslemlerEkrani uye = new UyeIslemlerEkrani(tcKimlikNumarasi);
                         uye.Show();
                         this.Hide();
@@ -133,5 +92,24 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                 }
             }
         }
-    }
+
+		private void UKullaniciAdiTB_MouseClick(object sender, MouseEventArgs e)
+		{
+			if (UKullaniciAdiTB.Text == "Kullanıcı adınız e-posta adresinizdir")
+			{
+				UKullaniciAdiTB.Text = "";
+				UKullaniciAdiTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
+			}
+		}
+
+        private void SifreTB_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (SifreTB.Text == "İlk şifreniz TC Kimlik numaranızdır")
+            {
+                SifreTB.PasswordChar = '*';
+                SifreTB.Text = "";
+                SifreTB.ForeColor = System.Drawing.SystemColors.WindowText;
+            }
+        }
+	}
 }

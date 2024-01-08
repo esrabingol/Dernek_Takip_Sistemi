@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -16,24 +9,13 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
     {
         String tcKimlikNumarasi;
         DataLayer.Baglanti.VeriTabaniBaglantisi connection;
-        UyeIslemlerEkrani uye_islemleri;
 
         public OdemeIslemleriEkrani(string tcKimlikNumarasi)
         {
             InitializeComponent();
             this.tcKimlikNumarasi = tcKimlikNumarasi;
-
             connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-
         }
-        public OdemeIslemleriEkrani(string tcKimlikNumarasi, UyeIslemlerEkrani uye_Islemleri)
-        {
-            InitializeComponent();
-            this.tcKimlikNumarasi = tcKimlikNumarasi;
-            connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-            this.uye_islemleri = uye_Islemleri;
-        }
-
 
         private void Odeme_Load(object sender, EventArgs e)
         {
@@ -113,9 +95,10 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            UyeIslemlerEkrani uyeIslemler = new UyeIslemlerEkrani();
-            uyeIslemler.ShowDialog();
-        }
+			UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani(tcKimlikNumarasi);
+            uyeIslemlerEkrani.OpenTab2();
+			uyeIslemlerEkrani.Show();
+		}
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
@@ -124,33 +107,27 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                 try
                 {
                     // OdemeTablosu'na yeni ödeme ekle
-                    string odemeQuery = "INSERT INTO OdemeTablosu (TCKimlikNumarasi, OdemeMiktari, OdemeTarihi) VALUES (@TCKimlikNumarasi, @OdemeMiktari, @OdemeTarihi)";
+                    string odemeQuery = "INSERT INTO Odeme_Tablosu (TCKimlikNumarasi, OdemeMiktari, OdemeTarihi) VALUES (@TCKimlikNumarasi, @OdemeMiktari, @OdemeTarihi)";
                     using (SqlCommand insertCommand = new SqlCommand(odemeQuery, connection.Connect()))
                     {
                         insertCommand.Parameters.AddWithValue("@TCKimlikNumarasi", tcKimlikNumarasi);
-                        insertCommand.Parameters.AddWithValue("@OdemeMiktari", OdenecekTutar_TB.Text);
+                        insertCommand.Parameters.AddWithValue("@OdemeMiktari", Convert.ToDecimal(OdenecekTutar_TB.Text));
                         insertCommand.Parameters.AddWithValue("@OdemeTarihi", DateTime.Now);
                         insertCommand.ExecuteNonQuery();
 
                         MessageBox.Show("Ödemeniz başarıyla gerçekleştirildi.");
-
                     }
 
                     //BorcTablosu'nu güncelle
-                    string updateQuery = $"UPDATE BorcTablosu SET BorcMiktari = BorcMiktari - @OdenenMiktar WHERE TCKimlikNumarasi = @TCKimlikNumarasi";
+                    string updateQuery = $"UPDATE BorcTablosu SET BorcMiktari = BorcMiktari - @OdenenMiktar WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'";
                     using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection.Connect()))
                     {
-                        updateCommand.Parameters.AddWithValue("@TCKimlikNumarasi", tcKimlikNumarasi);
                         updateCommand.Parameters.AddWithValue("@OdenenMiktar", Convert.ToDecimal(OdenecekTutar_TB.Text));
                         updateCommand.ExecuteNonQuery();
                     }
 
                     this.Close();
-                    UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani(tcKimlikNumarasi);
-                    uyeIslemlerEkrani.ShowDialog();
-
-
-                }
+				}
                 catch (Exception ex)
                 {
                     MessageBox.Show("Ödeme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -159,5 +136,11 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             else
                 MessageBox.Show("Ödenecek tutar giriniz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-    }
+
+		private void OdemeIslemleriEkrani_FormClosing(object sender, FormClosingEventArgs e)
+		{
+            UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani(tcKimlikNumarasi);
+            uyeIslemlerEkrani.Show();
+		}
+	}
 }

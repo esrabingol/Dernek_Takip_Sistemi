@@ -21,46 +21,62 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             InitializeComponent();
             this.tcKimlikNumarasi = tcKimlikNumarasi;
             connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-
         }
 
         private void chbox_mevcutParola_CheckedChanged(object sender, EventArgs e)
         {
-            if (chbox_mevcutParola.Checked)
-                txt_eskiSifre.PasswordChar = '\0';
+			if (chbox_mevcutParola.Checked)
+            {
+				chbox_mevcutParola.Image = Properties.Resources.opened_eye;
+				txt_eskiSifre.PasswordChar = '\0';
+			}
             else
-                txt_eskiSifre.PasswordChar = '*';
-        }
+            {
+				chbox_mevcutParola.Image = Properties.Resources.closed_eye;
+				txt_eskiSifre.PasswordChar = '*';
+			}
+		}
 
-        private void chbox_yeniParola_CheckedChanged(object sender, EventArgs e)
+		private void chbox_yeniParola_CheckedChanged(object sender, EventArgs e)
         {
-            if (chbox_yeniParola.Checked)
-                txt_yeniSifre.PasswordChar = '\0';
-            else
-                txt_yeniSifre.PasswordChar = '*';
-        }
+			if (chbox_mevcutParola.Checked)
+			{
+				chbox_mevcutParola.Image = Properties.Resources.opened_eye;
+				txt_eskiSifre.PasswordChar = '\0';
+			}
+			else
+			{
+				chbox_mevcutParola.Image = Properties.Resources.closed_eye;
+				txt_eskiSifre.PasswordChar = '*';
+			}
+		}
 
-        private void chbox_tekrarParola_CheckedChanged(object sender, EventArgs e)
+		private void chbox_tekrarParola_CheckedChanged(object sender, EventArgs e)
         {
-            if (chbox_tekrarParola.Checked)
-                txt_sifreTekrar.PasswordChar = '\0';
-            else
-                txt_sifreTekrar.PasswordChar = '*';
-        }
+			if (chbox_mevcutParola.Checked)
+			{
+				chbox_mevcutParola.Image = Properties.Resources.opened_eye;
+				txt_eskiSifre.PasswordChar = '\0';
+			}
+			else
+			{
+				chbox_mevcutParola.Image = Properties.Resources.closed_eye;
+				txt_eskiSifre.PasswordChar = '*';
+			}
+		}
 
-        private void GeriDon_BTN_Click(object sender, EventArgs e)
+		private void GeriDon_BTN_Click(object sender, EventArgs e)
         {
-            this.Close();
-            UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani();
+            this.Hide();
+            UyeIslemlerEkrani uyeIslemlerEkrani = new UyeIslemlerEkrani(tcKimlikNumarasi);
             uyeIslemlerEkrani.Show();
-           
         }
 
         private void CKS_BTN_Click(object sender, EventArgs e)
         {
             Giris giris = new Giris();
             giris.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
@@ -73,7 +89,6 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             {
                 veritabaniSifre = (string)command.ExecuteScalar();
             }
-
 
             if (veritabaniSifre != null && txt_eskiSifre.Text == veritabaniSifre)
             {
@@ -89,6 +104,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                     }
 
                     MessageBox.Show("Şifre başarıyla değiştirildi.");
+                    this.Close();
                 }
                 else
                     MessageBox.Show("Güncellemek istediğiniz şifreler birbiri ile uyuşmuyor!\nLütfen  şifreyi tekrar giriniz.");
@@ -99,5 +115,5 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
                 MessageBox.Show("Mevcut şifre hatalı. Lütfen  şifreyi tekrar giriniz");
             }
         }
-    }
+	}
 }
