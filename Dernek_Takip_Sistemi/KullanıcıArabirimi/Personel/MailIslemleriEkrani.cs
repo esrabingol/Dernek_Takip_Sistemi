@@ -116,9 +116,8 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                 msg.Raw = Base64UrlEncode(message.ToString());
                 service.Users.Messages.Send(msg, "me").Execute();
             }
-
-            MessageBox.Show("Mail başarıyla gönderildi!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+			MessageBox.Show("Mail başarıyla gönderildi!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Hide();
 
             UyeBilgileriniListelemeİslemleri uyeBilgileriniListeleme = new UyeBilgileriniListelemeİslemleri();
             uyeBilgileriniListeleme.ShowDialog();

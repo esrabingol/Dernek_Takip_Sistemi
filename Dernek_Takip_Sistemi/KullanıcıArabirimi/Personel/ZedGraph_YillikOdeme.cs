@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZedGraph;
 
@@ -21,14 +16,12 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
         public ZedGraph_YillikOdeme()
         {
             InitializeComponent();
-        }
+			connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+		}
 
         private void ZedGraph_YillikOdeme_Load(object sender, EventArgs e)
         {
-            connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
             DataTable dataTable = new DataTable();
-
-
 
             try
             {
@@ -37,7 +30,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
                     connection .Connect().Open();
                 }
 
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT YEAR(OdemeTarihi) AS Yil, SUM(OdemeMiktari) AS ToplamOdeme FROM OdemeTablosu GROUP BY YEAR(OdemeTarihi)", connection.Connect()))
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT YEAR(OdemeTarihi) AS Yil, SUM(OdemeMiktari) AS ToplamOdeme FROM Odeme_Tablosu GROUP BY YEAR(OdemeTarihi)", connection.Connect()))
                 {
                     dataAdapter.Fill(dataTable);
                 }

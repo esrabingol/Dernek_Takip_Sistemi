@@ -18,23 +18,8 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
         public UyeSilGüncelleEkrani()
         {
             InitializeComponent();
-        }
-
-
-        private void UyeGoruntuleBTN_Click(object sender, EventArgs e)
-        {
-            string Tckimlik = TCgirTB.Text;
-            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
-            DataTable UserDT = new DataTable();
-            if (String.IsNullOrWhiteSpace(TCgirTB.Text))
-                MessageBox.Show("TC Kimlik Numarası Alanı Boş Olamaz!");
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu WHERE TCKimlikNumarasi ='{Tckimlik}'", connect.Connect()))
-            {
-                dataAdapter.Fill(UserDT);
-
-            }
-            UyeGoruntuleDGW.DataSource = UserDT;
-        }
+			connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+		}
 
         private void UyeSilBTN_Click(object sender, EventArgs e)
         {
@@ -45,67 +30,35 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
 
             if (result == DialogResult.Yes)
             {
-                string dynamicConnectionString = "Dernek_Takip_Sistemi";
-                string connectionString = $"Data Source=LAPTOP-IPQTP7GR;Initial Catalog={dynamicConnectionString};Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                string sqlSorgusu = $"DELETE FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{Tckimlik}'";
+                using (SqlCommand sqlCommand = new SqlCommand(sqlSorgusu, connect.Connect()))
                 {
-                    // SQL sorgusunu hazırla
-                    string sqlSorgusu = $"DELETE FROM UyeKayitTablosu WHERE TCKimlikNumarasi = '{Tckimlik}'";
-
-                    // SQL sorgusunu çalıştır
-                    using (SqlCommand sqlCommand = new SqlCommand(sqlSorgusu, connection))
+                    try
                     {
-                        try
+                        if (sqlCommand.ExecuteNonQuery() > 0)
                         {
-                            // Veritabanı bağlantısını aç
-                            connection.Open();
+                            // İşlem başarılıysa kullanıcıya bilgi ver
+                            MessageBox.Show("Üye başarıyla silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // İşlemi gerçekleştir
-                            int etkilenenSatırSayısı = sqlCommand.ExecuteNonQuery();
+                            // UyeBilgileriniListelemeİslemleri formunu aç
+                            UyeBilgileriniListelemeİslemleri listelemeIslemleri = new UyeBilgileriniListelemeİslemleri();
+                            listelemeIslemleri.Show();
 
-                            if (etkilenenSatırSayısı > 0)
-                            {
-                                // İşlem başarılıysa kullanıcıya bilgi ver
-                                MessageBox.Show("Üye başarıyla silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                // UyeBilgileriniListelemeİslemleri formunu aç
-                                UyeBilgileriniListelemeİslemleri listelemeIslemleri = new UyeBilgileriniListelemeİslemleri();
-                                listelemeIslemleri.Show();
-
-                                // Mevcut formu gizle
-                                this.Hide();
-                            }
-                            else
-                            {
-
-                                // İşlem başarısızsa kullanıcıya hata mesajı ver
-                                MessageBox.Show("Uygun Kullanıcı Bulunamadı.Tc yi kontrol ediniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            // Mevcut formu gizle
+                            this.Hide();
                         }
-                        catch (Exception ex)
-                        {
-                            // Hata durumunda kullanıcıya bilgi ver
-                            MessageBox.Show("Bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            // Veritabanı bağlantısını kapat
-                            connection.Close();
-                        }
+                        else
+                            MessageBox.Show("Kullanıcı Bulunamadı. Geçerli bir TC kimlik numarası giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Hata durumunda kullanıcıya bilgi ver
+                        MessageBox.Show("Bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
-
             else
-            {
-                // Kullanıcı "Hayır" dediyse, mevcut formu göster
                 this.Show();
-            }
-        }
-
-        private void UyeSilGüncelleEkrani_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void TSB_UyeSil_Click(object sender, EventArgs e)
@@ -115,40 +68,25 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
             geriDonİslemi.ShowDialog();
         }
 
-        private void TCgirTB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void TCgirTB_MouseClick(object sender, MouseEventArgs e)
         {
-            if (TCgirTB.Text == "Kullanıcı TC Numarası")
+            if (TCgirTB.Text == "TC kimlik numarası giriniz")
             {
-                TCgirTB.Text = "";
-                TCgirTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
-            }
-        }
+				TCgirTB.Text = "";
+				TCgirTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
+			}
+		}
 
-        private void TCgirTB_MouseLeave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(TCgirTB.Text))
-            {
-                TCgirTB.Text = "Kullanıcı TC Numarası";
-                TCgirTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
-            }
-        }
-
-        private void guno_goruntule_Click(object sender, EventArgs e)
+		private void guno_goruntule_Click(object sender, EventArgs e)
         {
             string Tckimlik = TCgirTB.Text;
-            connect = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
+            
             DataTable UserDT = new DataTable();
             if (String.IsNullOrWhiteSpace(TCgirTB.Text))
                 MessageBox.Show("TC Kimlik Numarası Alanı Boş Olamaz!");
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM UyeKayitTablosu WHERE TCKimlikNumarasi ='{Tckimlik}'", connect.Connect()))
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT TCKimlikNumarasi, UyeAdi, UyeSoyadi FROM UyeKayitTablosu WHERE TCKimlikNumarasi ='{Tckimlik}'", connect.Connect()))
             {
                 dataAdapter.Fill(UserDT);
-
             }
             UyeGoruntuleDGW.DataSource = UserDT;
         }

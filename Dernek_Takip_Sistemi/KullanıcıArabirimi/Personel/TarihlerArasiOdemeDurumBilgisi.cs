@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
 { 
-
     public partial class TarihlerArasiOdemeDurumBilgisi : Form
     {
         DataLayer.Baglanti.VeriTabaniBaglantisi connection;
@@ -33,13 +25,12 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
 
         private void Guno_btn_Click(object sender, EventArgs e)
         {
-
             DateTime BaslangicTarihi = dateTimePicker_baslangic.Value;
             DateTime BitisTarihi = dateTimePicker_bitis.Value;
 
             try
             {
-                string updateQuery = $"SELECT * FROM OdemeTablosu WHERE OdemeTarihi BETWEEN @BaslangicTarihi AND @BitisTarihi";
+                string updateQuery = $"SELECT TCKimlikNumarasi, OdemeMiktari, OdemeTarihi FROM Odeme_Tablosu WHERE OdemeTarihi BETWEEN @BaslangicTarihi AND @BitisTarihi";
                 using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection.Connect()))
                 {
                     updateCommand.Parameters.AddWithValue("@BaslangicTarihi", BaslangicTarihi);
@@ -51,15 +42,12 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
                     adapter.Fill(dataTable);
 
                     dataGridView_listeleme.DataSource = dataTable;
-
-
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("İstenilen Tarihler arası ödeme yapılmamıştır.: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("İstenilen tarihler arası ödeme yapılmamıştır." + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

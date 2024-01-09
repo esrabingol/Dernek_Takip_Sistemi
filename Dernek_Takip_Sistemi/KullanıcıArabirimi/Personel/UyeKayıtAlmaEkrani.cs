@@ -1,5 +1,6 @@
 ﻿
 using Dernek_Takip_Sistemi.KullanıcıArabirimi;
+using Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye;
 using iTextSharp.text;
 using System;
 using System.Data;
@@ -112,12 +113,14 @@ namespace Dernek_Takip_Sistemi
         {
             if (chbox_parola.Checked)
             {
-                txt_Sifre.PasswordChar = '\0';
+				chbox_parola.Image = Properties.Resources.opened_eye;
+				txt_Sifre.PasswordChar = '\0';
                 txt_sifreTekrar.PasswordChar = '\0';
-            }
+			}
             else
             {
-                txt_Sifre.PasswordChar = '*';
+				chbox_parola.Image = Properties.Resources.closed_eye;
+				txt_Sifre.PasswordChar = '*';
                 txt_sifreTekrar.PasswordChar = '*';
             }
         }
@@ -201,8 +204,6 @@ namespace Dernek_Takip_Sistemi
                             sqlCommand.Parameters.AddWithValue("@UyeSifre", txt_Sifre.Text);
 
                             sqlCommand.ExecuteNonQuery();
-
-
                         }
 
                         //borc tablosu
@@ -232,6 +233,16 @@ namespace Dernek_Takip_Sistemi
                         MessageBox.Show("Dernek Sistemine Kayıt Başarılı.");
 
                         this.Close();
+                        if (personelGirismi)
+                        {
+                            UyeBilgileriniListelemeİslemleri personel = new UyeBilgileriniListelemeİslemleri();
+                            personel.Show();
+                        }
+                        else
+                        {
+                            UyeGirisEkrani uye = new UyeGirisEkrani();
+                            uye.Show();
+                        }
                     }
 
                     catch (Exception ex)
@@ -242,5 +253,5 @@ namespace Dernek_Takip_Sistemi
                 }
             }
         }
-    }
+	}
 }

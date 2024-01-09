@@ -17,31 +17,19 @@ namespace Dernek_Takip_Sistemi
             connection = new DataLayer.Baglanti.VeriTabaniBaglantisi("Dernek_Takip_Sistemi");
         }
 
-        private void txtBox_prsonelnumber_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtBox_prsonelpassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void sfregorCB_CheckedChanged(object sender, EventArgs e)
         {
-            //checkBox işaretli ise
-            if (sfregorCB.Checked)
-            {
-                //karakteri göster.
-                SifreTB.PasswordChar = '\0';
-            }
-            //değilse karakterlerin yerine * koy.
-            else
-            {
-                SifreTB.PasswordChar = '*';
-            }
-        }
-
-
+			if (sfregorCB.Checked)
+			{
+				sfregorCB.Image = Properties.Resources.opened_eye;
+				SifreTB.PasswordChar = '\0';
+			}
+			else
+			{
+				sfregorCB.Image = Properties.Resources.closed_eye;
+				SifreTB.PasswordChar = '*';
+			}
+		}
 
         private void TSB_Personel_Click(object sender, EventArgs e)
         {
@@ -50,25 +38,7 @@ namespace Dernek_Takip_Sistemi
             this.Hide();
         }
 
-        private void KullaniciAdiTB_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (PersonelAdiTB.Text == "Kullanıcı Adı")
-            {
-                PersonelAdiTB.Text = "";
-                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.WindowText; // Varsayılan metin rengi
-            }
-        }
-
-        private void KullaniciAdiTB_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(PersonelAdiTB.Text))
-            {
-                PersonelAdiTB.Text = "Kullanıcı Adı";
-                PersonelAdiTB.ForeColor = System.Drawing.SystemColors.GrayText; // Gri renk ile göster
-            }
-        }
-
-        private void guno_GirisBTN_Click(object sender, EventArgs e)
+		private void guno_GirisBTN_Click(object sender, EventArgs e)
         {
 
             if (String.IsNullOrWhiteSpace(PersonelAdiTB.Text))
@@ -97,23 +67,16 @@ namespace Dernek_Takip_Sistemi
                 {
                     if (SifreTB.Text == sifre)
                     {
-
-                        MessageBox.Show("Personel Giriş Başarılı, Hoşgeldiniz");
                         UyeBilgileriniListelemeİslemleri listelemeİslemleri = new UyeBilgileriniListelemeİslemleri();
                         listelemeİslemleri.Show();
                         this.Hide();
-
                     }
                     else
                     {
                         MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
-
-
-
             }
         }
-    }
+	}
 }
