@@ -35,7 +35,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi
                     connect.Connect().Open();
                 }
 
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT OdemeMiktari, MONTH(OdemeTarihi) AS Ay FROM Odeme_Tablosu", connect.Connect()))
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT OdemeMiktari, MONTH(OdemeTarihi) AS Ay FROM OdemeTablosu", connect.Connect()))
                 {
                     dataAdapter.Fill(dataTable);
                 }

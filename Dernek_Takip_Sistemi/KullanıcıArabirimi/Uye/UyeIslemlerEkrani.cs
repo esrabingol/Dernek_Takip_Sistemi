@@ -84,7 +84,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Uye
             //Odeme Gecmisi Tablosu
             DataTable OdemeDT = new DataTable();
 
-            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT OdemeTarihi, OdemeMiktari FROM Odeme_Tablosu WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'", connection.Connect()))
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT OdemeTarihi, OdemeMiktari FROM OdemeTablosu WHERE TCKimlikNumarasi = '{tcKimlikNumarasi}'", connection.Connect()))
             {
                 dataAdapter.Fill(OdemeDT);
             }

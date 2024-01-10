@@ -30,7 +30,7 @@ namespace Dernek_Takip_Sistemi.KullanıcıArabirimi.Personel
                     connection .Connect().Open();
                 }
 
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT YEAR(OdemeTarihi) AS Yil, SUM(OdemeMiktari) AS ToplamOdeme FROM Odeme_Tablosu GROUP BY YEAR(OdemeTarihi)", connection.Connect()))
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT YEAR(OdemeTarihi) AS Yil, SUM(OdemeMiktari) AS ToplamOdeme FROM OdemeTablosu GROUP BY YEAR(OdemeTarihi)", connection.Connect()))
                 {
                     dataAdapter.Fill(dataTable);
                 }
